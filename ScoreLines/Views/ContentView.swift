@@ -17,20 +17,78 @@ struct ContentView : View {
 
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.blue]
+        
+        
     }
 
      
     
     var body: some View {
         
+        let drag = DragGesture()
+          .onEnded {
+              if $0.translation.width < -100 {
+                  withAnimation {
+                      self.showMenu = false
+                  }
+              }
+          }
+        
         NavigationView(){
             if #available(iOS 15.0, *) {
-                    
+                
+                ZStack{
+                
                         FeedView()
-                .navigationBarTitle("ScoreLines")
+                
+                    GeometryReader{_ in
+
+                        MenuView(showMenu: $showMenu)
+                                .offset(x: self.showMenu ? 0 : -UIScreen.main.bounds.width)
+                                .animation(.default)
+                        
+                    }
+                    .background(Color.black.opacity(self.showMenu ? 0.2 : 0))
+                    .onTapGesture{
+                        self.showMenu.toggle()
+                    }
+                    .gesture(drag)
+                }
+                .navigationBarTitle(Text(""), displayMode: .inline)
+                .toolbar{
+                    ToolbarItem(placement: .principal){
+                        Text("ScoreLines")
+                            .font(.system(size: UIScreen.main.bounds.height*0.035))
+                            .foregroundColor(.white)
+                    }
+                }
+                .navigationBarItems(leading:
+                                        HStack{
+                                        Button(action: {
+                                            self.showMenu.toggle()
+                                        }, label: {
+                                            if self.showMenu{
+                                                Image(systemName: "gearshape")
+                                                    .resizable()
+                                                    .frame(width: UIScreen.main.bounds.width * 0.058 , height: UIScreen.main.bounds.width * 0.058)
+                                                    .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                                            }
+                                            else{
+                                                Image(systemName: "gearshape")
+                                                    .resizable()
+                                                    .frame(width: UIScreen.main.bounds.width * 0.06 , height: UIScreen.main.bounds.width * 0.06)
+                                                    .foregroundColor(Color.white)
+                                            }
+                                        })
+           
+                }
+                )
+                
                 .navigationBarColor(backgroundColor: .systemTeal, tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
                 .background(.teal)
+
+                
             } else {
                 // Fallback on earlier versions
             }

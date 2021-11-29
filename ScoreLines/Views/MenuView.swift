@@ -49,12 +49,12 @@ struct MenuView : View {
                 {
                     NavigationLink(destination: FeedView())
                     {
-                        Text("notifications").foregroundColor(.white).font(.system(size: 23)).bold()
+                        Text("favorites").foregroundColor(.white).font(.system(size: 23)).bold()
                             .padding(.leading, UIScreen.main.bounds.height * 0.03)
                             .padding(.top, UIScreen.main.bounds.height * 0.005)
                     }
                     Divider().frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.003).background(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                        .padding(.leading, UIScreen.main.bounds.width * 0.02)
+                        .padding(.leading, UIScreen.main.bounds.width * 0.06)
                     
                 }.frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.005, alignment: .leading)
                 .padding()
@@ -74,25 +74,7 @@ struct MenuView : View {
 //                Divider().frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.003).background(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                 
                 
-                VStack
-                {
-                    NavigationLink(destination: FeedView())
-                    {
-                        //Image("menu_report").resizable().frame(width: 25, height: 25).padding()
-                        Text("liked").foregroundColor(.white)
-                            .font(.system(size: 23)).bold()
-                            .padding(.leading, -UIScreen.main.bounds.width * 0.05)
-                            .padding(.top, UIScreen.main.bounds.height * 0.005)
-                        
-                    }
-                    Divider().frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.003).background(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                        .padding(.leading, UIScreen.main.bounds.width * 0.06)
-                    
-                }.frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.005, alignment: .leading)
-                .padding()
-                .padding(.bottom, UIScreen.main.bounds.height * 0.005)
-                .padding(.top, UIScreen.main.bounds.height * 0.01)
-                
+               
 //                HStack
 //                {
 //                    NavigationLink(destination: UserLikedView())
