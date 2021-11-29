@@ -63,8 +63,7 @@ struct ContentView : View {
                             }
                             .tag(2)
                         
-                        Text("Baseball")
-                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                        BaseballView()
                             .tabItem {
                                 Image(systemName: "atom")
                                 Text("Baseball")
@@ -84,7 +83,7 @@ struct ContentView : View {
                     GeometryReader{_ in
 
                         MenuView(showMenu: $showMenu)
-                                .offset(x: self.showMenu ? 0 : -UIScreen.main.bounds.width)
+                                .offset(x: self.showMenu ?  UIScreen.main.bounds.width/2: UIScreen.main.bounds.width)
                                 .animation(.default)
                         
                         .edgesIgnoringSafeArea(.bottom)
@@ -107,7 +106,7 @@ struct ContentView : View {
                             .foregroundColor(.white)
                     }
                 }
-                .navigationBarItems(leading:
+                .navigationBarItems(trailing:
                                         HStack{
                                         Button(action: {
                                             self.showMenu.toggle()

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */; };
 		5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */; };
+		5C38DDF22755932900FCE1E9 /* BaseballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38DDF12755932900FCE1E9 /* BaseballView.swift */; };
 		5C57E0CE2755404600D3375D /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0CD2755404600D3375D /* Pods */; };
 		5C57E0E82755405900D3375D /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0E72755405900D3375D /* Helpers */; };
 		5C57E0EA2755414F00D3375D /* ScoreLinesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */; };
@@ -24,6 +25,7 @@
 		5C38DDEC27557F4100FCE1E9 /* ScoreLines-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ScoreLines-Info.plist"; sourceTree = "<group>"; };
 		5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AVENTURESCRIPTINE-REGULAR.OTF"; path = "Fonts/AVENTURESCRIPTINE-REGULAR.OTF"; sourceTree = "<group>"; };
 		5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SCRIPT_MT_BOLD.TTF; path = Fonts/SCRIPT_MT_BOLD.TTF; sourceTree = "<group>"; };
+		5C38DDF12755932900FCE1E9 /* BaseballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballView.swift; sourceTree = "<group>"; };
 		5C57E0CD2755404600D3375D /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		5C57E0E72755405900D3375D /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Helpers; sourceTree = "<group>"; };
 		5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLinesApp.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				5C57E0ED2755427300D3375D /* FeedView.swift */,
 				5C57E0EE2755427300D3375D /* GameFrame.swift */,
 				5C57E0F327555BF600D3375D /* MenuView.swift */,
+				5C38DDF12755932900FCE1E9 /* BaseballView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C57E0F427555BF600D3375D /* MenuView.swift in Sources */,
+				5C38DDF22755932900FCE1E9 /* BaseballView.swift in Sources */,
 				5C57E0F62755606400D3375D /* NavigationBarColor.swift in Sources */,
 				5C57E0F02755427400D3375D /* FeedView.swift in Sources */,
 				5C57E0EC275541BB00D3375D /* ContentView.swift in Sources */,
