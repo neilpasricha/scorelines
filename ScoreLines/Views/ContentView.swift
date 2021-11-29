@@ -10,7 +10,8 @@ extension View {
 struct ContentView : View {
     
     @State var showMenu = false
-
+    @State private var selection = 0
+    
     init() {
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.blue]
@@ -62,7 +63,7 @@ struct ContentView : View {
                             .foregroundColor(.white)
                     }
                 }
-                .navigationBarItems(leading:
+                .navigationBarItems(trailing:
                                         HStack{
                                         Button(action: {
                                             self.showMenu.toggle()
@@ -86,7 +87,6 @@ struct ContentView : View {
                 
                 .navigationBarColor(backgroundColor: .systemTeal, tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
-                .background(.teal)
 
                 
             } else {

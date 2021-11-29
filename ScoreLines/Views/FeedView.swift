@@ -24,21 +24,24 @@ struct FeedView: View {
     {
         
             
-        if #available(iOS 14.0, *) {
-            ScrollView{
-            VStack{
+            if #available(iOS 15.0, *) {
+                ScrollView{
+                    VStack{
+                        
+                        GameFrame()
+                        GameFrame()
+                        GameFrame()
+                        GameFrame()
+                        GameFrame()
+                        GameFrame()
+                    }
+                }
+                .padding(.top, 2)
+                .padding(.bottom, 2)
+                .frame(width:UIScreen.main.bounds.width)
                 
-                GameFrame()
-                GameFrame()
-                GameFrame()
-                GameFrame()
-                GameFrame()
-                GameFrame()
-            }
-            }
-            .padding(.top, 2)
-            .padding(.bottom, 2)
-            .frame(width:UIScreen.main.bounds.width)
+                .background(.teal)
+    
             
         } else {
             // Fallback on earlier versions
