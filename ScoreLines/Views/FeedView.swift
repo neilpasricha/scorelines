@@ -35,12 +35,13 @@ struct FeedView: View {
                         GameFrame()
                         GameFrame()
                     }
+                    
+                    .frame(width:UIScreen.main.bounds.width)
+                    
+                    .padding(.top, 2)
+                    .padding(.bottom, 2)
                 }
-                .padding(.top, 2)
-                .padding(.bottom, 2)
-                .frame(width:UIScreen.main.bounds.width)
                 
-                .background(.teal)
     
             
         } else {

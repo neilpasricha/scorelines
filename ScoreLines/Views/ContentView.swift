@@ -10,7 +10,7 @@ extension View {
 struct ContentView : View {
     
     @State var showMenu = false
-    @State private var selection = 0
+    @State private var selection = 2
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -37,10 +37,49 @@ struct ContentView : View {
         
         NavigationView(){
             if #available(iOS 15.0, *) {
-                
+            
                 ZStack{
-                
+                    TabView(selection: $selection) {
+                        Text("Football")
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .tabItem {
+                                Image(systemName: "atom")
+                                Text("Football")
+                            }
+                            .tag(0)
+                     
+                        Text("Basketball")
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .tabItem {
+                                Image(systemName: "atom")
+                                Text("Basketball")
+                            }
+                            .tag(1)
+                     
                         FeedView()
+                            .tabItem {
+                                Image(systemName: "house.fill")
+                                Text("Feed")
+                            }
+                            .tag(2)
+                        
+                        Text("Baseball")
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .tabItem {
+                                Image(systemName: "atom")
+                                Text("Baseball")
+                            }
+                            .tag(3)
+                     
+                        Text("Soccer")
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .tabItem {
+                                Image(systemName: "atom")
+                                Text("Soccer")
+                            }
+                            .tag(4)
+                    }
+                    .accentColor(.teal)
                 
                     GeometryReader{_ in
 
@@ -87,7 +126,6 @@ struct ContentView : View {
                 
                 .navigationBarColor(backgroundColor: .systemTeal, tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
-
                 
             } else {
                 // Fallback on earlier versions
