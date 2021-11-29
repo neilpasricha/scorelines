@@ -7,7 +7,6 @@
 //
 import Foundation
 import Combine
-import JWTDecode
 
 class UserAuth: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()

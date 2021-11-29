@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JWTDecode
 
 struct Jwt: Decodable {
     let token: String
