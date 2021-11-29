@@ -45,6 +45,7 @@ struct GameFrame: View
     var body: some View
     {
             HStack{
+                Spacer()
                 VStack{//First VStack, containing team1 info
                     //UIScreen.main.bounds.height*0.2
                     HStack(spacing:0){//HStack 2 for the team1 wins/losses
@@ -75,26 +76,22 @@ struct GameFrame: View
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                         .padding()
                     Spacer()
-                    HStack(spacing:0){
+                    VStack(spacing:0){
                         
                     Text("ML (" + String(team1ML) + ") ")
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
-                    Text("|")
-                        .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
-                        .font(.system(size: UIScreen.main.bounds.height*0.0185))
-                        .bold()
-                        .lineLimit(1)
-                        .multilineTextAlignment(.center)
-                    Text(" Sprd (" + String(team1Spread) + ")")
+                    Text(" Spread (" + String(team1Spread) + ")")
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
                 }
+                .padding(.bottom, UIScreen.main.bounds.height*0.01)
+                .padding(.top, UIScreen.main.bounds.height*0.013)
                 VStack{//Time left and O/\U
                     Spacer()
                    HStack(spacing:0){//HStack 3 for gameclock seconds and min
@@ -232,6 +229,7 @@ struct GameFrame: View
                     }
                     .font(.system(size: UIScreen.main.bounds.height*0.02))
                     
+                    .padding(.top, UIScreen.main.bounds.height*0.013)
                     Spacer()
                     Text(String(team2Score))
                         .font(.system(size: UIScreen.main.bounds.height*0.05))
@@ -239,26 +237,21 @@ struct GameFrame: View
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                         .padding()
                     Spacer()
-                    HStack(spacing:0){
+                    VStack(spacing:0){
                         
                     Text("ML (+" + String(team2ML) + ") ")
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
-                    Text("|")
-                        .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
-                        .font(.system(size: UIScreen.main.bounds.height*0.0185))
-                        .bold()
-                        .lineLimit(1)
-                        .multilineTextAlignment(.center)
-                    Text(" Sprd (+" + String(team2Spread) + ")")
+                    Text(" Spread (+" + String(team2Spread) + ")")
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
-                    .padding(.bottom, UIScreen.main.bounds.height*0.0025)
+                    
+                    .padding(.bottom, UIScreen.main.bounds.height*0.01)
                 }
                     Spacer()
                 }//end whole HStack

@@ -36,11 +36,8 @@ struct FeedView: View {
                 GameFrame()
             }
             }
-            .padding()
+            .frame(width:UIScreen.main.bounds.width)
             
-            .offset(y:80)
-            .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.85)
-            .padding(.bottom, UIScreen.main.bounds.height*0.18)
         } else {
             // Fallback on earlier versions
         }
