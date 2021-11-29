@@ -32,6 +32,7 @@ struct GameFrame: View
     @State private var totalScore: Double = 0
     @State private var totalDiff: Double = 17.5
     
+    
     @State private var team1Q1: Int = 35
     @State private var team1Q2: Int = 28
     @State private var team1Q3: Int = 42
@@ -129,10 +130,14 @@ struct GameFrame: View
                    .padding(.bottom, UIScreen.main.bounds.height*0.0006)
                     Spacer()
                     HStack(spacing:0){//O/U
-                    Text("[O/U] ")
+                    Text("O/U: ")
+                            .underline()
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                     Text(String(total))
+                        .lineLimit(1)
+                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    Text(" [" + String(totalDiff) + "]")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                         }
@@ -140,12 +145,13 @@ struct GameFrame: View
                         .padding(.bottom, UIScreen.main.bounds.height*0.00025)
                     HStack(spacing:0){//O/U
                     Text("Total: ")
+                            .underline()
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                     Text(String(team1Score + team2Score))
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                    Text(" [" + String(totalDiff) + "]")
+                        Text(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                         }

@@ -36,6 +36,8 @@ struct FeedView: View {
                 GameFrame()
             }
             }
+            .padding(.top, 2)
+            .padding(.bottom, 2)
             .frame(width:UIScreen.main.bounds.width)
             
         } else {

@@ -28,9 +28,9 @@ struct ContentView : View {
                     
                         FeedView()
                 .navigationBarTitle("ScoreLines")
-                .navigationBarColor(backgroundColor: .blue, tintColor: .white)
-                .background(.blue)
+                .navigationBarColor(backgroundColor: .systemTeal, tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
+                .background(.teal)
             } else {
                 // Fallback on earlier versions
             }
