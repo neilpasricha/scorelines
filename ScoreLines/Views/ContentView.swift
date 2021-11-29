@@ -98,7 +98,7 @@ struct ContentView : View {
                 .toolbar{
                     ToolbarItem(placement: .principal){
                         Text("ScoreLines")
-                            .font(.system(size: UIScreen.main.bounds.height*0.035))
+                            .font(.custom("Freehand575 BT", size: UIScreen.main.bounds.height*0.055))
                             .foregroundColor(.white)
                     }
                 }
