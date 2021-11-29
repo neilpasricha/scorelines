@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SCRIPT_MT_BOLD.TTF</string>
+		<string>AVENTURESCRIPTINE-REGULAR.OTF</string>
 		<string>FREEH575.TTF</string>
 	</array>
 </dict>

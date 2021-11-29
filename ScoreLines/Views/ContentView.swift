@@ -87,7 +87,11 @@ struct ContentView : View {
                                 .offset(x: self.showMenu ? 0 : -UIScreen.main.bounds.width)
                                 .animation(.default)
                         
+                        .edgesIgnoringSafeArea(.bottom)
+                        
                     }
+                    
+                    .edgesIgnoringSafeArea(.bottom)
                     .background(Color.black.opacity(self.showMenu ? 0.2 : 0))
                     .onTapGesture{
                         self.showMenu.toggle()
@@ -99,10 +103,11 @@ struct ContentView : View {
                     ToolbarItem(placement: .principal){
                         Text("ScoreLines")
                             .font(.custom("Freehand575 BT", size: UIScreen.main.bounds.height*0.055))
+                            .bold()
                             .foregroundColor(.white)
                     }
                 }
-                .navigationBarItems(trailing:
+                .navigationBarItems(leading:
                                         HStack{
                                         Button(action: {
                                             self.showMenu.toggle()

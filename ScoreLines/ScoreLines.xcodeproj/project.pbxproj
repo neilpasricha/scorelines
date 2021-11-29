@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */; };
+		5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */; };
 		5C57E0CE2755404600D3375D /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0CD2755404600D3375D /* Pods */; };
 		5C57E0E82755405900D3375D /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0E72755405900D3375D /* Helpers */; };
 		5C57E0EA2755414F00D3375D /* ScoreLinesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		5C38DDEC27557F4100FCE1E9 /* ScoreLines-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ScoreLines-Info.plist"; sourceTree = "<group>"; };
+		5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AVENTURESCRIPTINE-REGULAR.OTF"; path = "Fonts/AVENTURESCRIPTINE-REGULAR.OTF"; sourceTree = "<group>"; };
+		5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SCRIPT_MT_BOLD.TTF; path = Fonts/SCRIPT_MT_BOLD.TTF; sourceTree = "<group>"; };
 		5C57E0CD2755404600D3375D /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		5C57E0E72755405900D3375D /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Helpers; sourceTree = "<group>"; };
 		5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLinesApp.swift; sourceTree = "<group>"; };
@@ -59,7 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				5C38DDEC27557F4100FCE1E9 /* ScoreLines-Info.plist */,
+				5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */,
 				5C57E0F727557EA900D3375D /* FREEH575.TTF */,
+				5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */,
 				5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */,
 				5C57E0F227555A3000D3375D /* Views */,
 				5C57E0E72755405900D3375D /* Helpers */,
@@ -136,6 +142,8 @@
 			files = (
 				5C57E0E82755405900D3375D /* Helpers in Resources */,
 				5C57E0CE2755404600D3375D /* Pods in Resources */,
+				5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */,
+				5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */,
 				5C57E0F827557EAC00D3375D /* FREEH575.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
