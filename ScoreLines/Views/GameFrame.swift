@@ -71,6 +71,7 @@ struct GameFrame: View
                     .font(.system(size: UIScreen.main.bounds.height*0.02))
                     Spacer()
                     Text(String(team1Score))
+                        .underline()
                         .font(.system(size: UIScreen.main.bounds.height*0.05))
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
@@ -79,11 +80,13 @@ struct GameFrame: View
                     VStack(spacing:0){
                         
                     Text("ML (" + String(team1ML) + ") ")
+                            .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     Text(" Spread (" + String(team1Spread) + ")")
+                            .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
@@ -232,6 +235,7 @@ struct GameFrame: View
                     .padding(.top, UIScreen.main.bounds.height*0.013)
                     Spacer()
                     Text(String(team2Score))
+                        .underline()
                         .font(.system(size: UIScreen.main.bounds.height*0.05))
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
@@ -240,11 +244,13 @@ struct GameFrame: View
                     VStack(spacing:0){
                         
                     Text("ML (+" + String(team2ML) + ") ")
+                            .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     Text(" Spread (+" + String(team2Spread) + ")")
+                            .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
