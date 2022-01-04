@@ -62,6 +62,7 @@ struct FootballView: View {
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
                         .font(.system(size: 24.0))
                         if(showNFL){
+                            ScrollView{
                             NFLButton(feed:feed)
                             NFLButton(feed:feed)
                             NFLButton(feed:feed)
@@ -71,6 +72,7 @@ struct FootballView: View {
                             NFLButton(feed:feed)
                             NFLButton(feed:feed)
                             NFLButton(feed:feed)
+                            }
                         }
                         else if(showCFB){
                             CFBButton(feed:feed)
