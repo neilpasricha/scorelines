@@ -21,6 +21,7 @@ struct MLBButton: View {
         })
         .simultaneousGesture(TapGesture().onEnded {
             self.isClicked.toggle()
+            print("MLB Tapped!")
         })
 
     }

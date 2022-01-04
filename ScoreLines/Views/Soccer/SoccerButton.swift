@@ -28,6 +28,7 @@ struct SoccerButton: View {
         })
         .simultaneousGesture(TapGesture().onEnded {
             self.isClicked.toggle()
+            print("Soccer Tapped!")
         })
 
     }

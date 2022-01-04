@@ -55,34 +55,6 @@ struct FeedView: View {
             if #available(iOS 15.0, *) {
                 ScrollView{
                     VStack{
-//                        Button(action:{
-//                            print("")
-//                        }){
-//                            if(isClicked){
-//
-//                                NBAComplex()
-//                            }
-//                            else{
-//                                NBASimple()
-//                            }
-//                        }
-//                            .simultaneousGesture(LongPressGesture().onEnded { _ in
-//                                if(isClicked){
-//
-//
-//                                    FeedView.currentFeed.append(NBAComplex())
-//                                }
-//                                else{
-//
-//                                    FeedView.currentFeed.append(NBASimple())
-//                                }
-//                                print("Added to current Feed!")
-//                            })
-//                            .simultaneousGesture(TapGesture().onEnded {
-//                                self.isClicked.toggle()
-//                            })
-                        
-  
                         NBAButton()
                         NFLButton()
                         NCAAMButton()

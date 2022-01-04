@@ -28,6 +28,7 @@ struct NCAAMButton: View {
         })
         .simultaneousGesture(TapGesture().onEnded {
             self.isClicked.toggle()
+            print("NCAAM Tapped!")
         })
 
     }

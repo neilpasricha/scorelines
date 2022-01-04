@@ -28,6 +28,7 @@ struct CFBButton: View {
         })
         .simultaneousGesture(TapGesture().onEnded {
             self.isClicked.toggle()
+            print("CFB Tapped!")
         })
 
     }

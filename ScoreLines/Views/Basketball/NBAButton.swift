@@ -20,8 +20,8 @@ struct NBAButton: View {
             print("NBA Added to current Feed!")
         })
         .simultaneousGesture(TapGesture().onEnded {
-            print("NBA Tapped!")
             self.isClicked.toggle()
+            print("NBA Tapped!")
         })
 
     }
