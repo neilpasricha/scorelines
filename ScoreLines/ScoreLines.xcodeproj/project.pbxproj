@@ -20,6 +20,7 @@
 		5C57E0F427555BF600D3375D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0F327555BF600D3375D /* MenuView.swift */; };
 		5C57E0F62755606400D3375D /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0F52755606400D3375D /* NavigationBarColor.swift */; };
 		5C57E0F827557EAC00D3375D /* FREEH575.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0F727557EA900D3375D /* FREEH575.TTF */; };
+		5C9009A42784FDEA008ACD7E /* SportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9009A32784FDEA008ACD7E /* SportView.swift */; };
 		5CA6ED272784ADFB0042A2F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA6ED262784A6E90042A2F7 /* Assets.xcassets */; };
 		5CA6ED292784B1220042A2F7 /* NFLComplex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6ED282784B1220042A2F7 /* NFLComplex.swift */; };
 		5CA6ED2B2784B3620042A2F7 /* NFLSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6ED2A2784B3620042A2F7 /* NFLSimple.swift */; };
@@ -57,6 +58,7 @@
 		5C57E0F327555BF600D3375D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5C57E0F52755606400D3375D /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
 		5C57E0F727557EA900D3375D /* FREEH575.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FREEH575.TTF; sourceTree = "<group>"; };
+		5C9009A32784FDEA008ACD7E /* SportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportView.swift; sourceTree = "<group>"; };
 		5CA6ED262784A6E90042A2F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CA6ED282784B1220042A2F7 /* NFLComplex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFLComplex.swift; sourceTree = "<group>"; };
 		5CA6ED2A2784B3620042A2F7 /* NFLSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFLSimple.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				5CBF2F0A2755C6E30066CF2C /* DetailedFrames */,
 				5CBF2F072755C6AC0066CF2C /* SimpleFrames */,
 				5C57E0EB275541BB00D3375D /* ContentView.swift */,
+				5C9009A32784FDEA008ACD7E /* SportView.swift */,
 				5C57E0F52755606400D3375D /* NavigationBarColor.swift */,
 				5C57E0ED2755427300D3375D /* FeedView.swift */,
 				5C57E0F327555BF600D3375D /* MenuView.swift */,
@@ -295,6 +298,7 @@
 				5CA6ED392784CF9C0042A2F7 /* SoccerView.swift in Sources */,
 				5CA6ED372784CD280042A2F7 /* SoccerSimple.swift in Sources */,
 				5CA6ED352784CD1E0042A2F7 /* SoccerComplex.swift in Sources */,
+				5C9009A42784FDEA008ACD7E /* SportView.swift in Sources */,
 				5CA6ED2D2784B87C0042A2F7 /* CFBComplex.swift in Sources */,
 				5C38DDF42755A2FF00FCE1E9 /* MLBSimple.swift in Sources */,
 			);

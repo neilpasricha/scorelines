@@ -19,10 +19,10 @@ struct CFBButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                FeedView.currentFeed.append(AnyView(CFBComplex()))
+               // FeedView.currentFeed.append(AnyView(CFBComplex()))
             }
             else{
-                FeedView.currentFeed.append(AnyView(CFBSimple()))
+               // FeedView.currentFeed.append(AnyView(CFBSimple()))
             }
             print("CFB Added to current Feed!")
         })

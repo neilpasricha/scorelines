@@ -10,18 +10,11 @@
 //4 = Baseball
 //5 = Soccer
 import SwiftUI
-class sporty: ObservableObject{
-    @Published var sport: [NBAButton]
 
-    init(){
-        self.sport = [NBAButton(game:"Warriors")]
-    }
 
-}
 
 struct FeedView: View {
     let categories = ["Deals":1, "Happy Hour":2, "Recreation":3, "What's Happening?":4, "Misc":5]
-    static var currentFeed: [AnyView] = [AnyView(NBAButton(game:"Warriors"))]
     @State private var showSortSheet: Bool = false
     @State private var showSubmitPost: Bool = false
     @State private var showCreateUser: Bool = false
@@ -31,8 +24,8 @@ struct FeedView: View {
     @State private var isShowing = false
     @State private var showComplex = false
     @State private var isClicked = false
-    
-    @StateObject var sports = sporty()
+    @ObservedObject var feed: Feed
+
     
     var body: some View
     {
@@ -64,14 +57,19 @@ struct FeedView: View {
          })
          */
             if #available(iOS 15.0, *) {
-                    ZStack{
-                        ForEach(sports.sport, id: \.game){ ind in
-                            ind
+                    ScrollView{
+                        
+                        VStack{
+                            ForEach(0..<feed.CurrentFeed.count, id: \.self){ index in
+                                feed.CurrentFeed[index]
                         }
-                    }
-                    .frame(width:UIScreen.main.bounds.width)
-                    
-                    .padding()
+                        }
+                        
+                        .frame(width:UIScreen.main.bounds.width)
+                        
+                        .padding()
+                    }.onTapGesture(perform: {
+                        print(feed.CurrentFeed.count)})
                 
                 
 //                if #available(iOS 15.0, *) {

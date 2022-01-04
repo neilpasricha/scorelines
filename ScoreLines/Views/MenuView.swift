@@ -6,7 +6,7 @@ import SwiftUI
 
 struct MenuView : View {
     @Binding var showMenu: Bool
-    
+    @ObservedObject var feed: Feed
     
     var body : some
         
@@ -25,7 +25,7 @@ struct MenuView : View {
                     
                     VStack
                     {
-                        NavigationLink(destination: FeedView())
+                        NavigationLink(destination: FeedView(feed:feed))
                         {
                             //Image("menu_report").resizable().frame(width: 25, height: 25).padding()
                             Text("account").foregroundColor(.white).font(.system(size: 23)).bold()
@@ -42,7 +42,7 @@ struct MenuView : View {
                     
                     VStack
                     {
-                        NavigationLink(destination: FeedView())
+                        NavigationLink(destination: FeedView(feed:feed))
                         {
                             Text("favorites").foregroundColor(.white).font(.system(size: 23)).bold()
                                 .padding(.leading, UIScreen.main.bounds.height * 0.03)
@@ -84,7 +84,7 @@ struct MenuView : View {
                     
                     VStack
                     {
-                        NavigationLink(destination: FeedView())
+                        NavigationLink(destination: FeedView(feed:feed))
                         {
                             //Image("menu_report").resizable().frame(width: 25, height: 25).padding()
                             Text("feedback").foregroundColor(.white).font(.system(size: 23)).bold()
@@ -148,19 +148,19 @@ struct MenuView : View {
     }
     func goProfile() {
         if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: FeedView())
+            window.rootViewController = UIHostingController(rootView: FeedView(feed:feed))
             window.makeKeyAndVisible()
         }
     }
     func goLiked() {
         if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: FeedView())
+            window.rootViewController = UIHostingController(rootView: FeedView(feed:feed))
             window.makeKeyAndVisible()
         }
     }
     func goFeedback() {
         if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: FeedView())
+            window.rootViewController = UIHostingController(rootView: FeedView(feed:feed))
             window.makeKeyAndVisible()
         }
     }

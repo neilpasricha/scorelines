@@ -1,34 +1,31 @@
-//
-//  NCAAMButton.swift
-//  ScoreLines
-//
-//  Created by Neil Pasricha on 1/4/22.
-//
-
 import SwiftUI
-struct NCAAMButton: View {
+struct SportView: View {
     @State var isClicked: Bool = false
+    
+    let id = UUID()
+    let game: String
     var body: some View {
         Button(action: {
         }) {
             if(isClicked){
-                NCAAMComplex()
+                NBAComplex()
             }else{
-                NCAAMSimple()
+                NBASimple()
             }
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                //FeedView.currentFeed.append(AnyView(NCAAMComplex()))
+               // FeedView..CurrentFeed.append(AnyView(NBAComplex()))
             }
             else{
-               // FeedView.currentFeed.append(AnyView(NCAAMSimple()))
+                //FeedView.feed.CurrentFeed.append(AnyView(NBASimple()))
             }
-            print("NCAAM Added to current Feed!")
+           // print(feed.CurrentFeed.count)
+            print("NBA Added to current Feed!")
         })
         .simultaneousGesture(TapGesture().onEnded {
             self.isClicked.toggle()
-            print("NCAAM Tapped!")
+            print("NBA Tapped!")
         })
 
     }

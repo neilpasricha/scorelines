@@ -11,7 +11,7 @@ struct BasketballView: View {
 
     @State private var showNBA: Bool = true
     @State private var showNCAAM: Bool = false
-    
+    @StateObject var feed: Feed
     
     var body: some View
     {
@@ -63,7 +63,7 @@ struct BasketballView: View {
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
                         .font(.system(size: 24.0))
                         if(showNBA){
-                            NBAButton(game:"Warriors")
+                            NBAButton(feed:feed)
                         }
                         else if(showNCAAM){
                             NCAAMButton()

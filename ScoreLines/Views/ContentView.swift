@@ -6,26 +6,19 @@ extension View {
     self.modifier(NavigationBarColor(backgroundColor: backgroundColor, tintColor: tintColor))
   }
 }
-
+class Feed: ObservableObject{
+    @Published var CurrentFeed: [AnyView] = []
+}
 struct ContentView : View {
     
     @State var showMenu = false
     @State private var selection = 2
-    
-    init() {
-        //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.blue]
+    @ObservedObject var feed: Feed = Feed()
 
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.blue]
-        
-        
-    }
 
      
     
     var body: some View {
-        
         let drag = DragGesture()
           .onEnded {
               if $0.translation.width < -100 {
@@ -48,14 +41,14 @@ struct ContentView : View {
                             }
                             .tag(0)
                      
-                        BasketballView()
+                        BasketballView(feed:feed)
                             .tabItem {
                                 Image(systemName: "atom")
                                 Text("Basketball")
                             }
                             .tag(1)
                      
-                        FeedView()
+                        FeedView(feed:feed)
                             .tabItem {
                                 Image(systemName: "house.fill")
                                 Text("Feed")
@@ -81,7 +74,7 @@ struct ContentView : View {
                 
                     GeometryReader{_ in
 
-                        MenuView(showMenu: $showMenu)
+                        MenuView(showMenu: $showMenu, feed:feed)
                                 .offset(x: self.showMenu ?  UIScreen.main.bounds.width/2: UIScreen.main.bounds.width)
                                 .animation(.default)
                         
