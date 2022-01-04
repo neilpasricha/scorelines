@@ -8,6 +8,7 @@
 import SwiftUI
 struct CFBButton: View {
     @State var isClicked: Bool = false
+    @ObservedObject var feed: Feed
     var body: some View {
         Button(action: {
         }) {
@@ -19,10 +20,10 @@ struct CFBButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-               // FeedView.currentFeed.append(AnyView(CFBComplex()))
+                self.feed.CurrentFeed.append(AnyView(CFBButton(feed:feed)))
             }
             else{
-               // FeedView.currentFeed.append(AnyView(CFBSimple()))
+                self.feed.CurrentFeed.append(AnyView(CFBButton(feed:feed)))
             }
             print("CFB Added to current Feed!")
         })

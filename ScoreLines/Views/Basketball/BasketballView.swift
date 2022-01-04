@@ -64,17 +64,22 @@ struct BasketballView: View {
                         .font(.system(size: 24.0))
                         if(showNBA){
                             NBAButton(feed:feed)
+                            NBAButton(feed:feed)
+                            NBAButton(feed:feed)
+                            NBAButton(feed:feed)
+                            NBAButton(feed:feed)
+                            NBAButton(feed:feed)
+                            NBAButton(feed:feed)
                         }
                         else if(showNCAAM){
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
-                            NCAAMButton()
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
+                            NCAAMButton(feed:feed)
                         }
                         else{
                             Text("college baby")

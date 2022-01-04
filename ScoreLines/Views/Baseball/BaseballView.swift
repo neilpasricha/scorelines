@@ -6,15 +6,8 @@
 import SwiftUI
 
 struct BaseballView: View {
-
-    @State private var showSortSheet: Bool = false
-    @State private var showSubmitPost: Bool = false
-    @State private var showCreateUser: Bool = false
-    @State private var post_content: String = ""
-    @State private var isMenu: Bool = false
-    @State private var currCategory: String = ""
-    @State private var isShowing = false
-    
+    @State var isClicked: Bool = false
+    @ObservedObject var feed: Feed
     
     var body: some View
     {
@@ -23,16 +16,15 @@ struct BaseballView: View {
             if #available(iOS 15.0, *) {
                 ScrollView{
                     VStack{
-                        
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
-                        MLBButton()
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
+                        MLBButton(feed:feed)
                     }
                     
                     .frame(width:UIScreen.main.bounds.width)

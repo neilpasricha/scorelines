@@ -11,8 +11,7 @@ struct FootballView: View {
 
     @State private var showNFL: Bool = true
     @State private var showCFB: Bool = false
-    
-    
+    @ObservedObject var feed: Feed
     var body: some View
     {
         
@@ -63,25 +62,26 @@ struct FootballView: View {
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
                         .font(.system(size: 24.0))
                         if(showNFL){
-                            NFLButton()
-                            NFLButton()
-                            NFLButton()
-                            NFLButton()
-                            NFLButton()
-                            NFLButton()
-                            NFLButton()
-                            NFLButton()
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
+                            NFLButton(feed:feed)
                         }
                         else if(showCFB){
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
-                            CFBButton()
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
+                            CFBButton(feed:feed)
                         }
                         else{
                             Text("college baby")

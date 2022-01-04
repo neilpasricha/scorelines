@@ -11,7 +11,7 @@ struct SoccerView: View {
 
     @State private var showNBA: Bool = true
     @State private var showNCAAM: Bool = false
-    
+    @ObservedObject var feed: Feed
     
     var body: some View
     {

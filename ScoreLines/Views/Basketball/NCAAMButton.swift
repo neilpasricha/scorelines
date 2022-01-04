@@ -8,6 +8,7 @@
 import SwiftUI
 struct NCAAMButton: View {
     @State var isClicked: Bool = false
+    @ObservedObject var feed: Feed
     var body: some View {
         Button(action: {
         }) {
@@ -19,10 +20,10 @@ struct NCAAMButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                //FeedView.currentFeed.append(AnyView(NCAAMComplex()))
+                self.feed.CurrentFeed.append(AnyView(NCAAMButton(feed:feed)))
             }
             else{
-               // FeedView.currentFeed.append(AnyView(NCAAMSimple()))
+                self.feed.CurrentFeed.append(AnyView(NCAAMButton(feed:feed)))
             }
             print("NCAAM Added to current Feed!")
         })

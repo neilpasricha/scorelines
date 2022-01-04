@@ -1,6 +1,7 @@
 import SwiftUI
 struct MLBButton: View {
     @State var isClicked: Bool = false
+    @ObservedObject var feed: Feed
     var body: some View {
         Button(action: {
         }) {
@@ -12,10 +13,10 @@ struct MLBButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-               // FeedView.currentFeed.append(MLBComplex())
+                self.feed.CurrentFeed.append(AnyView(MLBButton(feed:feed)))
             }
             else{
-               // FeedView.currentFeed.append(MLBSimple())
+                self.feed.CurrentFeed.append(AnyView(MLBButton(feed:feed)))
             }
             print("MLB Added to current Feed!")
         })

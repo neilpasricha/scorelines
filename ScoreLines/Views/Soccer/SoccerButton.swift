@@ -8,6 +8,8 @@
 import SwiftUI
 struct SoccerButton: View {
     @State var isClicked: Bool = false
+    //@Binding var isClicked: Bool
+    @ObservedObject var feed: Feed
     var body: some View {
         Button(action: {
         }) {
@@ -19,10 +21,10 @@ struct SoccerButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                //FeedView.currentFeed.append(SoccerComplex())
+                self.feed.CurrentFeed.append(AnyView(SoccerButton(feed:feed)))
             }
             else{
-               // FeedView.currentFeed.append(SoccerSimple())
+                self.feed.CurrentFeed.append(AnyView(SoccerButton(feed:feed)))
             }
             print("Soccer Added to current Feed!")
         })

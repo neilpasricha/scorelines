@@ -33,7 +33,7 @@ struct ContentView : View {
             
                 ZStack{
                     TabView(selection: $selection) {
-                        FootballView()
+                        FootballView(feed:feed)
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .tabItem {
                                 Image(systemName: "atom")
@@ -55,14 +55,14 @@ struct ContentView : View {
                             }
                             .tag(2)
                         
-                        SoccerView()
+                        SoccerView(feed:feed)
                             .tabItem {
                                 Image(systemName: "atom")
                                 Text("Soccer")
                             }
                             .tag(3)
                      
-                        BaseballView()
+                        BaseballView(feed:feed)
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .tabItem {
                                 Image(systemName: "atom")

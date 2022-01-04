@@ -8,6 +8,7 @@
 import SwiftUI
 struct NFLButton: View {
     @State var isClicked: Bool = false
+    @ObservedObject var feed: Feed
     var body: some View {
         Button(action: {
         }) {
@@ -19,10 +20,10 @@ struct NFLButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                //FeedView.currentFeed.append(AnyView(NFLComplex()))
+                self.feed.CurrentFeed.append(AnyView(NFLButton(feed:feed)))
             }
             else{
-               // FeedView.currentFeed.append(AnyView(NFLSimple()))
+                self.feed.CurrentFeed.append(AnyView(NFLButton(feed:feed)))
             }
             print("NFL Added to current Feed!")
         })
