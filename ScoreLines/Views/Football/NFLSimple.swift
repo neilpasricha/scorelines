@@ -42,10 +42,18 @@ struct NFLSimple: View
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width*0.06, height: UIScreen.main.bounds.height*0.025)
                             .rotationEffect(.degrees(-90))
+                            .offset(x:-UIScreen.main.bounds.width*0.06)
+                        
+                        Text(team1Name)
+                            .lineLimit(1)
+                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            .padding(.leading, -UIScreen.main.bounds.width*0.06)
                     }
+                    else{
                     Text(team1Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    }
                     
                     Text(" (")
                         .lineLimit(1)
@@ -71,10 +79,18 @@ struct NFLSimple: View
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width*0.06, height: UIScreen.main.bounds.height*0.025)
                             .rotationEffect(.degrees(-90))
+                            .offset(x:-UIScreen.main.bounds.width*0.06)
+                        
+                        Text(team2Name)
+                            .lineLimit(1)
+                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            .padding(.leading, -UIScreen.main.bounds.width*0.06)
                     }
+                    else{
                     Text(team2Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    }
                     Text(" (")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))

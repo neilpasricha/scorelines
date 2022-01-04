@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FootballView: View {
+struct SoccerView: View {
 
     @State private var showNBA: Bool = true
     @State private var showNCAAM: Bool = false

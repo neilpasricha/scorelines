@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CFBComplex: View
+struct SoccerComplex: View
 {
 //vstack
     //{hstack
@@ -15,42 +15,41 @@ struct CFBComplex: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var team1Name: String = "Penn St"
-    @State private var team2Name: String = "Michigan"
-    @State private var current_possession: String = "Penn St"
+    @State private var team1Name: String = "Ravens"
+    @State private var team2Name: String = "Steelers"
     
-    @State private var gameClockMin: Int = 6
-    @State private var gameClockSec: Int = 58
-    @State private var gameQuarter: Int = 3
+    @State private var gameClockMin: Int = 8
+    @State private var gameClockSec: Int = 32
+    @State private var gameQuarter: Int = 2
     
     @State private var team1W: Int = 7
-    @State private var team1L: Int = 0
-    @State private var team2W: Int = 6
-    @State private var team2L: Int = 1
+    @State private var team1L: Int = 2
+    @State private var team2W: Int = 3
+    @State private var team2L: Int = 6
     
-    @State private var team1ML: Int = -275
-    @State private var team1Spread: Int = -6
-    @State private var team2ML: Int = 250
-    @State private var team2Spread: Int = 8
+    @State private var team1ML: Int = -450
+    @State private var team1Spread: Int = -10
+    @State private var team2ML: Int = 300
+    @State private var team2Spread: Int = 12
     
-    @State private var team1Score: Int = 24
-    @State private var team2Score: Int = 13
+    @State private var team1Score: Int = 17
+    @State private var team2Score: Int = 7
     
-    @State private var total: Double = 57.5
+    @State private var total: Double = 56.5
     @State private var totalScore: Double = 0
     @State private var totalDiff: Double = 8.5
     //Both teams total projection formula:
     //(Total_Current_Score_Both_Teams/Total_Seconds_played)*Total_Seconds_In_Entire_Game
-    //Text(String(format:" [%.1f" ,Float(Float((Float(team1Score+team2Score))/2102))*3600)+"]")
+    //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/1288))*3600)+"]")
     
-    @State private var team1Q1: Int = 7
-    @State private var team1Q2: Int = 3
-    @State private var team1Q3: Int = 14
+    @State private var team1Q1: Int = 10
+    @State private var team1Q2: Int = 7
+    @State private var team1Q3: Int = 0
     @State private var team1Q4: Int = 0
     
-    @State private var team2Q1: Int = 3
+    @State private var team2Q1: Int = 0
     @State private var team2Q2: Int = 7
-    @State private var team2Q3: Int = 3
+    @State private var team2Q3: Int = 0
     @State private var team2Q4: Int = 0
     
     var body: some View
@@ -165,7 +164,7 @@ struct CFBComplex: View
                     Text(String(team1Score + team2Score))
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                        Text(String(format:" [%.1f" ,Float(Float((Float(team1Score+team2Score))/2102))*3600)+"]")
+                        Text(String(format:" [%.1f" ,Float(Float((Float(team1Score+team2Score))/1288))*3600)+"]")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                         }

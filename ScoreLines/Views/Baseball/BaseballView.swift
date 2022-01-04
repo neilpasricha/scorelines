@@ -24,16 +24,13 @@ struct BaseballView: View {
                 ScrollView{
                     VStack{
                         
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
-                        BaseballSimple()
+                        MLBSimple()
+                        MLBSimple()
+                        MLBSimple()
+                        MLBSimple()
+                        MLBSimple()
+                        MLBSimple()
+                        MLBSimple()
                     }
                     
                     .frame(width:UIScreen.main.bounds.width)

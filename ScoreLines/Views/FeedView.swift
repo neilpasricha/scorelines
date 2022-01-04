@@ -36,10 +36,11 @@ struct FeedView: View {
             if #available(iOS 15.0, *) {
                 ScrollView{
                     VStack{
-                        ToggleButton(isClicked:false, Sport:"NBA")
+                        ToggleButton(Sport:"NBA")
                         ToggleButton(isClicked:false, Sport:"NFL")
                         ToggleButton(isClicked:false, Sport:"NCAAM")
-                        BaseballSimple()
+                        ToggleButton(isClicked:false, Sport:"CFB")
+                        ToggleButton(isClicked:false, Sport:"MLB")
                     }
                     
                     .frame(width:UIScreen.main.bounds.width)
@@ -63,7 +64,7 @@ struct FeedView: View {
 
 
 struct ToggleButton: View {
-    @State var isClicked: Bool
+    @State var isClicked: Bool = false
     @State var Sport: String
     //SPORT KEY:
     //0 = NBA
@@ -77,42 +78,52 @@ struct ToggleButton: View {
             // Your auth logic
             self.isClicked.toggle()
         }) {
-            if(isClicked && Sport == "NBA"){
-                NBAComplex()
+        switch Sport {
+            case "NBA":
+                if(isClicked){
+                    NBAComplex()
+                }
+                else{
+                    NBASimple()
+                }
+            case "NCAAM":
+                if(isClicked){
+                    NCAAMComplex()
+                }
+                else{
+                    NCAAMSimple()
+                }
+            case "NFL":
+                if(isClicked){
+                    NFLComplex()
+                }
+                else{
+                    NFLSimple()
+                }
+            case "CFB":
+                if(isClicked){
+                    CFBComplex()
+                }
+                else{
+                    CFBSimple()
+                }
+            case "MLB":
+                if(isClicked){
+                    MLBComplex()
+                }
+                else{
+                    MLBSimple()
+                }
+            case "Soccer":
+                if(isClicked){
+                    SoccerComplex()
+                }
+                else{
+                    SoccerSimple()
+                }
+            default:
+                Text("Invalid Sport")
             }
-            else if(!isClicked && Sport == "NBA"){
-                NBASimple()
-            }
-            else if(isClicked && Sport == "NCAAM"){
-                NCAAMComplex()
-            }
-            else if(!isClicked && Sport == "NCAAM"){
-                NCAAMSimple()
-            }
-            else if(isClicked && Sport == "NFL"){
-                NFLComplex()
-            }
-            else if(!isClicked && Sport == "NFL"){
-                NFLSimple()
-            }
-//            else if(isClicked && Sport == 1){
-//                NBASimple()
-//            }
-//            else if(isClicked && Sport == 1){
-//                NBASimple()
-//            }
-//            else if(isClicked && Sport == 1){
-//                NBASimple()
-//            }
-//            else if(isClicked && Sport == 1){
-//                NBASimple()
-//            }
-//            else if(isClicked && Sport == 1){
-//                NBASimple()
-//            }
-//            else{
-//                SimpleView()
-//            }
         }
     }
 }

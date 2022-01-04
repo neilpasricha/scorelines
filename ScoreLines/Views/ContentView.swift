@@ -40,17 +40,17 @@ struct ContentView : View {
             
                 ZStack{
                     TabView(selection: $selection) {
-                        Text("Football")
+                        FootballView()
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .tabItem {
-                                Image(systemName: "atom")
+                                Image("football")
                                 Text("Football")
                             }
                             .tag(0)
                      
                         BasketballView()
                             .tabItem {
-                                Image(systemName: "atom")
+                                Image("basketball")
                                 Text("Basketball")
                             }
                             .tag(1)
@@ -64,15 +64,15 @@ struct ContentView : View {
                         
                         BaseballView()
                             .tabItem {
-                                Image(systemName: "atom")
+                                Image("baseball")
                                 Text("Baseball")
                             }
                             .tag(3)
                      
-                        Text("Soccer")
+                        SoccerView()
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .tabItem {
-                                Image(systemName: "atom")
+                                Image("soccer")
                                 Text("Soccer")
                             }
                             .tag(4)

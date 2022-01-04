@@ -34,10 +34,19 @@ struct NBASimple: View
                         Image("basketball")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                            .rotationEffect(.degrees(-90))
+                            .offset(x:-UIScreen.main.bounds.width*0.04)
+                        
+                        Text(team1Name)
+                            .lineLimit(1)
+                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
+                    else{
                     Text(team1Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    }
                     
                     Text(" (")
                         .lineLimit(1)
@@ -62,10 +71,19 @@ struct NBASimple: View
                         Image("basketball")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                            .rotationEffect(.degrees(-90))
+                            .offset(x:-UIScreen.main.bounds.width*0.04)
+                        
+                        Text(team2Name)
+                            .lineLimit(1)
+                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
+                    else{
                     Text(team2Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    }
                     Text(" (")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))

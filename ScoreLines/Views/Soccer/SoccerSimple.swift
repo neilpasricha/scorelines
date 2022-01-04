@@ -1,6 +1,13 @@
+//
+//  NFLSimple.swift
+//  ScoreLines
+//
+//  Created by Neil Pasricha on 1/4/22.
+//
+
 import SwiftUI
 
-struct BaseballSimple: View
+struct SoccerSimple: View
 {
 //vstack
     //{hstack
@@ -8,20 +15,20 @@ struct BaseballSimple: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var team1Name: String = "Giants"
-    @State private var team2Name: String = "Astros"
-    @State private var current_possession: String = "Giants"
+    @State private var team1Name: String = "Ravens"
+    @State private var team2Name: String = "Steelers"
+    @State private var current_possession: String = "Steelers"
     
-    @State private var team1Score: Int = 5
-    @State private var team2Score: Int = 3
+    @State private var team1Score: Int = 17
+    @State private var team2Score: Int = 7
     
-    @State private var inning: Int = 7
-    @State private var outs: Int = 2
+    @State private var quarter: Int = 2
+    @State private var gameClock: String = "8:32"
     
-    @State private var team1W: Int = 19
-    @State private var team1L: Int = 11
-    @State private var team2W: Int = 27
-    @State private var team2L: Int = 3
+    @State private var team1W: Int = 7
+    @State private var team1L: Int = 2
+    @State private var team2W: Int = 3
+    @State private var team2L: Int = 6
     
     var body: some View
     {
@@ -31,14 +38,22 @@ struct BaseballSimple: View
                 Spacer()
                 HStack(spacing:0){//First team name/team record
                     if(current_possession==team1Name){
-                        Image("baseball")
+                        Image("football")
                             .resizable()
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                            .frame(width: UIScreen.main.bounds.width*0.06, height: UIScreen.main.bounds.height*0.025)
+                            .rotationEffect(.degrees(-90))
+                            .offset(x:-UIScreen.main.bounds.width*0.06)
+                        
+                        Text(team1Name)
+                            .lineLimit(1)
+                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            .padding(.leading, -UIScreen.main.bounds.width*0.06)
                     }
+                    else{
                     Text(team1Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    }
                     
                     Text(" (")
                         .lineLimit(1)
@@ -60,14 +75,22 @@ struct BaseballSimple: View
                 Spacer()
                 HStack(spacing:0){//Second team name/team record
                     if(current_possession==team2Name){
-                        Image("baseball")
+                        Image("football")
                             .resizable()
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                            .frame(width: UIScreen.main.bounds.width*0.06, height: UIScreen.main.bounds.height*0.025)
+                            .rotationEffect(.degrees(-90))
+                            .offset(x:-UIScreen.main.bounds.width*0.06)
+                        
+                        Text(team2Name)
+                            .lineLimit(1)
+                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            .padding(.leading, -UIScreen.main.bounds.width*0.06)
                     }
+                    else{
                     Text(team2Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    }
                     Text(" (")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
@@ -103,18 +126,12 @@ struct BaseballSimple: View
             Spacer()
             VStack{
                 Spacer()
-            HStack(spacing: UIScreen.main.bounds.width * 0.0075){
-            Image(systemName: "arrow.triangle.merge")
-                    .resizable()
-                
-                .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                .frame(width: UIScreen.main.bounds.width * 0.03 , height: UIScreen.main.bounds.height * 0.02)
-            Text(String(inning) + "th")
+            Text("Q" + String(quarter))
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
                 .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-            }
+            
                 Spacer()
-                Text(String(outs) + " Outs")
+                Text(gameClock)
                     .font(.system(size: UIScreen.main.bounds.height*0.025))
                     .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                 Spacer()

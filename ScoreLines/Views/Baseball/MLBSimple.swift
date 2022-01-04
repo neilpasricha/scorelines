@@ -1,13 +1,6 @@
-//
-//  NFLSimple.swift
-//  ScoreLines
-//
-//  Created by Neil Pasricha on 1/4/22.
-//
-
 import SwiftUI
 
-struct CFBSimple: View
+struct MLBSimple: View
 {
 //vstack
     //{hstack
@@ -15,20 +8,20 @@ struct CFBSimple: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var team1Name: String = "Penn St"
-    @State private var team2Name: String = "Michigan"
-    @State private var current_possession: String = "Penn St"
+    @State private var team1Name: String = "Giants"
+    @State private var team2Name: String = "Astros"
+    @State private var current_possession: String = "Giants"
     
-    @State private var team1Score: Int = 24
-    @State private var team2Score: Int = 13
+    @State private var team1Score: Int = 5
+    @State private var team2Score: Int = 3
     
-    @State private var quarter: Int = 3
-    @State private var gameClock: String = "6:58"
+    @State private var inning: Int = 7
+    @State private var outs: Int = 2
     
-    @State private var team1W: Int = 7
-    @State private var team1L: Int = 0
-    @State private var team2W: Int = 6
-    @State private var team2L: Int = 1
+    @State private var team1W: Int = 19
+    @State private var team1L: Int = 11
+    @State private var team2W: Int = 27
+    @State private var team2L: Int = 3
     
     var body: some View
     {
@@ -38,22 +31,23 @@ struct CFBSimple: View
                 Spacer()
                 HStack(spacing:0){//First team name/team record
                     if(current_possession==team1Name){
-                        Image("football")
+                        Image("baseball")
                             .resizable()
-                            .frame(width: UIScreen.main.bounds.width*0.06, height: UIScreen.main.bounds.height*0.025)
+                            .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
                             .rotationEffect(.degrees(-90))
-                            .offset(x:-UIScreen.main.bounds.width*0.06)
+                            .offset(x:-UIScreen.main.bounds.width*0.04)
                         
                         Text(team1Name)
                             .lineLimit(1)
                             .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                            .padding(.leading, -UIScreen.main.bounds.width*0.06)
+                            .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
                     else{
                     Text(team1Name)
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                     }
+                    
                     Text(" (")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
@@ -74,16 +68,16 @@ struct CFBSimple: View
                 Spacer()
                 HStack(spacing:0){//Second team name/team record
                     if(current_possession==team2Name){
-                        Image("football")
+                        Image("baseball")
                             .resizable()
-                            .frame(width: UIScreen.main.bounds.width*0.06, height: UIScreen.main.bounds.height*0.025)
+                            .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
                             .rotationEffect(.degrees(-90))
-                            .offset(x:-UIScreen.main.bounds.width*0.06)
+                            .offset(x:-UIScreen.main.bounds.width*0.04)
                         
                         Text(team2Name)
                             .lineLimit(1)
                             .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                            .padding(.leading, -UIScreen.main.bounds.width*0.06)
+                            .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
                     else{
                     Text(team2Name)
@@ -125,12 +119,18 @@ struct CFBSimple: View
             Spacer()
             VStack{
                 Spacer()
-            Text("Q" + String(quarter))
+            HStack(spacing: UIScreen.main.bounds.width * 0.0075){
+            Image(systemName: "arrow.triangle.merge")
+                    .resizable()
+                
+                .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                .frame(width: UIScreen.main.bounds.width * 0.03 , height: UIScreen.main.bounds.height * 0.02)
+            Text(String(inning) + "th")
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
                 .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-            
+            }
                 Spacer()
-                Text(gameClock)
+                Text(String(outs) + " Outs")
                     .font(.system(size: UIScreen.main.bounds.height*0.025))
                     .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                 Spacer()
