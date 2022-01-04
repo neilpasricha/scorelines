@@ -1,11 +1,7 @@
+//  ScoreLines
 //
-//  Location.swift
-//  Localist
+//  Created by Neil Pasricha on 1/4/22.
 //
-//  Created by Steven Tran on 11/9/20.
-//  Copyright © 2020 Localist. All rights reserved.
-//
-
 import Foundation
 import CoreLocation
 

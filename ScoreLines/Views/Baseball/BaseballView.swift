@@ -1,9 +1,6 @@
+//  ScoreLines
 //
-//  FeedView.swift
-//  Localist
-//
-//  Created by Steven Tran on 9/26/20.
-//  Copyright © 2020 Localist. All rights reserved.
+//  Created by Neil Pasricha on 1/4/22.
 //
 
 import SwiftUI
@@ -27,18 +24,21 @@ struct BaseballView: View {
                 ScrollView{
                     VStack{
                         
-                        GameFrame()
-                        GameFrame()
-                        GameFrame()
-                        GameFrame()
-                        GameFrame()
-                        GameFrame()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
+                        BaseballSimple()
                     }
                     
                     .frame(width:UIScreen.main.bounds.width)
                     
-                    .padding(.top, 2)
-                    .padding(.bottom, 2)
+                    .padding()
                 }
                 .navigationBarTitle(Text("Baseball"))
                 }

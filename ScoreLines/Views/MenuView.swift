@@ -1,11 +1,7 @@
+//  ScoreLines
 //
-//  MenuView.swift
-//  Bubble
+//  Created by Neil Pasricha on 1/4/22.
 //
-//  Created by Steven Tran on 12/10/20.
-//  Copyright © 2020 Bubble. All rights reserved.
-//
-
 import SwiftUI
 
 struct MenuView : View {

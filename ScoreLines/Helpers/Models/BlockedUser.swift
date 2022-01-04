@@ -1,9 +1,6 @@
+//  ScoreLines
 //
-//  BlockedUser.swift
-//  Bubble
-//
-//  Created by steven tran on 6/13/21.
-//  Copyright © 2021 Bubble. All rights reserved.
+//  Created by Neil Pasricha on 1/4/22.
 //
 
 import Foundation

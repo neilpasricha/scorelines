@@ -1,9 +1,6 @@
+//  ScoreLines
 //
-//  UserInfo.swift
-//  Bubble
-//
-//  Created by Steven Tran on 12/10/20.
-//  Copyright © 2020 Bubble. All rights reserved.
+//  Created by Neil Pasricha on 1/4/22.
 //
 import Foundation
 import Combine

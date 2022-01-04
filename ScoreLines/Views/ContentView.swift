@@ -48,8 +48,7 @@ struct ContentView : View {
                             }
                             .tag(0)
                      
-                        Text("Basketball")
-                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                        BasketballView()
                             .tabItem {
                                 Image(systemName: "atom")
                                 Text("Basketball")

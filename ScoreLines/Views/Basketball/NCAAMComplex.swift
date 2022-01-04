@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GameFrame: View
+struct NCAAMComplex: View
 {
 //vstack
     //{hstack
@@ -8,8 +8,8 @@ struct GameFrame: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var team1Name: String = "Warriors"
-    @State private var team2Name: String = "Bulls"
+    @State private var team1Name: String = "Gonzaga"
+    @State private var team2Name: String = "Purdue"
     
     @State private var gameClockMin: Int = 2
     @State private var gameClockSec: Int = 24
@@ -20,18 +20,19 @@ struct GameFrame: View
     @State private var team2W: Int = 7
     @State private var team2L: Int = 3
     
-    @State private var team1ML: Int = -1200
-    @State private var team1Spread: Int = -20
-    @State private var team2ML: Int = 2500
-    @State private var team2Spread: Int = 12
+    @State private var team1ML: Int = -750
+    @State private var team1Spread: Int = -17
+    @State private var team2ML: Int = 1200
+    @State private var team2Spread: Int = 20
     
-    @State private var team1Score: Int = 114
-    @State private var team2Score: Int = 79
+    @State private var team1Score: Int = 57
+    @State private var team2Score: Int = 39
     
-    @State private var total: Double = 210.5
+    @State private var total: Double = 105.5
     @State private var totalScore: Double = 0
-    @State private var totalDiff: Double = 17.5
-    
+    @State private var totalDiff: Double = 8.5
+    //Both teams total projection formula:
+    //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
     
     @State private var team1Q1: Int = 35
     @State private var team1Q2: Int = 28
@@ -44,6 +45,7 @@ struct GameFrame: View
     @State private var team2Q4: Int = 4
     
     var body: some View
+    
     {
             HStack{
                 Spacer()
@@ -109,7 +111,10 @@ struct GameFrame: View
                        .bold()
                        .lineLimit(1)
                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                   Text(String(gameClockMin))
+                       Image("basketball")
+                           .resizable()
+                           .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                   Text("["+String(gameClockMin))
                        
                        .bold()
                        .lineLimit(1)
@@ -119,7 +124,7 @@ struct GameFrame: View
                        .bold()
                        .lineLimit(1)
                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                   Text(String(gameClockSec))
+                   Text(String(gameClockSec)+"]")
                        
                        .bold()
                        .lineLimit(1)
@@ -151,7 +156,7 @@ struct GameFrame: View
                     Text(String(team1Score + team2Score))
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
-                        Text(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
+                        Text(String(format:" [%.1f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
                         .lineLimit(1)
                         .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                         }
@@ -276,7 +281,7 @@ struct GameFrame: View
         .onAppear {
         UITableViewCell.appearance().selectionStyle = .none
      }
-    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
+    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.2, alignment: .center)
         
     .background(Color.white)
     .overlay(
