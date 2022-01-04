@@ -19,10 +19,10 @@ struct SoccerButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                FeedView.currentFeed.append(SoccerComplex())
+                //FeedView.currentFeed.append(SoccerComplex())
             }
             else{
-                FeedView.currentFeed.append(SoccerSimple())
+               // FeedView.currentFeed.append(SoccerSimple())
             }
             print("Soccer Added to current Feed!")
         })

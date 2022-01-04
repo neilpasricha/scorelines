@@ -19,10 +19,10 @@ struct NFLButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                FeedView.currentFeed.append(NFLComplex())
+                FeedView.currentFeed.append(AnyView(NFLComplex()))
             }
             else{
-                FeedView.currentFeed.append(NFLSimple())
+                FeedView.currentFeed.append(AnyView(NFLSimple()))
             }
             print("NFL Added to current Feed!")
         })

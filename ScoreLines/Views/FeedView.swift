@@ -10,10 +10,18 @@
 //4 = Baseball
 //5 = Soccer
 import SwiftUI
+class sporty: ObservableObject{
+    @Published var sport: [NBAButton]
+
+    init(){
+        self.sport = [NBAButton(game:"Warriors")]
+    }
+
+}
 
 struct FeedView: View {
     let categories = ["Deals":1, "Happy Hour":2, "Recreation":3, "What's Happening?":4, "Misc":5]
-    static var currentFeed: [Any] = []
+    static var currentFeed: [AnyView] = [AnyView(NBAButton(game:"Warriors"))]
     @State private var showSortSheet: Bool = false
     @State private var showSubmitPost: Bool = false
     @State private var showCreateUser: Bool = false
@@ -23,6 +31,9 @@ struct FeedView: View {
     @State private var isShowing = false
     @State private var showComplex = false
     @State private var isClicked = false
+    
+    @StateObject var sports = sporty()
+    
     var body: some View
     {
         //SPORT KEY:
@@ -53,21 +64,32 @@ struct FeedView: View {
          })
          */
             if #available(iOS 15.0, *) {
-                ScrollView{
-                    VStack{
-                        NBAButton()
-                        NFLButton()
-                        NCAAMButton()
-                        CFBButton()
-                        MLBButton()
+                    ZStack{
+                        ForEach(sports.sport, id: \.game){ ind in
+                            ind
+                        }
                     }
-                    
                     .frame(width:UIScreen.main.bounds.width)
                     
                     .padding()
-                }
                 
-    
+                
+//                if #available(iOS 15.0, *) {
+//                    ScrollView{
+//                        VStack{
+//
+//
+//                            NBAButton()
+//                            NFLButton()
+//                            NCAAMButton()
+//                            CFBButton()
+//                            MLBButton()
+//                        }
+//
+//                        .frame(width:UIScreen.main.bounds.width)
+//
+//                        .padding()
+//                    }
             
         } else {
             // Fallback on earlier versions
@@ -82,97 +104,97 @@ struct FeedView: View {
 
 
 
-struct ToggleButton: View {
-    @State var isClicked: Bool = false
-    @State var Sport: String
-    @State var sportType: Any = EmptyView()
-    //SPORT KEY:
-    //0 = NBA
-    //1 = NCAAM
-    //2 = NFL
-    //3 = CFB
-    //4 = Baseball
-    //5 = Soccer
-    var body: some View {
-        Button(action: {
-            // Your auth logic
-        }) {
-            if(isClicked && Sport == "NBA"){
-                NBAComplex()
-            }else{
-                NBASimple()
-            }
-//        switch Sport {
-//            case "NBA":
-//                if(isClicked){
-//                    self.sportType = NBAComplex()
-//                    NBAComplex()
-//                }
-//                else{
-//                    NBASimple()
-//                }
-//            case "NCAAM":
-//                if(isClicked){
-//                    NCAAMComplex()
-//                }
-//                else{
-//                    NCAAMSimple()
-//                }
-//            case "NFL":
-//                if(isClicked){
-//                    NFLComplex()
-//                }
-//                else{
-//                    NFLSimple()
-//                }
-//            case "CFB":
-//                if(isClicked){
-//                    CFBComplex()
-//                }
-//                else{
-//                    CFBSimple()
-//                }
-//            case "MLB":
-//                if(isClicked){
-//                    MLBComplex()
-//                }
-//                else{
-//                    MLBSimple()
-//                }
-//            case "Soccer":
-//                if(isClicked){
-//                    SoccerComplex()
-//                }
-//                else{
-//                    SoccerSimple()
-//                }
-//            default:
-//                Text("Invalid Sport")
+//struct ToggleButton: View {
+//    @State var isClicked: Bool = false
+//    @State var Sport: String
+//    @State var sportType: Any = EmptyView()
+//    //SPORT KEY:
+//    //0 = NBA
+//    //1 = NCAAM
+//    //2 = NFL
+//    //3 = CFB
+//    //4 = Baseball
+//    //5 = Soccer
+//    var body: some View {
+//        Button(action: {
+//            // Your auth logic
+//        }) {
+//            if(isClicked && Sport == "NBA"){
+//                NBAComplex()
+//            }else{
+//                NBASimple()
 //            }
-        }
-        .simultaneousGesture(LongPressGesture().onEnded { _ in
-            if(isClicked){
-                
-                
-                FeedView.currentFeed.append(sportType)
-            }
-            else{
-                
-                FeedView.currentFeed.append(NBASimple())
-            }
-            print("Added to current Feed!")
-        })
-        .simultaneousGesture(TapGesture().onEnded {
-            self.isClicked.toggle()
-        })
+////        switch Sport {
+////            case "NBA":
+////                if(isClicked){
+////                    self.sportType = NBAComplex()
+////                    NBAComplex()
+////                }
+////                else{
+////                    NBASimple()
+////                }
+////            case "NCAAM":
+////                if(isClicked){
+////                    NCAAMComplex()
+////                }
+////                else{
+////                    NCAAMSimple()
+////                }
+////            case "NFL":
+////                if(isClicked){
+////                    NFLComplex()
+////                }
+////                else{
+////                    NFLSimple()
+////                }
+////            case "CFB":
+////                if(isClicked){
+////                    CFBComplex()
+////                }
+////                else{
+////                    CFBSimple()
+////                }
+////            case "MLB":
+////                if(isClicked){
+////                    MLBComplex()
+////                }
+////                else{
+////                    MLBSimple()
+////                }
+////            case "Soccer":
+////                if(isClicked){
+////                    SoccerComplex()
+////                }
+////                else{
+////                    SoccerSimple()
+////                }
+////            default:
+////                Text("Invalid Sport")
+////            }
+//        }
 //        .simultaneousGesture(LongPressGesture().onEnded { _ in
-//            print("Secret Long Press Action!")
+//            if(isClicked){
+//                
+//                
+//                FeedView.currentFeed.append(NBAComplex())
+//            }
+//            else{
+//                
+//                FeedView.currentFeed.append(NBASimple())
+//            }
+//            print("Added to current Feed!")
 //        })
 //        .simultaneousGesture(TapGesture().onEnded {
-//            print("Boring regular tap")
+//            self.isClicked.toggle()
 //        })
-    }
-}
+////        .simultaneousGesture(LongPressGesture().onEnded { _ in
+////            print("Secret Long Press Action!")
+////        })
+////        .simultaneousGesture(TapGesture().onEnded {
+////            print("Boring regular tap")
+////        })
+//    }
+
 
 struct TapAndLongPressModifier: ViewModifier {
   @State private var isLongPressing = false

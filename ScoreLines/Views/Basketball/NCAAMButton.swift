@@ -19,10 +19,10 @@ struct NCAAMButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                FeedView.currentFeed.append(NCAAMComplex())
+                FeedView.currentFeed.append(AnyView(NCAAMComplex()))
             }
             else{
-                FeedView.currentFeed.append(NCAAMSimple())
+                FeedView.currentFeed.append(AnyView(NCAAMSimple()))
             }
             print("NCAAM Added to current Feed!")
         })

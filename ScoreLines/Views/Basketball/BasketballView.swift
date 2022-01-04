@@ -63,13 +63,7 @@ struct BasketballView: View {
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
                         .font(.system(size: 24.0))
                         if(showNBA){
-                            NBAButton()
-                            NBAButton()
-                            NBAButton()
-                            NBAButton()
-                            NBAButton()
-                            NBAButton()
-                            NBAButton()
+                            NBAButton(game:"Warriors")
                         }
                         else if(showNCAAM){
                             NCAAMButton()

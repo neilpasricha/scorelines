@@ -12,10 +12,10 @@ struct MLBButton: View {
         }
         .simultaneousGesture(LongPressGesture().onEnded { _ in
             if(isClicked){
-                FeedView.currentFeed.append(MLBComplex())
+               // FeedView.currentFeed.append(MLBComplex())
             }
             else{
-                FeedView.currentFeed.append(MLBSimple())
+               // FeedView.currentFeed.append(MLBSimple())
             }
             print("MLB Added to current Feed!")
         })
