@@ -29,12 +29,10 @@ struct SoccerView: View {
                             }
                             
                             ) {
-                                Text("NBA")
-                                
-                                .frame(width:UIScreen.main.bounds.width*0.45)
+                                Text("Premier")
                             }
                             .padding()
-                            .frame(width:UIScreen.main.bounds.width*0.45)
+                            .frame(width:UIScreen.main.bounds.width*0.3)
                             .cornerRadius(20)
                             .overlay(
                                 Rectangle()
@@ -45,12 +43,26 @@ struct SoccerView: View {
                                 showNCAAM = true
                                 showNBA = false
                             }) {
-                                Text("NCAAM")
-                                
-                                .frame(width:UIScreen.main.bounds.width*0.45)
+                                Text("LaLiga")
                             }
                             .padding()
-                            .frame(width:UIScreen.main.bounds.width*0.45)
+                            .frame(width:UIScreen.main.bounds.width*0.3)
+                            .cornerRadius(20)
+                            .overlay(
+                                Rectangle()
+                                    .stroke(Color.black, lineWidth: 2)
+                            )
+                            
+                                   
+                            Spacer()
+                            Button(action: {
+                                showNCAAM = true
+                                showNBA = false
+                            }) {
+                                Text("MLS")
+                            }
+                            .padding()
+                            .frame(width:UIScreen.main.bounds.width*0.3)
                             .cornerRadius(20)
                             .overlay(
                                 Rectangle()
@@ -60,6 +72,8 @@ struct SoccerView: View {
                                    
                             Spacer()
                         }
+                        .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
+                        .font(.system(size: 24.0))
                         if(showNBA){
                             NBASimple()
                             NBASimple()

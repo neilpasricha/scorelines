@@ -43,14 +43,14 @@ struct ContentView : View {
                         FootballView()
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .tabItem {
-                                Image("football")
+                                Image(systemName: "atom")
                                 Text("Football")
                             }
                             .tag(0)
                      
                         BasketballView()
                             .tabItem {
-                                Image("basketball")
+                                Image(systemName: "atom")
                                 Text("Basketball")
                             }
                             .tag(1)
@@ -62,18 +62,18 @@ struct ContentView : View {
                             }
                             .tag(2)
                         
-                        BaseballView()
+                        SoccerView()
                             .tabItem {
-                                Image("baseball")
-                                Text("Baseball")
+                                Image(systemName: "atom")
+                                Text("Soccer")
                             }
                             .tag(3)
                      
-                        SoccerView()
+                        BaseballView()
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .tabItem {
-                                Image("soccer")
-                                Text("Soccer")
+                                Image(systemName: "atom")
+                                Text("Baseball")
                             }
                             .tag(4)
                     }

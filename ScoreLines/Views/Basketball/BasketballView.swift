@@ -60,21 +60,27 @@ struct BasketballView: View {
                                    
                             Spacer()
                         }
+                        .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
+                        .font(.system(size: 24.0))
                         if(showNBA){
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
+                            ToggleButton(Sport:"NBA")
                         }
                         else if(showNCAAM){
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
+                            ToggleButton(isClicked:false, Sport:"NCAAM")
                         }
                         else{
                             Text("college baby")

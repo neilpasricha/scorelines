@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FootballView: View {
 
-    @State private var showNBA: Bool = true
-    @State private var showNCAAM: Bool = false
+    @State private var showNFL: Bool = true
+    @State private var showCFB: Bool = false
     
     
     var body: some View
@@ -24,12 +24,12 @@ struct FootballView: View {
                         HStack{//Selector for NBA or NCAAM
                             Spacer()
                             Button(action: {
-                                showNBA = true
-                                showNCAAM = false
+                                showNFL = true
+                                showCFB = false
                             }
                             
                             ) {
-                                Text("NBA")
+                                Text("NFL")
                                 
                                 .frame(width:UIScreen.main.bounds.width*0.45)
                             }
@@ -42,10 +42,10 @@ struct FootballView: View {
                             )
                             Spacer()
                             Button(action: {
-                                showNCAAM = true
-                                showNBA = false
+                                showNFL = false
+                                showCFB = true
                             }) {
-                                Text("NCAAM")
+                                Text("CFB")
                                 
                                 .frame(width:UIScreen.main.bounds.width*0.45)
                             }
@@ -60,21 +60,27 @@ struct FootballView: View {
                                    
                             Spacer()
                         }
-                        if(showNBA){
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
+                        .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
+                        .font(.system(size: 24.0))
+                        if(showNFL){
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
+                            ToggleButton(isClicked:false, Sport:"NFL")
                         }
-                        else if(showNCAAM){
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
-                            NCAAMSimple()
+                        else if(showCFB){
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
+                            ToggleButton(isClicked:false, Sport:"CFB")
                         }
                         else{
                             Text("college baby")
@@ -85,7 +91,7 @@ struct FootballView: View {
                     
                     .padding()
                 }
-                .navigationBarTitle(Text("Basketball"))
+                .navigationBarTitle(Text("Football"))
                 }
     
     
