@@ -12,25 +12,26 @@ struct MLBButton: View {
                 MLBSimple()
             }
         }
-        .alert(isPresented:$addToFeedAlert) {
-            Alert(
-                title: Text("Do you want to add this game to your feed?"),
-                primaryButton: .default(Text("Add")) {
-                    if(isClicked){
-                        self.feed.CurrentFeed.append(AnyView(MLBButton(feed:feed)))
-                    }
-                    else{
-                        self.feed.CurrentFeed.append(AnyView(MLBButton(feed:feed)))
-                    }
-                    print(self.feed.CurrentFeed.count)
-                    print("NBA Added to current Feed!")
-                },
-                secondaryButton: .cancel()
-            )
+        .contextMenu{
+            Button {
+                if(isClicked){
+                    self.feed.CurrentFeed.append(AnyView(MLBButton(feed:feed)))
+                }
+                else{
+                    self.feed.CurrentFeed.append(AnyView(MLBButton(feed:feed)))
+                }
+                print(self.feed.CurrentFeed.count)
+                print("NBA Added to current Feed!")
+            } label: {
+                Label("Add to Feed", systemImage: "house")
+            }
+
+            Button {
+                print("Enable geolocation")
+            } label: {
+                Label("Add bets", systemImage: "banknote")
+            }
         }
-        .simultaneousGesture(LongPressGesture(minimumDuration: 0.3).onEnded { _ in
-            addToFeedAlert = true
-        })
         .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             print("MLB Tapped!")

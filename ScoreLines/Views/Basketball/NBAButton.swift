@@ -35,25 +35,6 @@ struct NBAButton: View {
                 NBASimple()
             }
         }
-//        .alert(isPresented:$addToFeedAlert) {
-//            Alert(
-//                title: Text("Do you want to add this game to your feed?"),
-//                primaryButton: .default(Text("Add")) {
-//                    if(isClicked){
-//                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed)))
-//                    }
-//                    else{
-//                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed)))
-//                    }
-//                    print(self.feed.CurrentFeed.count)
-//                    print("NBA Added to current Feed!")
-//                },
-//                secondaryButton: .cancel()
-//            )
-//        }
-//        .simultaneousGesture(LongPressGesture(minimumDuration: 0.1).onEnded { _ in
-//            addToFeedAlert = true
-//        })
         .contextMenu{
             Button {
                 if(isClicked){
