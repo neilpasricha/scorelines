@@ -82,6 +82,30 @@ struct MLBComplex: View
             HStack{
                 Spacer()
             HStack(spacing:0){//HStack 2 for the team1 wins/losses
+                if(current_possession==team1Name){
+                    Image("baseball")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                    Text(team1Name)
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(" (")
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(String(team1W))
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text("-")
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(String(team1L))
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(")")
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                }
+                else{
             Text(team1Name)
                 .lineLimit(1)
                   .foregroundColor(Color.black)
@@ -101,9 +125,36 @@ struct MLBComplex: View
                 .lineLimit(1)
                   .foregroundColor(Color.black)
             }
-            .font(.system(size: UIScreen.main.bounds.height*0.025))
+            
+            }.font(.system(size: UIScreen.main.bounds.height*0.025))
                 Spacer()
-            HStack(spacing:0){//HStack 2 for the team1 wins/losses
+                Spacer()
+                Spacer()
+                HStack(spacing:0){
+                if(current_possession==team2Name){
+                    Text(team2Name)
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(" (")
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(String(team2W))
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text("-")
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(String(team2L))
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Text(")")
+                        .lineLimit(1)
+                          .foregroundColor(Color.black)
+                    Image("baseball")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
+                }
+                else{
             Text(team2Name)
                 .lineLimit(1)
                   .foregroundColor(Color.black)
@@ -122,8 +173,9 @@ struct MLBComplex: View
             Text(")")
                 .lineLimit(1)
                   .foregroundColor(Color.black)
-            }
-            .font(.system(size: UIScreen.main.bounds.height*0.025))
+                }
+            
+            }.font(.system(size: UIScreen.main.bounds.height*0.025))
                 Spacer()
             }//end Team names
             .padding(.top)
@@ -183,7 +235,7 @@ struct MLBComplex: View
                         Rectangle()
                             .fill(Color.black)
                             .frame(width:2)
-                        Text(String(outs) + "/O")
+                        Text(String(outs) + " outs")
                             .font(.system(size: UIScreen.main.bounds.height*0.02))
                               .foregroundColor(Color.black)
                         Spacer()
@@ -199,7 +251,7 @@ struct MLBComplex: View
                     Text(String(total))
                         .lineLimit(1)
                           .foregroundColor(Color.black)
-                    Text(" [" + String(totalDiff) + "]")
+                    Text(" [" + String(Float(total)-Float(team1Score + team2Score)) + "]")
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                         }
