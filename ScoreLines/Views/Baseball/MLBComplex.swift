@@ -77,41 +77,65 @@ struct MLBComplex: View
      */
     var body: some View
     {
+        
+        VStack{
             HStack{
-                
+                Spacer()
+            HStack(spacing:0){//HStack 2 for the team1 wins/losses
+            Text(team1Name)
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(" (")
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(String(team1W))
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text("-")
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(String(team1L))
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(")")
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            }
+            .font(.system(size: UIScreen.main.bounds.height*0.025))
+                Spacer()
+            HStack(spacing:0){//HStack 2 for the team1 wins/losses
+            Text(team2Name)
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(" (")
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(String(team2W))
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text("-")
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(String(team2L))
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            Text(")")
+                .lineLimit(1)
+                  .foregroundColor(Color.black)
+            }
+            .font(.system(size: UIScreen.main.bounds.height*0.025))
+                Spacer()
+            }//end Team names
+            HStack{
                 Spacer()
                 VStack{//First VStack, containing team1 info
                     //UIScreen.main.bounds.height*0.2
-                    HStack(spacing:0){//HStack 2 for the team1 wins/losses
-                    Text(team1Name)
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(" (")
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(String(team1W))
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text("-")
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(String(team1L))
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(")")
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    }
-                    .font(.system(size: UIScreen.main.bounds.height*0.025))
-                    
-                    Spacer()
                     Text(String(team1Score))
                         .underline()
                         .font(.system(size: UIScreen.main.bounds.height*0.05))
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                         .padding()
-                    Spacer()
                     VStack(spacing:0){
                         
                     Text("ML (" + String(team1ML) + ") ")
@@ -127,6 +151,7 @@ struct MLBComplex: View
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
+                    Spacer()
                 }
                 .padding(.bottom, UIScreen.main.bounds.height*0.01)
                 .padding(.top, UIScreen.main.bounds.height*0.013)
@@ -142,18 +167,18 @@ struct MLBComplex: View
                           .foregroundColor(Color.black)
                         .frame(width: UIScreen.main.bounds.width * 0.03 , height: UIScreen.main.bounds.height * 0.02)
                     Text(String(inning) + "th")
-                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                        .font(.system(size: UIScreen.main.bounds.height*0.02))
                           .foregroundColor(Color.black)
                     }
                         Rectangle()
                             .fill(Color.black)
                             .frame(width:2)
                         Text(String(outs) + "/O")
-                            .font(.system(size: UIScreen.main.bounds.height*0.025))
+                            .font(.system(size: UIScreen.main.bounds.height*0.02))
                               .foregroundColor(Color.black)
                         Spacer()
                     }
-                    .frame(width: UIScreen.main.bounds.height*0.15, height: UIScreen.main.bounds.height*0.03, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.height*0.14, height: UIScreen.main.bounds.height*0.025, alignment: .center)
                     .padding(4)
                     .border(Color.black, width: 2)
                     HStack(spacing:0){//O/U
@@ -196,7 +221,6 @@ struct MLBComplex: View
                         Text(String(team1I8))
                         Text(String(team1I9))
                         }
-                        Spacer()
                         VStack{//Innings
                             ForEach(1..<10) { i in
                             if(i==inning){
@@ -213,7 +237,6 @@ struct MLBComplex: View
                         .padding(4)
                         .border(Color.black, width: 2)
                         
-                        Spacer()
                         VStack{//Team2Scores
                         Text(String(team2I1))
                         Text(String(team2I2))
@@ -231,32 +254,8 @@ struct MLBComplex: View
                     .fixedSize(horizontal: true, vertical: false)
                     .font(.system(size: UIScreen.main.bounds.height*0.020))
                     .foregroundColor(Color.black)
-                Spacer()
                 VStack{//Third VStack, containing team2 info
                     //UIScreen.main.bounds.height*0.2
-                    HStack(spacing:0){//HStack 2 for the team1 wins/losses
-                    Text(team2Name)
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(" (")
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(String(team2W))
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text("-")
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(String(team2L))
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    Text(")")
-                        .lineLimit(1)
-                          .foregroundColor(Color.black)
-                    }
-                    .font(.system(size: UIScreen.main.bounds.height*0.02))
-                    
-                    .padding(.top, UIScreen.main.bounds.height*0.013)
                     Spacer()
                     Text(String(team2Score))
                         .underline()
@@ -294,6 +293,7 @@ struct MLBComplex: View
         .onAppear {
         UITableViewCell.appearance().selectionStyle = .none
      }
+        }
     .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.4, alignment: .center)
         
     .background(Color.white)
