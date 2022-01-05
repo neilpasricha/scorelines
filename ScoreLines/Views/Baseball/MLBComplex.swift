@@ -132,7 +132,7 @@ struct MLBComplex: View
                     //UIScreen.main.bounds.height*0.2
                     Text(String(team1Score))
                         .underline()
-                        .font(.system(size: UIScreen.main.bounds.height*0.05))
+                        .font(.system(size: UIScreen.main.bounds.height*0.065))
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                         .padding()
@@ -141,13 +141,13 @@ struct MLBComplex: View
                     Text("ML (" + String(team1ML) + ") ")
                             .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
-                        .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                        .font(.system(size: UIScreen.main.bounds.height*0.015))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     Text(" Spread (" + String(team1Spread) + ")")
                             .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
-                        .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                        .font(.system(size: UIScreen.main.bounds.height*0.015))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
@@ -156,8 +156,6 @@ struct MLBComplex: View
                 .padding(.bottom, UIScreen.main.bounds.height*0.01)
                 .padding(.top, UIScreen.main.bounds.height*0.013)
                 VStack{//Time left and O/\U
-                    Spacer()
-                    Spacer()
                     HStack{
                         Spacer()
                     HStack(spacing: UIScreen.main.bounds.width * 0.0075){
@@ -252,36 +250,35 @@ struct MLBComplex: View
                     Spacer()
                 }
                     .fixedSize(horizontal: true, vertical: false)
-                    .font(.system(size: UIScreen.main.bounds.height*0.020))
+                    .font(.system(size: UIScreen.main.bounds.height*0.0225))
                     .foregroundColor(Color.black)
                 VStack{//Third VStack, containing team2 info
                     //UIScreen.main.bounds.height*0.2
-                    Spacer()
                     Text(String(team2Score))
                         .underline()
-                        .font(.system(size: UIScreen.main.bounds.height*0.05))
+                        .font(.system(size: UIScreen.main.bounds.height*0.065))
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                         .padding()
-                    Spacer()
                     VStack(spacing:0){
                         
                     Text("ML (+" + String(team2ML) + ") ")
                             .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
-                        .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                        .font(.system(size: UIScreen.main.bounds.height*0.015))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     Text(" Spread (+" + String(team2Spread) + ")")
                             .bold()
                         .foregroundColor(Color(red: 112 / 255, green: 202 / 255, blue: 211 / 255))
-                        .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                        .font(.system(size: UIScreen.main.bounds.height*0.015))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
-                    
-                    .padding(.bottom, UIScreen.main.bounds.height*0.01)
+                    Spacer()
                 }
+                .padding(.bottom, UIScreen.main.bounds.height*0.01)
+                .padding(.top, UIScreen.main.bounds.height*0.013)
                     Spacer()
                 }//end whole HStack
             
