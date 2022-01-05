@@ -73,8 +73,11 @@ struct MLBComplex: View
     {
         VStack{//Entire Frame
             HStack{//Top Level
+                Spacer()
                 Text("ML -275")
+                Spacer()
                 Text("Spread -2")
+                Spacer()
             }
             .font(.system(size: UIScreen.main.bounds.height*0.02))
             .foregroundColor(Color.black)
@@ -169,23 +172,25 @@ struct MLBComplex: View
                 }
                 .font(.system(size: UIScreen.main.bounds.height*0.02))
                 .foregroundColor(Color.black)
-//                Spacer()
-//                VStack{//Totals
-//                    Text(String(team1Score))
-//                    Spacer()
-//                    Text(String(team1Score+team2Score))
-//                    Spacer()
-//                    Text(String(team2Score))
-//                }
-//                .font(.system(size: UIScreen.main.bounds.height*0.02))
-//                .foregroundColor(Color.black)
-//                Spacer()
                 Spacer()
+                VStack{//Totals
+                    Text(String(team1Score))
+                    Spacer()
+                    Text(String(team1Score+team2Score))
+                    Spacer()
+                    Text(String(team2Score))
+                }
+                .font(.system(size: UIScreen.main.bounds.height*0.02))
+                .foregroundColor(Color.black)
+//                Spacer()
             }
             Spacer()
             HStack{//Lower Level
+                Spacer()
                 Text("ML +500")
+                Spacer()
                 Text("Spread +3")
+                Spacer()
             }
             .font(.system(size: UIScreen.main.bounds.height*0.02))
             .foregroundColor(Color.black)
