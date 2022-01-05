@@ -70,7 +70,7 @@ struct ContentView : View {
                             }
                             .tag(4)
                     }
-                    .accentColor(.blue)
+                    .accentColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
                     
                     GeometryReader{_ in
 

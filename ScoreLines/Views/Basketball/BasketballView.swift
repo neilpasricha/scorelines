@@ -51,7 +51,7 @@ struct BasketballView: View {
                                     .stroke(currentMode == .dark ? Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255) : Color.black, lineWidth: 2)
                                     
                             )
-                            .background(Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255))
+                            .background(currentMode == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
                             Spacer()
                             Button(action: {
                                 showNCAAM = true
@@ -76,7 +76,7 @@ struct BasketballView: View {
                                     .stroke(currentMode == .dark ? Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255) : Color.black, lineWidth: 2)
                                     
                             )
-                            .background(Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255))
+                            .background(currentMode == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
                             Spacer()
                         }
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)

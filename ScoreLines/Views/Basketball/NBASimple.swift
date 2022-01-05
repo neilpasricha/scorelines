@@ -36,7 +36,7 @@ struct NBASimple: View
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
                             .rotationEffect(.degrees(-90))
-                            .offset(x:-UIScreen.main.bounds.width*0.04)
+                            .offset(x:-UIScreen.main.bounds.width*0.08)
                         
                         Text(team1Name)
                             .lineLimit(1)
@@ -73,7 +73,7 @@ struct NBASimple: View
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
                             .rotationEffect(.degrees(-90))
-                            .offset(x:-UIScreen.main.bounds.width*0.04)
+                            .offset(x:-UIScreen.main.bounds.width*0.08)
                         
                         Text(team2Name)
                             .lineLimit(1)
@@ -133,7 +133,7 @@ struct NBASimple: View
             Spacer()
         }
         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.1, alignment: .center)
-        .foregroundColor(currentMode  == .dark ? Color.white : Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255))
+        .foregroundColor(currentMode  == .dark ? Color.white : Color.black)
         .background(currentMode  == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
         //.background(Color.gray)
         .overlay(
