@@ -151,10 +151,20 @@ struct MLBComplex: View
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
+                    VStack{//team1Players scoring
+                        Text("2nd - B. Posey")
+                        Text("6th - M. Bumgarner")
+                        Text("6th - B. Bonds")
+                        Text("7th - T. Lincecum")
+                        Text("7th - T. Watson")
+                        
+                    }
+                    .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                    .foregroundColor(Color.black)
+                    .padding(4)
+                    .border(Color.black, width: 2)
                     Spacer()
                 }
-                .padding(.bottom, UIScreen.main.bounds.height*0.01)
-                .padding(.top, UIScreen.main.bounds.height*0.013)
                 VStack{//Time left and O/\U
                     HStack{
                         Spacer()
@@ -250,7 +260,7 @@ struct MLBComplex: View
                     Spacer()
                 }
                     .fixedSize(horizontal: true, vertical: false)
-                    .font(.system(size: UIScreen.main.bounds.height*0.0225))
+                    .font(.system(size: UIScreen.main.bounds.height*0.020))
                     .foregroundColor(Color.black)
                 VStack{//Third VStack, containing team2 info
                     //UIScreen.main.bounds.height*0.2
@@ -275,10 +285,18 @@ struct MLBComplex: View
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
+                    VStack{//team1Players scoring
+                        Text("3rd - J. Altuve")
+                        Text("3rd - L. Garcia")
+                        Text("4th - J. Verlander")
+                        
+                    }
+                    .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                    .foregroundColor(Color.black)
+                    .padding(4)
+                    .border(Color.black, width: 2)
                     Spacer()
                 }
-                .padding(.bottom, UIScreen.main.bounds.height*0.01)
-                .padding(.top, UIScreen.main.bounds.height*0.013)
                     Spacer()
                 }//end whole HStack
             
@@ -291,7 +309,7 @@ struct MLBComplex: View
         UITableViewCell.appearance().selectionStyle = .none
      }
         }
-    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.4, alignment: .center)
+    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.375, alignment: .center)
         
     .background(Color.white)
     .overlay(
