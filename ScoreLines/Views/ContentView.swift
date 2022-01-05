@@ -8,6 +8,7 @@ extension View {
 }
 class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
+    @Published var feedIDs: [Int] = []
 }
 struct ContentView : View {
     

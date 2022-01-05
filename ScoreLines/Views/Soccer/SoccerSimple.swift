@@ -15,6 +15,7 @@ struct SoccerSimple: View
             //{vstack
                 //{hstack
                     //vstack
+    @State private var id: Int = 5
     @State private var team1Name: String = "Ravens"
     @State private var team2Name: String = "Steelers"
     @State private var current_possession: String = "Steelers"

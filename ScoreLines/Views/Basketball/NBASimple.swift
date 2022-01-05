@@ -9,6 +9,7 @@ struct NBASimple: View
                 //{hstack
                     //vstack
     @Environment(\.colorScheme) var currentMode
+    @State private var id: Int = 1
     @State private var team1Name: String = "Warriors"
     @State private var team2Name: String = "Bulls"
     @State private var current_possession: String = "Warriors"

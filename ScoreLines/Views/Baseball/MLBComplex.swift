@@ -15,6 +15,7 @@ struct MLBComplex: View
             //{vstack
                 //{hstack
                     //vstack
+    @State private var id: Int  = 4
     @State private var team1Name: String = "Giants"
     @State private var team2Name: String = "Astros"
     @State private var current_possession: String = "Giants"

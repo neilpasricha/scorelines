@@ -8,6 +8,8 @@ struct NBAComplex: View
             //{vstack
                 //{hstack
                     //vstack
+    @Binding var id: Int
+    
     @Binding var team1Name: String
     @Binding var team2Name: String
     

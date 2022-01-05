@@ -8,6 +8,7 @@ struct NCAAMComplex: View
             //{vstack
                 //{hstack
                     //vstack
+    @State private var id: Int = 1
     @State private var team1Name: String = "Gonzaga"
     @State private var team2Name: String = "Purdue"
     

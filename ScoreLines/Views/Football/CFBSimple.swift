@@ -15,6 +15,7 @@ struct CFBSimple: View
             //{vstack
                 //{hstack
                     //vstack
+    @State private var id: Int = 3
     @State private var team1Name: String = "Penn St"
     @State private var team2Name: String = "Michigan"
     @State private var current_possession: String = "Penn St"

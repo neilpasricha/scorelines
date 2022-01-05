@@ -14,7 +14,8 @@ import SwiftUI
 
 
 struct FeedView: View {
-    let categories = ["Deals":1, "Happy Hour":2, "Recreation":3, "What's Happening?":4, "Misc":5]
+    @ObservedObject var feed: Feed
+    
     @State private var showSortSheet: Bool = false
     @State private var showSubmitPost: Bool = false
     @State private var showCreateUser: Bool = false
@@ -24,7 +25,7 @@ struct FeedView: View {
     @State private var isShowing = false
     @State private var showComplex = false
     @State private var isClicked = false
-    @ObservedObject var feed: Feed
+
 
     
     var body: some View
