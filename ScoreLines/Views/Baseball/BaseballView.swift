@@ -13,7 +13,7 @@ struct BaseballView: View {
     {
         
             
-            if #available(iOS 15.0, *) {
+            
                 ScrollView{
                     VStack{
                         MLBButton(feed:feed)
@@ -32,12 +32,9 @@ struct BaseballView: View {
                     .padding()
                 }
                 .navigationBarTitle(Text("Baseball"))
-                }
+                
     
-    
-         else {
-            // Fallback on earlier versions
-        }
+
             
         
 //        let self.category_global.currCategory = category //issue here

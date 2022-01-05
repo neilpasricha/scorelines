@@ -56,14 +56,19 @@ struct FeedView: View {
              FeedView.currentFeed.append(NBAComplex())
          })
          */
-            if #available(iOS 15.0, *) {
+         
                     ScrollView{
                         
                         VStack{
+                            if(feed.CurrentFeed.count>0){
                             ForEach(0..<feed.CurrentFeed.count, id: \.self){ index in
                                 feed.CurrentFeed[index]
+                            }
                         }
-                        }
+                            else{
+                                Text("Add games to your feed by pressing and holding their scoreboard!")
+                            }
+                    }
                         
                         .frame(width:UIScreen.main.bounds.width)
                         
@@ -89,9 +94,7 @@ struct FeedView: View {
 //                        .padding()
 //                    }
             
-        } else {
-            // Fallback on earlier versions
-        }
+
             
         
 //        let self.category_global.currCategory = category //issue here

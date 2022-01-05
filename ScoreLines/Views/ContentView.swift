@@ -29,7 +29,7 @@ struct ContentView : View {
           }
         
         NavigationView(){
-            if #available(iOS 15.0, *) {
+           
             
                 ZStack{
                     TabView(selection: $selection) {
@@ -70,8 +70,8 @@ struct ContentView : View {
                             }
                             .tag(4)
                     }
-                    .accentColor(.teal)
-                
+                    .accentColor(.blue)
+                    
                     GeometryReader{_ in
 
                         MenuView(showMenu: $showMenu, feed:feed)
@@ -123,9 +123,7 @@ struct ContentView : View {
                 .navigationBarColor(backgroundColor: .systemTeal, tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
                 
-            } else {
-                // Fallback on earlier versions
-            }
+  
             }
                     
                 

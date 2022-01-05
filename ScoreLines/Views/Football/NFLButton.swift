@@ -27,7 +27,7 @@ struct NFLButton: View {
             }
             print("NFL Added to current Feed!")
         })
-        .simultaneousGesture(TapGesture().onEnded {
+        .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             print("NFL Tapped!")
         })

@@ -11,7 +11,7 @@ struct NBAButton: View {
                 NBASimple()
             }
         }
-        .simultaneousGesture(LongPressGesture().onEnded { _ in
+        .simultaneousGesture(LongPressGesture(minimumDuration: 0.5).onEnded { _ in
             if(isClicked){
                 self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed)))
             }
@@ -21,10 +21,11 @@ struct NBAButton: View {
             print(self.feed.CurrentFeed.count)
             print("NBA Added to current Feed!")
         })
-        .simultaneousGesture(TapGesture().onEnded {
+        .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             print("NBA Tapped!")
         })
+        
 
     }
 }

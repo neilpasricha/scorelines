@@ -17,7 +17,7 @@ struct SoccerView: View {
     {
         
             
-            if #available(iOS 15.0, *) {
+           
                 ScrollView{
                     
                     VStack{
@@ -74,6 +74,7 @@ struct SoccerView: View {
                         }
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
                         .font(.system(size: 24.0))
+                        .padding(.bottom)
                         if(showNBA){
                             NBASimple()
                             NBASimple()
@@ -99,14 +100,9 @@ struct SoccerView: View {
                     
                     .padding()
                 }
-                .navigationBarTitle(Text("Basketball"))
-                }
+
     
-    
-         else {
-            // Fallback on earlier versions
-        }
-            
+
         
 //        let self.category_global.currCategory = category //issue here
     }

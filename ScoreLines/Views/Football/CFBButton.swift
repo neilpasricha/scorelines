@@ -27,7 +27,7 @@ struct CFBButton: View {
             }
             print("CFB Added to current Feed!")
         })
-        .simultaneousGesture(TapGesture().onEnded {
+        .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             print("CFB Tapped!")
         })

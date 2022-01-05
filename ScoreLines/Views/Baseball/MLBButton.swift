@@ -20,7 +20,7 @@ struct MLBButton: View {
             }
             print("MLB Added to current Feed!")
         })
-        .simultaneousGesture(TapGesture().onEnded {
+        .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             print("MLB Tapped!")
         })

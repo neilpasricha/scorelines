@@ -27,7 +27,7 @@ struct NCAAMButton: View {
             }
             print("NCAAM Added to current Feed!")
         })
-        .simultaneousGesture(TapGesture().onEnded {
+        .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             print("NCAAM Tapped!")
         })

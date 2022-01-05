@@ -16,7 +16,7 @@ struct FootballView: View {
     {
         
             
-            if #available(iOS 15.0, *) {
+            
                 ScrollView{
                     
                     VStack{
@@ -61,6 +61,7 @@ struct FootballView: View {
                         }
                         .frame(width: UIScreen.main.bounds.width*0.95, alignment: Alignment.center)
                         .font(.system(size: 24.0))
+                        .padding(.bottom)
                         if(showNFL){
                             ScrollView{
                             NFLButton(feed:feed)
@@ -98,13 +99,10 @@ struct FootballView: View {
                 }
     
     
-         else {
-            // Fallback on earlier versions
-        }
             
         
 //        let self.category_global.currCategory = category //issue here
-    }
+    
     
 }
 

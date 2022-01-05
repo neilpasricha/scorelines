@@ -11,7 +11,7 @@ struct MenuView : View {
     var body : some
         
     View{
-            if #available(iOS 15.0, *) {
+            
                 VStack
                 {
                     Image("dark_text")
@@ -133,17 +133,13 @@ struct MenuView : View {
                     
                 }
                 .frame(maxWidth: UIScreen.main.bounds.width/2, maxHeight: UIScreen.main.bounds.height, alignment: .topLeading)
-                .background(.teal)
                 .onTapGesture{
                     print("nothing")
                 }
                 
                 .ignoresSafeArea()
                 .edgesIgnoringSafeArea(.bottom)
-            } else {
-                // Fallback on earlier versions
-            }
-        
+  
         
     }
     func goProfile() {

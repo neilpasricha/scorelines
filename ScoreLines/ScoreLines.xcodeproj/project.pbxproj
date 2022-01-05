@@ -11,7 +11,6 @@
 		5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */; };
 		5C38DDF22755932900FCE1E9 /* BaseballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38DDF12755932900FCE1E9 /* BaseballView.swift */; };
 		5C38DDF42755A2FF00FCE1E9 /* MLBSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38DDF32755A2FF00FCE1E9 /* MLBSimple.swift */; };
-		5C57E0CE2755404600D3375D /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0CD2755404600D3375D /* Pods */; };
 		5C57E0E82755405900D3375D /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0E72755405900D3375D /* Helpers */; };
 		5C57E0EA2755414F00D3375D /* ScoreLinesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */; };
 		5C57E0EC275541BB00D3375D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0EB275541BB00D3375D /* ContentView.swift */; };
@@ -49,7 +48,6 @@
 		5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SCRIPT_MT_BOLD.TTF; path = Fonts/SCRIPT_MT_BOLD.TTF; sourceTree = "<group>"; };
 		5C38DDF12755932900FCE1E9 /* BaseballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballView.swift; sourceTree = "<group>"; };
 		5C38DDF32755A2FF00FCE1E9 /* MLBSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBSimple.swift; sourceTree = "<group>"; };
-		5C57E0CD2755404600D3375D /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		5C57E0E72755405900D3375D /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Helpers; sourceTree = "<group>"; };
 		5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLinesApp.swift; sourceTree = "<group>"; };
 		5C57E0EB275541BB00D3375D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				5C57E0E92755414F00D3375D /* ScoreLinesApp.swift */,
 				5C57E0F227555A3000D3375D /* Views */,
 				5C57E0E72755405900D3375D /* Helpers */,
-				5C57E0CD2755404600D3375D /* Pods */,
 				5CDC56C027552BA40065B639 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C57E0E82755405900D3375D /* Helpers in Resources */,
-				5C57E0CE2755404600D3375D /* Pods in Resources */,
 				5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */,
 				5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */,
 				5CA6ED272784ADFB0042A2F7 /* Assets.xcassets in Resources */,
@@ -318,6 +314,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -344,6 +341,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -359,7 +357,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,6 +378,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -406,6 +405,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -415,9 +415,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -428,8 +429,10 @@
 		5CDC56CE27552BA50065B639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 227HN389RV;
@@ -441,26 +444,27 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = mang.ScoreLines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
 		5CDC56CF27552BA50065B639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 227HN389RV;
@@ -472,18 +476,17 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = mang.ScoreLines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -497,7 +500,7 @@
 				5CDC56CC27552BA50065B639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5CDC56CD27552BA50065B639 /* Build configuration list for PBXNativeTarget "ScoreLines" */ = {
 			isa = XCConfigurationList;
@@ -506,7 +509,7 @@
 				5CDC56CF27552BA50065B639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
