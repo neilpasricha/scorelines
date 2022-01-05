@@ -39,7 +39,7 @@ struct MLBComplex: View
     @State private var team1Score: Int = 5
     @State private var team2Score: Int = 3
     
-    @State private var total: Double = 8
+    @State private var total: Double = 9.5
     @State private var totalScore: Double = 0
     @State private var totalDiff: Double = 0
     //Both teams total projection formula:
@@ -87,8 +87,9 @@ struct MLBComplex: View
                     
                     HStack(spacing:0){//Team1Name and Record
                         Text(team1Name)
-                            .lineLimit(1)
-                              .foregroundColor(Color.black)
+                        .bold()
+                        .lineLimit(1)
+                        .foregroundColor(Color.black)
                         Text(" (")
                             .lineLimit(1)
                               .foregroundColor(Color.black)
@@ -109,6 +110,7 @@ struct MLBComplex: View
                     Spacer()
                     HStack(spacing:0){//Team2Name and Record
                         Text(team2Name)
+                            .bold()
                             .lineLimit(1)
                               .foregroundColor(Color.black)
                         Text(" (")
@@ -144,15 +146,26 @@ struct MLBComplex: View
                     }
                     Spacer()
                     HStack{//Innings
-                    Text("1")
-                    Text("2")
-                    Text("3")
-                    Text("4")
-                    Text("5")
-                    Text("6")
-                    Text("7")
-                    Text("8")
-                    Text("9")
+                        ForEach(1..<10) { i in
+                        if(i==inning){
+                            Text(String(inning))
+                                .underline()
+                                .bold()
+
+                        }
+                        else{
+                            Text(String(i))
+                        }
+                    }
+//                    Text("1")
+//                    Text("2")
+//                    Text("3")
+//                    Text("4")
+//                    Text("5")
+//                    Text("6")
+//                    Text("7")
+//                    Text("8")
+//                    Text("9")
                     }
                     .padding(4)
                     .border(Color.black, width: 2)
@@ -169,16 +182,23 @@ struct MLBComplex: View
                     Text(String(team2I8))
                     Text(String(team2I9))
                     }
+                    .lineSpacing(20)
                 }
-                .font(.system(size: UIScreen.main.bounds.height*0.02))
+                .fixedSize(horizontal: true, vertical: false)
+                .font(.system(size: UIScreen.main.bounds.height*0.0225))
                 .foregroundColor(Color.black)
                 Spacer()
                 VStack{//Totals
                     Text(String(team1Score))
+                        .font(.system(size: UIScreen.main.bounds.height*0.03))
                     Spacer()
+                    HStack(spacing:0){
                     Text(String(team1Score+team2Score))
+                    Text("[" + String(total) + "]")
+                    }
                     Spacer()
                     Text(String(team2Score))
+                        .font(.system(size: UIScreen.main.bounds.height*0.03))
                 }
                 .font(.system(size: UIScreen.main.bounds.height*0.02))
                 .foregroundColor(Color.black)
