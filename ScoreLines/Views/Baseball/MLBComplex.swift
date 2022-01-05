@@ -78,6 +78,7 @@ struct MLBComplex: View
     var body: some View
     {
             HStack{
+                
                 Spacer()
                 VStack{//First VStack, containing team1 info
                     //UIScreen.main.bounds.height*0.2
@@ -101,7 +102,8 @@ struct MLBComplex: View
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                     }
-                    .font(.system(size: UIScreen.main.bounds.height*0.02))
+                    .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    
                     Spacer()
                     Text(String(team1Score))
                         .underline()
@@ -130,6 +132,30 @@ struct MLBComplex: View
                 .padding(.top, UIScreen.main.bounds.height*0.013)
                 VStack{//Time left and O/\U
                     Spacer()
+                    Spacer()
+                    HStack{
+                        Spacer()
+                    HStack(spacing: UIScreen.main.bounds.width * 0.0075){
+                    Image(systemName: "arrow.triangle.merge")
+                            .resizable()
+                        
+                          .foregroundColor(Color.black)
+                        .frame(width: UIScreen.main.bounds.width * 0.03 , height: UIScreen.main.bounds.height * 0.02)
+                    Text(String(inning) + "th")
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                          .foregroundColor(Color.black)
+                    }
+                        Rectangle()
+                            .fill(Color.black)
+                            .frame(width:2)
+                        Text(String(outs) + "/O")
+                            .font(.system(size: UIScreen.main.bounds.height*0.025))
+                              .foregroundColor(Color.black)
+                        Spacer()
+                    }
+                    .frame(width: UIScreen.main.bounds.height*0.15, height: UIScreen.main.bounds.height*0.03, alignment: .center)
+                    .padding(4)
+                    .border(Color.black, width: 2)
                     HStack(spacing:0){//O/U
                     Text("O/U: ")
                             .underline()
@@ -152,7 +178,7 @@ struct MLBComplex: View
                     Text(String(team1Score + team2Score))
                         .lineLimit(1)
                           .foregroundColor(Color.black)
-                        Text(String(format:" [%.1f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
+                        Text(String(format:" [%.1f" ,Float(Float((Float(team1Score+team2Score))/Float(inning)))*9)+"]")
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                         }
@@ -181,17 +207,8 @@ struct MLBComplex: View
                             }
                             else{
                                 Text(String(i))
+                                }
                             }
-                        }
-    //                    Text("1")
-    //                    Text("2")
-    //                    Text("3")
-    //                    Text("4")
-    //                    Text("5")
-    //                    Text("6")
-    //                    Text("7")
-    //                    Text("8")
-    //                    Text("9")
                         }
                         .padding(4)
                         .border(Color.black, width: 2)
@@ -209,9 +226,10 @@ struct MLBComplex: View
                         Text(String(team2I9))
                         }
                     }
+                    Spacer()
                 }
                     .fixedSize(horizontal: true, vertical: false)
-                    .font(.system(size: UIScreen.main.bounds.height*0.0225))
+                    .font(.system(size: UIScreen.main.bounds.height*0.020))
                     .foregroundColor(Color.black)
                 Spacer()
                 VStack{//Third VStack, containing team2 info
@@ -276,7 +294,7 @@ struct MLBComplex: View
         .onAppear {
         UITableViewCell.appearance().selectionStyle = .none
      }
-    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.33, alignment: .center)
+    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.4, alignment: .center)
         
     .background(Color.white)
     .overlay(
