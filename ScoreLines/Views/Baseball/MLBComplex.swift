@@ -126,6 +126,7 @@ struct MLBComplex: View
             .font(.system(size: UIScreen.main.bounds.height*0.025))
                 Spacer()
             }//end Team names
+            .padding(.top)
             HStack{
                 Spacer()
                 VStack{//First VStack, containing team1 info
@@ -157,9 +158,10 @@ struct MLBComplex: View
                         Text("6th - B. Bonds")
                         Text("7th - T. Lincecum")
                         Text("7th - T. Watson")
-                        
+                        Spacer()
                     }
                     .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                    .frame(height:UIScreen.main.bounds.height*0.135)
                     .foregroundColor(Color.black)
                     .padding(4)
                     .border(Color.black, width: 2)
@@ -289,9 +291,10 @@ struct MLBComplex: View
                         Text("3rd - J. Altuve")
                         Text("3rd - L. Garcia")
                         Text("4th - J. Verlander")
-                        
+                        Spacer()
                     }
                     .font(.system(size: UIScreen.main.bounds.height*0.0125))
+                    .frame(height:UIScreen.main.bounds.height*0.135)
                     .foregroundColor(Color.black)
                     .padding(4)
                     .border(Color.black, width: 2)
