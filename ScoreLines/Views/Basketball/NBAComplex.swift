@@ -8,29 +8,55 @@ struct NBAComplex: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var team1Name: String = "Warriors"
-    @State private var team2Name: String = "Bulls"
+    @Binding var team1Name: String
+    @Binding var team2Name: String
     
-    @State private var gameClockMin: Int = 4
-    @State private var gameClockSec: Int = 48
-    @State private var gameQuarter: Int = 4
+    @Binding var gameClockMin: Int
+    @Binding var gameClockSec: Int
+    @Binding var gameQuarter: Int
     
-    @State private var team1W: Int = 10
-    @State private var team1L: Int = 2
-    @State private var team2W: Int = 8
-    @State private var team2L: Int = 4
+    @Binding var team1W: Int
+    @Binding var team1L: Int
+    @Binding var team2W: Int
+    @Binding var team2L: Int
     
-    @State private var team1ML: Int = -1200
-    @State private var team1Spread: Int = -20
-    @State private var team2ML: Int = 2500
-    @State private var team2Spread: Int = 12
+    @Binding var team1ML: Int
+    @Binding var team1Spread: Int
+    @Binding var team2ML: Int
+    @Binding var team2Spread: Int
     
-    @State private var team1Score: Int = 114
-    @State private var team2Score: Int = 79
+    @Binding var team1Score: Int
+    @Binding var team2Score: Int
     
-    @State private var total: Double = 210.5
-    @State private var totalScore: Double = 0
-    @State private var totalDiff: Double = 17.5
+    @Binding var total: Double
+    @Binding var totalScore: Double
+    @Binding var totalDiff: Double
+    /*
+     team1Name: "Warriors", team2Name: "Bulls", gameClockMin : 4, gameClockSec : 48, gameQuarter : 4, team1W : 10, team1L : 2, team2W : 8, team2L : 4, team1ML : -1200, team1Spread : -20, team2ML : 2500, team2Spread : 12, team1Score : 114, team2Score : 79, total : 210.5, totalScore : 0, totalDiff : 17.5
+     */
+//    @State private var team1Name: String = "Warriors"
+//    @State private var team2Name: String = "Bulls"
+//
+//    @State private var gameClockMin: Int = 4
+//    @State private var gameClockSec: Int = 48
+//    @State private var gameQuarter: Int = 4
+//
+//    @State private var team1W: Int = 10
+//    @State private var team1L: Int = 2
+//    @State private var team2W: Int = 8
+//    @State private var team2L: Int = 4
+//
+//    @State private var team1ML: Int = -1200
+//    @State private var team1Spread: Int = -20
+//    @State private var team2ML: Int = 2500
+//    @State private var team2Spread: Int = 12
+//
+//    @State private var team1Score: Int = 114
+//    @State private var team2Score: Int = 79
+//
+//    @State private var total: Double = 210.5
+//    @State private var totalScore: Double = 0
+//    @State private var totalDiff: Double = 17.5
     //Both teams total projection formula:
     //(Total_Current_Score_Both_Teams/Total_Seconds_played)*Total_Seconds_In_Entire_Game
     //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")

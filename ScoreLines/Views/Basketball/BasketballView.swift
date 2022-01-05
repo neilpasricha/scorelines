@@ -65,12 +65,6 @@ struct BasketballView: View {
                         .padding(.bottom)
                         if(showNBA){
                             NBAButton(feed:feed)
-                            NBAButton(feed:feed)
-                            NBAButton(feed:feed)
-                            NBAButton(feed:feed)
-                            NBAButton(feed:feed)
-                            NBAButton(feed:feed)
-                            NBAButton(feed:feed)
                         }
                         else if(showNCAAM){
                             NCAAMButton(feed:feed)

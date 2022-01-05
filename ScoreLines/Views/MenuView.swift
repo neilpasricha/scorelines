@@ -136,8 +136,8 @@ struct MenuView : View {
                 .onTapGesture{
                     print("nothing")
                 }
-                
-                .ignoresSafeArea()
+                .background(Color.black)
+                .opacity(0.75)
                 .edgesIgnoringSafeArea(.bottom)
   
         
