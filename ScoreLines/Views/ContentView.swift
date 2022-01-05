@@ -107,7 +107,7 @@ struct ContentView : View {
                                                 Image(systemName: "gearshape")
                                                     .resizable()
                                                     .frame(width: UIScreen.main.bounds.width * 0.058 , height: UIScreen.main.bounds.width * 0.058)
-                                                    .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                                                    .foregroundColor(Color.black)
                                             }
                                             else{
                                                 Image(systemName: "gearshape")

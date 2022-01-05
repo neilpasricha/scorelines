@@ -8,6 +8,7 @@ struct NBASimple: View
             //{vstack
                 //{hstack
                     //vstack
+    @Environment(\.colorScheme) var currentMode
     @State private var team1Name: String = "Warriors"
     @State private var team2Name: String = "Bulls"
     @State private var current_possession: String = "Warriors"
@@ -39,30 +40,30 @@ struct NBASimple: View
                         
                         Text(team1Name)
                             .lineLimit(1)
-                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                                
                             .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
                     else{
                     Text(team1Name)
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            
                     }
                     
                     Text(" (")
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            
                     Text(String(team1W))
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            
                     Text("-")
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            
                     Text(String(team1L))
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                            
                     Text(")")
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     }
                     .font(.system(size: UIScreen.main.bounds.height*0.025))
                 Spacer()
@@ -76,29 +77,29 @@ struct NBASimple: View
                         
                         Text(team2Name)
                             .lineLimit(1)
-                            .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                              
                             .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
                     else{
                     Text(team2Name)
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     }
                     Text(" (")
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     Text(String(team2W))
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     Text("-")
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     Text(String(team2L))
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     Text(")")
                         .lineLimit(1)
-                        .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                          
                     }
                     .font(.system(size: UIScreen.main.bounds.height*0.025))
                 Spacer()
@@ -108,11 +109,11 @@ struct NBASimple: View
                 Spacer()
                 Text(String(team1Score))
                     .lineLimit(1)
-                    .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                      
                 Spacer()
                 Text(String(team2Score))
                     .lineLimit(1)
-                    .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                      
                 Spacer()
             }
             .font(.system(size: UIScreen.main.bounds.height*0.025))
@@ -121,19 +122,20 @@ struct NBASimple: View
                 Spacer()
             Text("Q" + String(quarter))
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
-                .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
             
                 Spacer()
                 Text(gameClock)
                     .font(.system(size: UIScreen.main.bounds.height*0.025))
-                    .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                      
                 Spacer()
             }
+            
             Spacer()
         }
         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.1, alignment: .center)
-            
-        .background(Color.white)
+        .foregroundColor(currentMode  == .dark ? Color.white : Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255))
+        .background(currentMode  == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
+        //.background(Color.gray)
         .overlay(
             Rectangle()
                 .stroke(Color.black, lineWidth: 2)
