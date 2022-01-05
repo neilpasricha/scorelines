@@ -8,6 +8,8 @@ struct NBAButton: View {
     
     @Binding var id: Int
     
+    @State private var feedID: Int =  0
+    
     @Binding var team1Name: String
     @Binding var team2Name: String
     
@@ -56,6 +58,7 @@ struct NBAButton: View {
 //        @State private var totalDiff: Double = 17.5
     var body: some View {
         Button(action: {
+            print("$id:")
             print($id)
         }) {
             if(isClicked){
@@ -66,25 +69,28 @@ struct NBAButton: View {
         }
         .contextMenu{
             Button {
+                self.feedID = self.feed.CurrentFeed.count
+                print("self.id")
+                print(self.id)
                 if(!self.feed.feedIDs.contains(id)){
-                    
-
-                if(isClicked){
-                    self.feed.CurrentFeed.append(AnyView                            (NBAButton(feed:feed, complexFrame: $complexFrame, id: $id, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)))
-                    //Append the ID to the feed array for easy look up
-                    self.feed.feedIDs.append(id)
-                }
-                else{
-                    self.feed.CurrentFeed.append(AnyView                            (NBAButton(feed:feed, complexFrame: $complexFrame, id: $id, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)))
-                    
-                    self.feed.feedIDs.append(id)
+                    if(isClicked){
+                        self.feed.CurrentFeed.append(AnyView                            (NBAButton(feed:feed, complexFrame: $complexFrame, id: $id, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)))
+                        //Append the ID to the feed array for easy look up
+                        self.feed.feedIDs.append(id)
                     }
+                    else{
+                        self.feed.CurrentFeed.append(AnyView                            (NBAButton(feed:feed, complexFrame: $complexFrame, id: $id, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)))
+                        
+                        self.feed.feedIDs.append(id)
+                        }
                     print(self.feed.CurrentFeed.count)
                     print("NBA Added to current Feed!")
                 }
                 else{
-                    self.feed.CurrentFeed.remove(at: id)
-                    self.feed.feedIDs.remove(at: id)
+                    if let index = self.feed.feedIDs.firstIndex(of: id) {
+                        self.feed.CurrentFeed.remove(at: index)
+                        self.feed.feedIDs.remove(at: index)
+                    }
                     print(self.feed.CurrentFeed.count)
                     print("NBA Frame Removed from feed!")
                 }
@@ -94,12 +100,12 @@ struct NBAButton: View {
                 Label("Add to Feed", systemImage: "house")
                 }
                 else{
-                    Label("Remove from Feed", systemImage: "house")
+                    Label("Remove from Feed", systemImage: "house.fill")
                 }
             }
 
             Button {
-                print("Enable geolocation")
+                print("Add betting baby")
             } label: {
                 Label("Add bets", systemImage: "banknote")
             }
@@ -107,6 +113,8 @@ struct NBAButton: View {
         .highPriorityGesture(TapGesture().onEnded {
             self.isClicked.toggle()
             self.complexFrame.toggle()
+            print("tapgesture self.id")
+            print(self.id)
             print("NBA Tapped!")
         })
         
