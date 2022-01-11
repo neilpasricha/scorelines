@@ -8,22 +8,42 @@ struct NBASimple: View
             //{vstack
                 //{hstack
                     //vstack
+     /*
+      @Binding var id: Int = 1
+      @Binding var team1Name: String = "Warriors"
+      @Binding var team2Name: String = "Bulls"
+      @Binding var current_possession: String = "Warriors"
+      
+      @Binding var team1Score: Int = 114
+      @Binding var team2Score: Int = 79
+      
+      @Binding var quarter: Int = 4
+      @Binding var gameClock: String = "4:48"
+      
+      @Binding var team1W: Int = 10
+      @Binding var team1L: Int = 2
+      @Binding var team2W: Int = 8
+      @Binding var team2L: Int = 4
+      */
     @Environment(\.colorScheme) var currentMode
-    @State private var id: Int = 1
-    @State private var team1Name: String = "Warriors"
-    @State private var team2Name: String = "Bulls"
-    @State private var current_possession: String = "Warriors"
+    @Binding var id: Int
+    @Binding var current_possession: String
     
-    @State private var team1Score: Int = 114
-    @State private var team2Score: Int = 79
+    @Binding var team1Name: String
+    @Binding var team2Name: String
+
     
-    @State private var quarter: Int = 4
-    @State private var gameClock: String = "4:48"
+    @Binding var team1Score: Int
+    @Binding var team2Score: Int
     
-    @State private var team1W: Int = 10
-    @State private var team1L: Int = 2
-    @State private var team2W: Int = 8
-    @State private var team2L: Int = 4
+    @Binding var gameClockMin: Int
+    @Binding var gameClockSec: Int
+    @Binding var gameQuarter: Int
+    
+    @Binding var team1W: Int
+    @Binding var team1L: Int
+    @Binding var team2W: Int
+    @Binding var team2L: Int
     
     var body: some View
     {
@@ -121,13 +141,27 @@ struct NBASimple: View
             Spacer()
             VStack{
                 Spacer()
-            Text("Q" + String(quarter))
+            Text("Q" + String(gameQuarter))
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
             
                 Spacer()
-                Text(gameClock)
-                    .font(.system(size: UIScreen.main.bounds.height*0.025))
-                      
+                HStack{
+                Text("["+String(gameClockMin))
+                    
+                    .bold()
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                Text(":")
+                    
+                    .bold()
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                Text(String(gameClockSec)+"]")
+                    
+                    .bold()
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                }
                 Spacer()
             }
             

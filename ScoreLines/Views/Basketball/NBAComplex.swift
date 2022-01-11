@@ -9,9 +9,13 @@ struct NBAComplex: View
                 //{hstack
                     //vstack
     @Binding var id: Int
+    @Binding var current_possession: String
     
     @Binding var team1Name: String
     @Binding var team2Name: String
+    
+    @Binding var team1Score: Int
+    @Binding var team2Score: Int
     
     @Binding var gameClockMin: Int
     @Binding var gameClockSec: Int
@@ -27,8 +31,7 @@ struct NBAComplex: View
     @Binding var team2ML: Int
     @Binding var team2Spread: Int
     
-    @Binding var team1Score: Int
-    @Binding var team2Score: Int
+
     
     @Binding var total: Double
     @Binding var totalScore: Double

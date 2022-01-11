@@ -160,13 +160,13 @@
 		5CE46CB0275703AB005779A5 /* Basketball */ = {
 			isa = PBXGroup;
 			children = (
-				5CBF2F082755C6D40066CF2C /* NBASimple.swift */,
 				5CBF2F052755C6920066CF2C /* BasketballView.swift */,
+				5CA6ED3A2784E3120042A2F7 /* NBAButton.swift */,
+				5CBF2F082755C6D40066CF2C /* NBASimple.swift */,
 				5C57E0EE2755427300D3375D /* NBAComplex.swift */,
+				5CA6ED3E2784E48A0042A2F7 /* NCAAMButton.swift */,
 				5CE46CB427570CEC005779A5 /* NCAAMSimple.swift */,
 				5CE46CB627570D15005779A5 /* NCAAMComplex.swift */,
-				5CA6ED3A2784E3120042A2F7 /* NBAButton.swift */,
-				5CA6ED3E2784E48A0042A2F7 /* NCAAMButton.swift */,
 			);
 			path = Basketball;
 			sourceTree = "<group>";

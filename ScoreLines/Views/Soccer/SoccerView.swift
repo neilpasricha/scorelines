@@ -76,12 +76,12 @@ struct SoccerView: View {
                         .font(.system(size: 24.0))
                         .padding(.bottom)
                         if(showNBA){
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
-                            NBASimple()
+                            NCAAMSimple()
+                            NCAAMSimple()
+                            NCAAMSimple()
+                            NCAAMSimple()
+                            NCAAMSimple()
+                            NCAAMSimple()
                         }
                         else if(showNCAAM){
                             NCAAMSimple()
