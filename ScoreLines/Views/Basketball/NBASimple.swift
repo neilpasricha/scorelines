@@ -145,20 +145,17 @@ struct NBASimple: View
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
             
                 Spacer()
-                HStack{
-                Text("["+String(gameClockMin))
-                    
-                    .bold()
+                HStack(spacing:0){
+                Text(String(gameClockMin))
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
                     .lineLimit(1)
                       .foregroundColor(Color.black)
                 Text(":")
-                    
-                    .bold()
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
                     .lineLimit(1)
                       .foregroundColor(Color.black)
-                Text(String(gameClockSec)+"]")
-                    
-                    .bold()
+                Text(String(gameClockSec))
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
                     .lineLimit(1)
                       .foregroundColor(Color.black)
                 }

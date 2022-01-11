@@ -71,7 +71,7 @@ struct ContentView : View {
                             }
                             .tag(4)
                     }
-                    .accentColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                    .accentColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                     
                     GeometryReader{_ in
 
@@ -121,7 +121,7 @@ struct ContentView : View {
                 }
                 )
                 
-                .navigationBarColor(backgroundColor: .systemTeal, tintColor: .white)
+                .navigationBarColor(backgroundColor: UIColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255)), tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
                 
   

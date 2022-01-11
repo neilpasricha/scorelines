@@ -71,7 +71,7 @@ struct BasketballView: View {
                             ) {
                                 if(showNBA){
                                 Text("NBA")
-                                .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                                .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                                 .frame(width:UIScreen.main.bounds.width*0.45)
                                 }
                                 else{
@@ -85,7 +85,7 @@ struct BasketballView: View {
                             .cornerRadius(20)
                             .overlay(
                                 Rectangle()
-                                    .stroke(currentMode == .dark ? Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255) : Color.black, lineWidth: 2)
+                                    .stroke(currentMode == .dark ? Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255) : Color.black, lineWidth: 2)
                                     
                             )
                             .background(currentMode == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
@@ -96,7 +96,7 @@ struct BasketballView: View {
                             }) {
                                 if(showNCAAM){
                                 Text("NCAAM")
-                                .foregroundColor(Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255))
+                                .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                                 .frame(width:UIScreen.main.bounds.width*0.45)
                                 }
                                 else{
@@ -110,7 +110,7 @@ struct BasketballView: View {
                             .cornerRadius(20)
                             .overlay(
                                 Rectangle()
-                                    .stroke(currentMode == .dark ? Color(red: 43 / 255, green: 149 / 255, blue: 173 / 255) : Color.black, lineWidth: 2)
+                                    .stroke(currentMode == .dark ? Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255) : Color.black, lineWidth: 2)
                                     
                             )
                             .background(currentMode == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
