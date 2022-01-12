@@ -1,0 +1,24 @@
+
+    {
+    "type" : "NBA",
+    "team1Name": "Warriors",
+    "team2name": "Bulls",
+    "current_possession": "Warriors",
+    "gameClockMin": 4,
+    "gameClockSec": 48,
+    "gameQuarter": 4,
+    "team1W": 10,
+    "team1L": 2,
+    "team2W": 8,
+    "team2L": 4,
+    "team1ML": -1200,
+    "team1Spread": -20,
+    "team2ML": 2500,
+    "team2Spread": 12,
+    "team1Score": 114,
+    "team2Score": 79,
+    "total": 210.5,
+    "totalScore": 0,
+    "totalDiff": 17.5
+    }
+

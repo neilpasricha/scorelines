@@ -13,6 +13,7 @@ struct BasketballView: View {
     @State private var showNCAAM: Bool = false
     @State private var complexFrame: Bool = false
     @StateObject var feed: Feed
+    @ObservedObject var jsonData = readJSONData()
     
     //Below is to detect light/dark mode.
     //"if currentMode == .dark"
@@ -23,14 +24,14 @@ struct BasketballView: View {
     @State private var current_possession: String = "Warriors"
     @State private var idizzle: Int  = 0
     
-    @State private var id0: Int = 0
-    @State private var id1: Int = 1
-    @State private var id2: Int = 2
-    @State private var id3: Int = 3
-    @State private var id4: Int = 4
-    @State private var id5: Int = 5
-    @State private var id6: Int = 6
-    @State private var id7: Int = 7
+    @State private var id0: Int = Int.random(in: 1..<2147483645)
+    @State private var id1: Int = Int.random(in: 1..<2147483645)
+    @State private var id2: Int = Int.random(in: 1..<2147483645)
+    @State private var id3: Int = Int.random(in: 1..<2147483645)
+    @State private var id4: Int = Int.random(in: 1..<2147483645)
+    @State private var id5: Int = Int.random(in: 1..<2147483645)
+    @State private var id6: Int = Int.random(in: 1..<2147483645)
+    @State private var id7: Int = Int.random(in: 1..<2147483645)
 
     @State private var gameClockMin: Int = 4
     @State private var gameClockSec: Int = 48
@@ -55,11 +56,12 @@ struct BasketballView: View {
     
     var body: some View
     {
-        
-            
-            
+//        List(jsonData.nbaComplexModel){complex in
+//           // Text(complex.team2Name)
+//        }
+//
                 ScrollView{
-                    
+
                     VStack{
                         HStack{//Selector for NBA or NCAAM
                             Spacer()
@@ -67,7 +69,7 @@ struct BasketballView: View {
                                 showNBA = true
                                 showNCAAM = false
                             }
-                            
+
                             ) {
                                 if(showNBA){
                                 Text("NBA")
@@ -86,13 +88,14 @@ struct BasketballView: View {
                             .overlay(
                                 Rectangle()
                                     .stroke(currentMode == .dark ? Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255) : Color.black, lineWidth: 2)
-                                    
+
                             )
                             .background(currentMode == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
                             Spacer()
                             Button(action: {
                                 showNCAAM = true
                                 showNBA = false
+                                print(jsonData.nbaComplexModel)
                             }) {
                                 if(showNCAAM){
                                 Text("NCAAM")
@@ -111,7 +114,7 @@ struct BasketballView: View {
                             .overlay(
                                 Rectangle()
                                     .stroke(currentMode == .dark ? Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255) : Color.black, lineWidth: 2)
-                                    
+
                             )
                             .background(currentMode == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
                             Spacer()
@@ -121,8 +124,7 @@ struct BasketballView: View {
                         .padding(.bottom)
                         if(showNBA){
                             //NBAButton(feed:feed)
-                            
-                            
+
                             NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id0, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
                             NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id1, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
                             NBAButton(feed:feed,complexFrame: $complexFrame, current_possession: $current_possession, id: $id2, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
@@ -146,18 +148,20 @@ struct BasketballView: View {
                             Text("college baby")
                         }
                     }
-                    
+
                     .frame(width:UIScreen.main.bounds.width)
-                    
+
                     .padding()
                 }
-            
-    
-
-            
-        
-//        let self.category_global.currCategory = category //issue here
     }
+    
+//    private func parseJSON(){
+//        guard let path = Bundle.main.path(forResource: "NBAComplex", ofType: "json")else{
+//            return
+//        }
+//        let url = URL(fileURLWithPath: path)
+//
+//    }
     
 }
 
