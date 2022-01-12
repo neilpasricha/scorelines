@@ -4,35 +4,35 @@ struct NBAButton: View {
     
     @State var isClicked: Bool = false
     @Binding var complexFrame: Bool
-    @Binding var current_possession: String
-    
-    @Binding var id: Int
+    var current_possession: String
+    @ObservedObject var jsonData = readJSONData()
+    @Binding var id: Int = 0
     
     @State private var feedID: Int =  0
     
-    @Binding var team1Name: String
-    @Binding var team2Name: String
+     var team1Name: String
+     var team2Name: String
     
-    @Binding var gameClockMin: Int
-    @Binding var gameClockSec: Int
-    @Binding var gameQuarter: Int
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
     
-    @Binding var team1W: Int
-    @Binding var team1L: Int
-    @Binding var team2W: Int
-    @Binding var team2L: Int
+     var team1W: Int
+     var team1L: Int
+     var team2W: Int
+     var team2L: Int
     
-    @Binding var team1ML: Int
-    @Binding var team1Spread: Int
-    @Binding var team2ML: Int
-    @Binding var team2Spread: Int
+     var team1ML: Int
+     var team1Spread: Int
+     var team2ML: Int
+     var team2Spread: Int
     
-    @Binding var team1Score: Int
-    @Binding var team2Score: Int
+     var team1Score: Int
+     var team2Score: Int
     
-    @Binding var total: Double
-    @Binding var totalScore: Double
-    @Binding var totalDiff: Double
+     var total: Double
+     var totalScore: Double
+     var totalDiff: Double
 //        @State private var team1Name: String = "Warriors"
 //        @State private var team2Name: String = "Bulls"
 //
@@ -57,14 +57,16 @@ struct NBAButton: View {
 //        @State private var totalScore: Double = 0
 //        @State private var totalDiff: Double = 17.5
     var body: some View {
+        let nbaData = jsonData.nbaComplexModel[0].data[0]
+        let ncaamData = jsonData.nbaComplexModel[0].data[1]
         Button(action: {
             print("$id:")
             print($id)
         }) {
             if(isClicked){
-                NBAComplex(id: $id, current_possession: $current_possession, team1Name: $team1Name, team2Name: $team2Name, team1Score : $team1Score, team2Score : $team2Score, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
+                NBAComplex(id: $id, current_possession: nbaData.current_possession, team1Name: nbaData.team1Name, team2Name: nbaData.team2Name, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)
             }else{
-                NBASimple(id: $id, current_possession: $current_possession, team1Name: $team1Name, team2Name: $team2Name, team1Score : $team1Score, team2Score : $team2Score, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L)
+                NBASimple(id: $id, current_possession: nbaData.current_possession, team1Name: nbaData.team1Name, team2Name: nbaData.team2Name, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L)
             }
         }
         .contextMenu{
@@ -74,12 +76,12 @@ struct NBAButton: View {
                 print(self.id)
                 if(!self.feed.feedIDs.contains(id)){
                     if(isClicked){
-                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)))
+                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, complexFrame: nbaData.complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: nbaData.id, team1Name: nbaData.team1Name, team2Name: nbaData.team2Name, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)))
                         //Append the ID to the feed array for easy look up
                         self.feed.feedIDs.append(id)
                     }
                     else{
-                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id,team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)))
+                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, complexFrame: nbaData.complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: nbaData.id,team1Name: nbaData.team1Name, team2Name: nbaData.team2Name, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)))
                         
                         self.feed.feedIDs.append(id)
                         }

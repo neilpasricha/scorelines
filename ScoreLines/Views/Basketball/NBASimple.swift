@@ -26,24 +26,24 @@ struct NBASimple: View
       @Binding var team2L: Int = 4
       */
     @Environment(\.colorScheme) var currentMode
-    @Binding var id: Int
-    @Binding var current_possession: String
+    var current_possession: String
     
-    @Binding var team1Name: String
-    @Binding var team2Name: String
+     var team1Name: String
+     var team2Name: String
 
     
-    @Binding var team1Score: Int
-    @Binding var team2Score: Int
+     var team1Score: Int
+     var team2Score: Int
     
-    @Binding var gameClockMin: Int
-    @Binding var gameClockSec: Int
-    @Binding var gameQuarter: Int
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
     
-    @Binding var team1W: Int
-    @Binding var team1L: Int
-    @Binding var team2W: Int
-    @Binding var team2L: Int
+    
+    var team1W: Int
+    var team1L: Int
+    var team2W: Int
+    var team2L: Int
     
     var body: some View
     {

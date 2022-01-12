@@ -10,7 +10,7 @@ struct Result: Codable{
     let data: [NBAComplexModel]
 }
 
-struct NBAComplexModel: Codable, Identifiable{
+struct NBAComplexModel: Codable{
     enum CodingKeys: CodingKey {
         case type
         case team1Name
@@ -41,8 +41,7 @@ struct NBAComplexModel: Codable, Identifiable{
         case totalScore
         case totalDiff
     }
-       
-        var id = UUID()
+
         var type: String
         var team1Name: String
         var team2name: String

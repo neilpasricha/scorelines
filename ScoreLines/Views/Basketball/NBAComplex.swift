@@ -8,34 +8,33 @@ struct NBAComplex: View
             //{vstack
                 //{hstack
                     //vstack
-    @Binding var id: Int
-    @Binding var current_possession: String
+    var current_possession: String
     
-    @Binding var team1Name: String
-    @Binding var team2Name: String
+     var team1Name: String
+     var team2Name: String
     
-    @Binding var team1Score: Int
-    @Binding var team2Score: Int
+     var team1Score: Int
+     var team2Score: Int
     
-    @Binding var gameClockMin: Int
-    @Binding var gameClockSec: Int
-    @Binding var gameQuarter: Int
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
     
-    @Binding var team1W: Int
-    @Binding var team1L: Int
-    @Binding var team2W: Int
-    @Binding var team2L: Int
+     var team1W: Int
+     var team1L: Int
+     var team2W: Int
+     var team2L: Int
     
-    @Binding var team1ML: Int
-    @Binding var team1Spread: Int
-    @Binding var team2ML: Int
-    @Binding var team2Spread: Int
+     var team1ML: Int
+     var team1Spread: Int
+     var team2ML: Int
+     var team2Spread: Int
     
 
     
-    @Binding var total: Double
-    @Binding var totalScore: Double
-    @Binding var totalDiff: Double
+     var total: Double
+     var totalScore: Double
+     var totalDiff: Double
     /*
      team1Name: "Warriors", team2Name: "Bulls", gameClockMin : 4, gameClockSec : 48, gameQuarter : 4, team1W : 10, team1L : 2, team2W : 8, team2L : 4, team1ML : -1200, team1Spread : -20, team2ML : 2500, team2Spread : 12, team1Score : 114, team2Score : 79, total : 210.5, totalScore : 0, totalDiff : 17.5
      */

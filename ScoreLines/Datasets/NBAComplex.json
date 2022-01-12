@@ -2,7 +2,7 @@
     "data": [{
                     "type": "NBA",
                     "team1Name": "Warriors",
-                    "team2name": "Bulls",
+                    "team2Name": "Bulls",
                     "current_possession": "Warriors",
                     "gameClockMin": 4,
                     "gameClockSec": 48,
