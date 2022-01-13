@@ -26,6 +26,9 @@ struct NBASimple: View
       @Binding var team2L: Int = 4
       */
     @Environment(\.colorScheme) var currentMode
+    
+    let id: UUID
+    
     var current_possession: String
     
      var team1Name: String

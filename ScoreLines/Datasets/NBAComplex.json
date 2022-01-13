@@ -1,8 +1,8 @@
 {
     "data": [{
                     "type": "NBA",
-                    "team1Name": "Warriors",
-                    "team2Name": "Bulls",
+                    "homeTeam": "Warriors",
+                    "awayTeam": "Bulls",
                     "current_possession": "Warriors",
                     "gameClockMin": 4,
                     "gameClockSec": 48,
@@ -31,8 +31,8 @@
                 },
                 {
                     "type": "NCAAM",
-                    "team1Name": "Gonzaga",
-                    "team2name": "Purdue",
+                    "homeTeam": "Gonzaga",
+                    "awayTeam": "Purdue",
                     "current_possession": "Gonzaga",
                     "gameClockMin": 2,
                     "gameClockSec": 24,

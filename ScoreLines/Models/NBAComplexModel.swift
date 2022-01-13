@@ -10,11 +10,11 @@ struct Result: Codable{
     let data: [NBAComplexModel]
 }
 
-struct NBAComplexModel: Codable{
+struct NBAComplexModel: Codable, Identifiable{
     enum CodingKeys: CodingKey {
         case type
-        case team1Name
-        case team2name
+        case homeTeam
+        case awayTeam
         case current_possession
         case gameClockMin
         case gameClockSec
@@ -41,10 +41,10 @@ struct NBAComplexModel: Codable{
         case totalScore
         case totalDiff
     }
-
+        let id = UUID()
         var type: String
-        var team1Name: String
-        var team2name: String
+        let homeTeam: String
+        let awayTeam: String
         var current_possession: String
     
         var gameClockMin: Int

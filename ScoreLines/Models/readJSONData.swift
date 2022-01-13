@@ -9,10 +9,16 @@ import Foundation
 
 class readJSONData: ObservableObject  {
     @Published var nbaComplexModel = [Result]()
-    
+    @Published var dataLoaded = false
+    var data_loaded = false
         
     init(){
-        loadData()
+        if(!self.dataLoaded){
+            loadData()
+        }
+        else{
+            print("Data already loaded baby")
+        }
     }
     
     func loadData()  {
@@ -31,10 +37,8 @@ class readJSONData: ObservableObject  {
             if let result = result{
                 //print(result)
                 self.nbaComplexModel.append(result)
-                print("PRINTING SELF.NBACOMPLEXMODEL")
-                print(self.nbaComplexModel)
-                print("----END PRINT----")
-                print(self.nbaComplexModel[0].data[0].team1Name)
+                print(self.nbaComplexModel[0].data[0].homeTeam)
+                self.dataLoaded = true
             }
             else{
                 print("Failed to parse")

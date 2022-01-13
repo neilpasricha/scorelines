@@ -19,47 +19,48 @@ struct BasketballView: View {
     //"if currentMode == .dark"
     //".accentColor(currentMode == .dark ? Color.green : Color.accentColor)"
     @Environment(\.colorScheme) var currentMode
-    @State private var team1Name: String = "Warriors"
-    @State private var team2Name: String = "Bulls"
-    @State private var current_possession: String = "Warriors"
-    @State private var idizzle: Int  = 0
-    
-    @State private var id0: Int = Int.random(in: 1..<2147483645)
-    @State private var id1: Int = Int.random(in: 1..<2147483645)
-    @State private var id2: Int = Int.random(in: 1..<2147483645)
-    @State private var id3: Int = Int.random(in: 1..<2147483645)
-    @State private var id4: Int = Int.random(in: 1..<2147483645)
-    @State private var id5: Int = Int.random(in: 1..<2147483645)
-    @State private var id6: Int = Int.random(in: 1..<2147483645)
-    @State private var id7: Int = Int.random(in: 1..<2147483645)
-
-    @State private var gameClockMin: Int = 4
-    @State private var gameClockSec: Int = 48
-    @State private var gameQuarter: Int = 4
-
-    @State private var team1W: Int = 10
-    @State private var team1L: Int = 2
-    @State private var team2W: Int = 8
-    @State private var team2L: Int = 4
-
-    @State private var team1ML: Int = -1200
-    @State private var team1Spread: Int = -20
-    @State private var team2ML: Int = 2500
-    @State private var team2Spread: Int = 12
-
-    @State private var team1Score: Int = 114
-    @State private var team2Score: Int = 79
-
-    @State private var total: Double = 210.5
-    @State private var totalScore: Double = 0
-    @State private var totalDiff: Double = 17.5
+//    @State private var team1Name: String = "Warriors"
+//    @State private var team2Name: String = "Bulls"
+//    @State private var current_possession: String = "Warriors"
+//    @State private var idizzle: Int  = 0
+//    
+//    @State private var id0: Int = Int.random(in: 1..<2147483645)
+//    @State private var id1: Int = Int.random(in: 1..<2147483645)
+//    @State private var id2: Int = Int.random(in: 1..<2147483645)
+//    @State private var id3: Int = Int.random(in: 1..<2147483645)
+//    @State private var id4: Int = Int.random(in: 1..<2147483645)
+//    @State private var id5: Int = Int.random(in: 1..<2147483645)
+//    @State private var id6: Int = Int.random(in: 1..<2147483645)
+//    @State private var id7: Int = Int.random(in: 1..<2147483645)
+//
+//    @State private var gameClockMin: Int = 4
+//    @State private var gameClockSec: Int = 48
+//    @State private var gameQuarter: Int = 4
+//
+//    @State private var team1W: Int = 10
+//    @State private var team1L: Int = 2
+//    @State private var team2W: Int = 8
+//    @State private var team2L: Int = 4
+//
+//    @State private var team1ML: Int = -1200
+//    @State private var team1Spread: Int = -20
+//    @State private var team2ML: Int = 2500
+//    @State private var team2Spread: Int = 12
+//
+//    @State private var team1Score: Int = 114
+//    @State private var team2Score: Int = 79
+//
+//    @State private var total: Double = 210.5
+//    @State private var totalScore: Double = 0
+//    @State private var totalDiff: Double = 17.5
     
     var body: some View
     {
 //        List(jsonData.nbaComplexModel){complex in
 //           // Text(complex.team2Name)
-//        }
-//
+        
+        let nbaData = jsonData.nbaComplexModel[0].data[0]
+        let ncaamData = jsonData.nbaComplexModel[0].data[1]
                 ScrollView{
 
                     VStack{
@@ -124,15 +125,15 @@ struct BasketballView: View {
                         .padding(.bottom)
                         if(showNBA){
                             //NBAButton(feed:feed)
-
-                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: $id0, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id1, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed,complexFrame: $complexFrame, current_possession: $current_possession, id: $id2, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id3, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id4, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id5, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id6, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
-//                            NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: $current_possession, id: $id7, team1Name: $team1Name, team2Name: $team2Name, gameClockMin : $gameClockMin, gameClockSec : $gameClockSec, gameQuarter : $gameQuarter, team1W : $team1W, team1L : $team1L, team2W : $team2W, team2L : $team2L, team1ML : $team1ML, team1Spread : $team1Spread, team2ML : $team2ML, team2Spread : $team2Spread, team1Score : $team1Score, team2Score : $team2Score, total : $total, totalScore : $totalScore, totalDiff : $totalDiff)
+                            Print(jsonData.nbaComplexModel[0].data[0])
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
+                            
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
+                            (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff))
                         }
                         else if(showNCAAM){
                             NCAAMButton(feed:feed)
@@ -166,3 +167,9 @@ struct BasketballView: View {
 }
 
 
+extension View {
+    func Print(_ vars: Any...) -> some View {
+        for v in vars { print(v) }
+        return EmptyView()
+    }
+}

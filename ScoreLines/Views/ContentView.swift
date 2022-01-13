@@ -8,7 +8,7 @@ extension View {
 }
 class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
-    @Published var feedIDs: [Int] = []
+    @Published var feedIDs: [UUID] = []
 //    @Published var randomNumbers = Set<Int>()
 //    @State var maxValue: Int = 2147483645
 //    @Published var id: Int = generateIDs(<#T##self: Feed##Feed#>)
@@ -31,11 +31,14 @@ struct ContentView : View {
     @State var showMenu = false
     @State private var selection = 2
     @ObservedObject var feed: Feed = Feed()
-
+    @ObservedObject var jsonData = readJSONData()
+   
 
      
     
     var body: some View {
+    
+        
         let drag = DragGesture()
           .onEnded {
               if $0.translation.width < -100 {
@@ -142,8 +145,15 @@ struct ContentView : View {
                 
   
             }
-                    
-                
         
+        .onAppear(perform: {
+            self.jsonData.loadData()
+            self.jsonData.dataLoaded = true
+            
+        })
+                
+        Print("jsonData.nbaComplexModel ContentView")
+        Print(jsonData.nbaComplexModel)
     }
+        
 }

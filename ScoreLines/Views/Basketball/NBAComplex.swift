@@ -8,6 +8,8 @@ struct NBAComplex: View
             //{vstack
                 //{hstack
                     //vstack
+    let id: UUID
+    
     var current_possession: String
     
      var team1Name: String
