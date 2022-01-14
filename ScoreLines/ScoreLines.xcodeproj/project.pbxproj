@@ -21,6 +21,8 @@
 		5C57E0F827557EAC00D3375D /* FREEH575.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0F727557EA900D3375D /* FREEH575.TTF */; };
 		5C8EB5A3278F306B00E4FC3E /* readJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A2278F306B00E4FC3E /* readJSONData.swift */; };
 		5C8EB5A5278F650F00E4FC3E /* NBAComplex.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A1278F2DEF00E4FC3E /* NBAComplex.json */; };
+		5C8EB5A8279143BE00E4FC3E /* sl_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A7279143BE00E4FC3E /* sl_logo.png */; };
+		5C8EB5AA2791455F00E4FC3E /* sl_logo_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A92791455F00E4FC3E /* sl_logo_large.png */; };
 		5C9009A42784FDEA008ACD7E /* SportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9009A32784FDEA008ACD7E /* SportView.swift */; };
 		5CA6ED272784ADFB0042A2F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA6ED262784A6E90042A2F7 /* Assets.xcassets */; };
 		5CA6ED292784B1220042A2F7 /* NFLComplex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6ED282784B1220042A2F7 /* NFLComplex.swift */; };
@@ -61,6 +63,8 @@
 		5C57E0F727557EA900D3375D /* FREEH575.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FREEH575.TTF; sourceTree = "<group>"; };
 		5C8EB5A1278F2DEF00E4FC3E /* NBAComplex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NBAComplex.json; sourceTree = "<group>"; };
 		5C8EB5A2278F306B00E4FC3E /* readJSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJSONData.swift; sourceTree = "<group>"; };
+		5C8EB5A7279143BE00E4FC3E /* sl_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sl_logo.png; sourceTree = "<group>"; };
+		5C8EB5A92791455F00E4FC3E /* sl_logo_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sl_logo_large.png; sourceTree = "<group>"; };
 		5C9009A32784FDEA008ACD7E /* SportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportView.swift; sourceTree = "<group>"; };
 		5CA6ED262784A6E90042A2F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CA6ED282784B1220042A2F7 /* NFLComplex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFLComplex.swift; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 			path = Datasets;
 			sourceTree = "<group>";
 		};
+		5C8EB5A62791439800E4FC3E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5C8EB5A7279143BE00E4FC3E /* sl_logo.png */,
+				5C8EB5A92791455F00E4FC3E /* sl_logo_large.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		5CB9B93B27852DB400468935 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +162,10 @@
 		5CDC56B627552BA40065B639 = {
 			isa = PBXGroup;
 			children = (
+				5CA6ED262784A6E90042A2F7 /* Assets.xcassets */,
+				5C8EB5A62791439800E4FC3E /* Images */,
 				5C8EB5A0278F2D4400E4FC3E /* Datasets */,
 				5CB9B93B27852DB400468935 /* Models */,
-				5CA6ED262784A6E90042A2F7 /* Assets.xcassets */,
 				5C38DDEC27557F4100FCE1E9 /* ScoreLines-Info.plist */,
 				5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */,
 				5C57E0F727557EA900D3375D /* FREEH575.TTF */,
@@ -280,8 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8EB5A5278F650F00E4FC3E /* NBAComplex.json in Resources */,
+				5C8EB5AA2791455F00E4FC3E /* sl_logo_large.png in Resources */,
 				5C57E0E82755405900D3375D /* Helpers in Resources */,
 				5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */,
+				5C8EB5A8279143BE00E4FC3E /* sl_logo.png in Resources */,
 				5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */,
 				5CA6ED272784ADFB0042A2F7 /* Assets.xcassets in Resources */,
 				5C57E0F827557EAC00D3375D /* FREEH575.TTF in Resources */,

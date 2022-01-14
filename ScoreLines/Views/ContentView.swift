@@ -69,6 +69,14 @@ struct ContentView : View {
                             .tag(1)
                      
                         FeedView(feed:feed)
+                            .background(
+                                Image("sl_logo_large")
+                                .resizable()
+                                //width = 0.5 and height = 0.375 seem to be really good
+                                //0.625 and 0.46875 are 25% larger than above
+                            .frame(width: UIScreen.main.bounds.width*0.625, height: UIScreen.main.bounds.height*0.46875),
+                                alignment: .center
+                                )
                             .tabItem {
                                 Image(systemName: "house.fill")
                                 Text("Feed")
@@ -142,7 +150,7 @@ struct ContentView : View {
                 
                 .navigationBarColor(backgroundColor: UIColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255)), tintColor: .white)
                 .navigationBarTitleDisplayMode(.inline)
-                
+                //grey: #303030
   
             }
         

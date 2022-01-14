@@ -67,12 +67,24 @@ struct FeedView: View {
                             }
                         }
                             else{
-                                Text("Add games to your feed by pressing and holding their scoreboard!")
+                                VStack{
+//                                Image("sl_logo_large")
+//                                    .resizable()
+//                                    //width = 0.5 and height = 0.375 seem to be really good
+//                                    //0.625 and 0.46875 are 25% larger than above
+//                                    .frame(width: UIScreen.main.bounds.width*0.625, height: UIScreen.main.bounds.height*0.46875)
+//                                    .padding(.top, UIScreen.main.bounds.width*0.185)
+                                Spacer()
+                                Text("Your feed is empty.\nAdd games to your feed by pressing down on their scoreboard!")
+                                    .font(.system(size:24))
+                                    .multilineTextAlignment(.center)
+                                    
+                                //Text("Add games to your feed by pressing and holding their scoreboard!")
+                                }
                             }
                     }
                         
                         .frame(width:UIScreen.main.bounds.width)
-                        
                         .padding()
                     }.onTapGesture(perform: {
                         print(feed.CurrentFeed.count)})
