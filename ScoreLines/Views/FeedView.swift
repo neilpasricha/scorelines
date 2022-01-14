@@ -30,185 +30,30 @@ struct FeedView: View {
     
     var body: some View
     {
-        //SPORT KEY:
-        //0 = NBA
-        //1 = NCAAM
-        //2 = NFL
-        //3 = CFB
-        //4 = Baseball
-        //5 = Soccer
-        /*
-         .simultaneousGesture(
-             LongPressGesture()
-                 .onEnded { _ in
-                     print("Loooong")
-                 }
-         )
-         .highPriorityGesture(TapGesture()
-                                 .onEnded { _ in
-                                     print("Tap")
-                                 })
-         
-         .onTapGesture(perform:{
-             NBASimple()
-         })
-         .onLongPressGesture(perform:{
-             print("Added to currentfeed")
-             FeedView.currentFeed.append(NBAComplex())
-         })
-         */
-         
-                    ScrollView{
-                        
-                        VStack{
-                            if(feed.CurrentFeed.count>0){
-                            ForEach(0..<feed.CurrentFeed.count, id: \.self){ index in
-                                feed.CurrentFeed[index]
-                            }
-                        }
-                            else{
-                                VStack{
-//                                Image("sl_logo_large")
-//                                    .resizable()
-//                                    //width = 0.5 and height = 0.375 seem to be really good
-//                                    //0.625 and 0.46875 are 25% larger than above
-//                                    .frame(width: UIScreen.main.bounds.width*0.625, height: UIScreen.main.bounds.height*0.46875)
-//                                    .padding(.top, UIScreen.main.bounds.width*0.185)
-                                Spacer()
-                                Text("Your feed is empty.\nAdd games to your feed by holding down on their scoreboard!")
-                                    .font(.system(size:24))
-                                    .multilineTextAlignment(.center)
-                                    
-                                //Text("Add games to your feed by pressing and holding their scoreboard!")
-                                }
-                            }
+        if(feed.CurrentFeed.count>0){
+            ScrollView{
+                VStack{
+                    ForEach(0..<feed.CurrentFeed.count, id: \.self){ index in
+                        feed.CurrentFeed[index]
                     }
-                        
-                        .frame(width:UIScreen.main.bounds.width)
-                        .padding()
-                    }.onTapGesture(perform: {
-                        print(feed.CurrentFeed.count)})
-                
-                
-//                if #available(iOS 15.0, *) {
-//                    ScrollView{
-//                        VStack{
-//
-//
-//                            NBAButton()
-//                            NFLButton()
-//                            NCAAMButton()
-//                            CFBButton()
-//                            MLBButton()
-//                        }
-//
-//                        .frame(width:UIScreen.main.bounds.width)
-//
-//                        .padding()
-//                    }
-            
-
-            
-        
-//        let self.category_global.currCategory = category //issue here
+                }
+            }
+            .frame(width:UIScreen.main.bounds.width)
+            .padding()
+            .onTapGesture(perform: {
+            print(feed.CurrentFeed.count)})
+        }
+        else{
+            VStack{
+            Text("Your feed is empty.\nAdd games to your feed by holding down on their scoreboard!")
+                .font(.system(size:24))
+                .multilineTextAlignment(.center)
+                .padding(.top)
+                Spacer()
+        }
     }
     
 }
-
-
-
-
-//struct ToggleButton: View {
-//    @State var isClicked: Bool = false
-//    @State var Sport: String
-//    @State var sportType: Any = EmptyView()
-//    //SPORT KEY:
-//    //0 = NBA
-//    //1 = NCAAM
-//    //2 = NFL
-//    //3 = CFB
-//    //4 = Baseball
-//    //5 = Soccer
-//    var body: some View {
-//        Button(action: {
-//            // Your auth logic
-//        }) {
-//            if(isClicked && Sport == "NBA"){
-//                NBAComplex()
-//            }else{
-//                NBASimple()
-//            }
-////        switch Sport {
-////            case "NBA":
-////                if(isClicked){
-////                    self.sportType = NBAComplex()
-////                    NBAComplex()
-////                }
-////                else{
-////                    NBASimple()
-////                }
-////            case "NCAAM":
-////                if(isClicked){
-////                    NCAAMComplex()
-////                }
-////                else{
-////                    NCAAMSimple()
-////                }
-////            case "NFL":
-////                if(isClicked){
-////                    NFLComplex()
-////                }
-////                else{
-////                    NFLSimple()
-////                }
-////            case "CFB":
-////                if(isClicked){
-////                    CFBComplex()
-////                }
-////                else{
-////                    CFBSimple()
-////                }
-////            case "MLB":
-////                if(isClicked){
-////                    MLBComplex()
-////                }
-////                else{
-////                    MLBSimple()
-////                }
-////            case "Soccer":
-////                if(isClicked){
-////                    SoccerComplex()
-////                }
-////                else{
-////                    SoccerSimple()
-////                }
-////            default:
-////                Text("Invalid Sport")
-////            }
-//        }
-//        .simultaneousGesture(LongPressGesture().onEnded { _ in
-//            if(isClicked){
-//                
-//                
-//                FeedView.currentFeed.append(NBAComplex())
-//            }
-//            else{
-//                
-//                FeedView.currentFeed.append(NBASimple())
-//            }
-//            print("Added to current Feed!")
-//        })
-//        .simultaneousGesture(TapGesture().onEnded {
-//            self.isClicked.toggle()
-//        })
-////        .simultaneousGesture(LongPressGesture().onEnded { _ in
-////            print("Secret Long Press Action!")
-////        })
-////        .simultaneousGesture(TapGesture().onEnded {
-////            print("Boring regular tap")
-////        })
-//    }
-
 
 struct TapAndLongPressModifier: ViewModifier {
   @State private var isLongPressing = false
@@ -232,4 +77,5 @@ struct TapAndLongPressModifier: ViewModifier {
           }
       )
   }
+}
 }
