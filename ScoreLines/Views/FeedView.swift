@@ -48,7 +48,7 @@ struct FeedView: View {
             Text("Your feed is empty.\nAdd games to your feed by holding down on their scoreboard!")
                 .font(.system(size:24))
                 .multilineTextAlignment(.center)
-                .padding(.top)
+                .padding()
                 Spacer()
         }
     }
