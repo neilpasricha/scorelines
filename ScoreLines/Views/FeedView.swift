@@ -75,7 +75,7 @@ struct FeedView: View {
 //                                    .frame(width: UIScreen.main.bounds.width*0.625, height: UIScreen.main.bounds.height*0.46875)
 //                                    .padding(.top, UIScreen.main.bounds.width*0.185)
                                 Spacer()
-                                Text("Your feed is empty.\nAdd games to your feed by pressing down on their scoreboard!")
+                                Text("Your feed is empty.\nAdd games to your feed by holding down on their scoreboard!")
                                     .font(.system(size:24))
                                     .multilineTextAlignment(.center)
                                     
