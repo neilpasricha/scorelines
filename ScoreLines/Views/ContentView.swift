@@ -8,22 +8,21 @@ extension View {
 }
 class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
-    @Published var feedIDs: [UUID] = []
+    @Published var feedIDs: [Int] = []
+    @Published var excludeList: [Int] = []
+    @Published var gameIDs: [Int] = Array(0...1000)
 //    @Published var randomNumbers = Set<Int>()
 //    @State var maxValue: Int = 2147483645
 //    @Published var id: Int = generateIDs(<#T##self: Feed##Feed#>)
 //    
-//    func generateIDs() -> Int{
-//        var tmp_id = Int.random(in: 1..<2147483645)
-//        while(randomNumbers.contains(tmp_id)){
-//            tmp_id = Int.random(in: 1..<2147483645)
-//        }
-//        if(!randomNumbers.contains(tmp_id)){
-//            id = tmp_id
-//            randomNumbers.insert(tmp_id)
-//        }
-//        return id
-//    }
+    func generateIDs() -> Int{
+        var random = Int.random(in: 0...1000)
+        while(feedIDs.contains(random)){
+            random = Int.random(in: 0...1000)
+        }
+        
+        return random
+    }
     
 }
 struct ContentView : View {
@@ -165,3 +164,5 @@ struct ContentView : View {
     }
         
 }
+
+
