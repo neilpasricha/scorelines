@@ -42,6 +42,7 @@
 		5CB9B93D27852DD200468935 /* NBAComplexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B93C27852DD200468935 /* NBAComplexModel.swift */; };
 		5CBF2F062755C6920066CF2C /* BasketballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF2F052755C6920066CF2C /* BasketballView.swift */; };
 		5CBF2F092755C6D40066CF2C /* NBASimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF2F082755C6D40066CF2C /* NBASimple.swift */; };
+		5CE0530E2797B07600679937 /* NBAButtonC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0530D2797B07600679937 /* NBAButtonC.swift */; };
 		5CE46CB527570CEC005779A5 /* NCAAMSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE46CB427570CEC005779A5 /* NCAAMSimple.swift */; };
 		5CE46CB727570D15005779A5 /* NCAAMComplex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE46CB627570D15005779A5 /* NCAAMComplex.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		5CBF2F052755C6920066CF2C /* BasketballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballView.swift; sourceTree = "<group>"; };
 		5CBF2F082755C6D40066CF2C /* NBASimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBASimple.swift; sourceTree = "<group>"; };
 		5CDC56BF27552BA40065B639 /* ScoreLines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreLines.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE0530D2797B07600679937 /* NBAButtonC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAButtonC.swift; sourceTree = "<group>"; };
 		5CE46CB427570CEC005779A5 /* NCAAMSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCAAMSimple.swift; sourceTree = "<group>"; };
 		5CE46CB627570D15005779A5 /* NCAAMComplex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCAAMComplex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +194,7 @@
 				5CA6ED3E2784E48A0042A2F7 /* NCAAMButton.swift */,
 				5CE46CB427570CEC005779A5 /* NCAAMSimple.swift */,
 				5CE46CB627570D15005779A5 /* NCAAMComplex.swift */,
+				5CE0530D2797B07600679937 /* NBAButtonC.swift */,
 			);
 			path = Basketball;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				5CBF2F092755C6D40066CF2C /* NBASimple.swift in Sources */,
 				5CA6ED332784CCF00042A2F7 /* MLBComplex.swift in Sources */,
 				5CA6ED392784CF9C0042A2F7 /* SoccerView.swift in Sources */,
+				5CE0530E2797B07600679937 /* NBAButtonC.swift in Sources */,
 				5CA6ED372784CD280042A2F7 /* SoccerSimple.swift in Sources */,
 				5CA6ED352784CD1E0042A2F7 /* SoccerComplex.swift in Sources */,
 				5CA6ED2D2784B87C0042A2F7 /* CFBComplex.swift in Sources */,

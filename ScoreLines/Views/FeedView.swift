@@ -43,6 +43,9 @@ struct FeedView: View {
             ScrollView{
                 VStack{
                     ForEach(0..<feed.CurrentFeed.count, id: \.self){ index in
+                        Print("----------------FEEDVIEW INDEX-------------------")
+                        Print(index)
+                        Print("----------------END CURRENT FEEDVIEW INDEX-------------------")
                         feed.CurrentFeed[index]
                     }
                 }

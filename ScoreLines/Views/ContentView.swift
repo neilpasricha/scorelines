@@ -9,6 +9,7 @@ extension View {
 class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
     @Published var feedIDs: [Int] = []
+    @Published var frameIDs: [UUID] = []
     @Published var excludeList: [Int] = []
     @Published var gameIDs: [Int] = Array(0...1000)
 //    @Published var randomNumbers = Set<Int>()
