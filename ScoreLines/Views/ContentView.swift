@@ -9,8 +9,7 @@ extension View {
 class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
     @Published var feedIDs: [Int] = []
-    @Published var excludeList: [Int] = []
-    @Published var gameIDs: [Int] = Array(0...1000)
+    @Published var nbaComplexModel = [Result]()
 //    @Published var randomNumbers = Set<Int>()
 //    @State var maxValue: Int = 2147483645
 //    @Published var id: Int = generateIDs(<#T##self: Feed##Feed#>)
@@ -30,14 +29,41 @@ struct ContentView : View {
     @State var showMenu = false
     @State private var selection = 2
     @ObservedObject var feed: Feed = Feed()
-    @ObservedObject var jsonData = readJSONData()
-   
+//    @ObservedObject var jsonData = readJSONData()
+    
+    func loadData()  {
+        guard let path = Bundle.main.path(forResource: "NBAComplex", ofType: "json")
+            else {
+                print("Json file not found")
+                return
+            }
+        let url = URL(fileURLWithPath: path)
+        print(url)
+        var result: Result?
+        
+        do{
+            let data = try Data(contentsOf: url)
+            result = try JSONDecoder().decode(Result.self, from: data)
+            if let result = result{
+                //print(result)
+                feed.nbaComplexModel.append(result)
+                print(feed.nbaComplexModel[0].data[0].homeTeam)
+            }
+            else{
+                print("Failed to parse")
+            }
+            return
+            
+        }
+        catch{
+            print("Error \(error)")
+        }
 
+    }
      
     
     var body: some View {
     
-        
         let drag = DragGesture()
           .onEnded {
               if $0.translation.width < -100 {
@@ -49,7 +75,6 @@ struct ContentView : View {
         
         NavigationView(){
            
-            
                 ZStack{
                     TabView(selection: $selection) {
                         FootballView(feed:feed)
@@ -154,13 +179,13 @@ struct ContentView : View {
             }
         
         .onAppear(perform: {
-            self.jsonData.loadData()
-            self.jsonData.dataLoaded = true
+//            self.jsonData.loadData()
+//            self.jsonData.dataLoaded = true
             
         })
                 
         Print("jsonData.nbaComplexModel ContentView")
-        Print(jsonData.nbaComplexModel)
+        //Print(jsonData.nbaComplexModel)
     }
         
 }

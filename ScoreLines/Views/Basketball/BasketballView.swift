@@ -13,7 +13,6 @@ struct BasketballView: View {
     @State private var showNCAAM: Bool = false
     @State private var complexFrame: Bool = false
     @StateObject var feed: Feed
-    @ObservedObject var jsonData = readJSONData()
     
     //Below is to detect light/dark mode.
     //"if currentMode == .dark"
@@ -59,8 +58,8 @@ struct BasketballView: View {
 //        List(jsonData.nbaComplexModel){complex in
 //           // Text(complex.team2Name)
         
-        let nbaData = jsonData.nbaComplexModel[0].data[0]
-        let ncaamData = jsonData.nbaComplexModel[0].data[1]
+        let nbaData = feed.nbaComplexModel[0].data[0]
+        let ncaamData = feed.nbaComplexModel[0].data[1]
                 ScrollView{
 
                     VStack{
@@ -96,7 +95,7 @@ struct BasketballView: View {
                             Button(action: {
                                 showNCAAM = true
                                 showNBA = false
-                                print(jsonData.nbaComplexModel)
+                                print(feed.nbaComplexModel)
                             }) {
                                 if(showNCAAM){
                                 Text("NCAAM")

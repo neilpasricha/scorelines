@@ -13,8 +13,10 @@ class readJSONData: ObservableObject  {
     var data_loaded = false
         
     init(){
-        if(!self.dataLoaded){
+        if(!dataLoaded){
             loadData()
+            print("loaded")
+            dataLoaded = true
         }
         else{
             print("Data already loaded baby")
@@ -38,7 +40,7 @@ class readJSONData: ObservableObject  {
                 //print(result)
                 self.nbaComplexModel.append(result)
                 print(self.nbaComplexModel[0].data[0].homeTeam)
-                self.dataLoaded = true
+                dataLoaded = true
             }
             else{
                 print("Failed to parse")
