@@ -39,6 +39,9 @@ class readJSONData: ObservableObject  {
                 self.nbaComplexModel.append(result)
                 print(self.nbaComplexModel[0].data[0].homeTeam)
                 self.dataLoaded = true
+                print("---------------------------------------------")
+                print("LOADED JSON")
+                print("---------------------------------------------")
             }
             else{
                 print("Failed to parse")

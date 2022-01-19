@@ -30,7 +30,7 @@ struct ContentView : View {
     @State var showMenu = false
     @State private var selection = 2
     @ObservedObject var feed: Feed = Feed()
-    @ObservedObject var jsonData = readJSONData()
+    @ObservedObject var jsonData: readJSONData = readJSONData()
    
 
      
@@ -60,7 +60,7 @@ struct ContentView : View {
                             }
                             .tag(0)
                      
-                        BasketballView(feed:feed)
+                        BasketballView(feed:feed, jsonData: jsonData)
                             .tabItem {
                                 Image(systemName: "atom")
                                 Text("Basketball")
@@ -160,7 +160,7 @@ struct ContentView : View {
         })
                 
         Print("jsonData.nbaComplexModel ContentView")
-        Print(jsonData.nbaComplexModel)
+        //Print(jsonData.nbaComplexModel)
     }
         
 }

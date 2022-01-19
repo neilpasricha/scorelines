@@ -1,11 +1,18 @@
 import SwiftUI
+
+protocol addToFeed: AnyObject {
+    func addToFeed(_ nbaButton: NBAButton)
+}
+
 struct NBAButton: View {
-    @ObservedObject var feed: Feed
+    @StateObject var feed: Feed
+    
+    @StateObject var jsonData: readJSONData
     
     @State var isClicked: Bool = false
+    
     @Binding var complexFrame: Bool
     var current_possession: String
-    @ObservedObject var jsonData = readJSONData()
     
     @State var id: Int
     @State private var feedID: Int =  0
@@ -56,6 +63,10 @@ struct NBAButton: View {
 //        @State private var total: Double = 210.5
 //        @State private var totalScore: Double = 0
 //        @State private var totalDiff: Double = 17.5
+    func addToFeed(_ nbaButton: NBAButton) {
+        self.feed.CurrentFeed.append(AnyView(nbaButton))
+        // now do your reload stuff.
+    }
     var body: some View {
         Print("jsonData.nbaComplexModel NBAButton")
        // Print(jsonData.nbaComplexModel)
@@ -79,12 +90,12 @@ struct NBAButton: View {
                 print(self.id)
                 if(!self.feed.feedIDs.contains(self.id)){
                     if(isClicked){
-                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: self.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)))
+                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, jsonData: jsonData, complexFrame: $complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: self.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)))
                         //Append the ID to the feed array for easy look up
                         self.feed.feedIDs.append(self.id)
                     }
                     else{
-                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: self.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)))
+                        self.feed.CurrentFeed.append(AnyView(NBAButton(feed:feed, jsonData: jsonData, complexFrame: $complexFrame, current_possession: jsonData.nbaComplexModel[0].data[0].current_possession, id: self.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff)))
                         
                         self.feed.feedIDs.append(self.id)
                         }
