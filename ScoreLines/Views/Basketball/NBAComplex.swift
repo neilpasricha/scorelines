@@ -9,34 +9,56 @@ struct NBAComplex: View
                 //{hstack
                     //vstack
     let id: UUID
-    
+
     var current_possession: String
-    
+
      var team1Name: String
      var team2Name: String
-    
+
      var team1Score: Int
      var team2Score: Int
-    
+
      var gameClockMin: Int
      var gameClockSec: Int
      var gameQuarter: Int
-    
+
      var team1W: Int
      var team1L: Int
      var team2W: Int
      var team2L: Int
-    
+
      var team1ML: Int
      var team1Spread: Int
      var team2ML: Int
      var team2Spread: Int
-    
 
-    
+
+
      var total: Double
      var totalScore: Double
      var totalDiff: Double
+
+     var team1Q1: Int
+     var team1Q2: Int
+     var team1Q3: Int
+     var team1Q4: Int
+     var team2Q1: Int
+     var team2Q2: Int
+     var team2Q3: Int
+     var team2Q4: Int
+    //Both teams total projection formula:
+    //(Total_Current_Score_Both_Teams/Total_Seconds_played)*Total_Seconds_In_Entire_Game
+    //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
+    
+    //    @State private var team1Q1: Int = 35
+    //    @State private var team1Q2: Int = 28
+    //    @State private var team1Q3: Int = 42
+    //    @State private var team1Q4: Int = 9
+    //
+    //    @State private var team2Q1: Int = 27
+    //    @State private var team2Q2: Int = 19
+    //    @State private var team2Q3: Int = 29
+    //    @State private var team2Q4: Int = 4
     /*
      team1Name: "Warriors", team2Name: "Bulls", gameClockMin : 4, gameClockSec : 48, gameQuarter : 4, team1W : 10, team1L : 2, team2W : 8, team2L : 4, team1ML : -1200, team1Spread : -20, team2ML : 2500, team2Spread : 12, team1Score : 114, team2Score : 79, total : 210.5, totalScore : 0, totalDiff : 17.5
      */
@@ -67,15 +89,15 @@ struct NBAComplex: View
     //(Total_Current_Score_Both_Teams/Total_Seconds_played)*Total_Seconds_In_Entire_Game
     //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
     
-    @State private var team1Q1: Int = 35
-    @State private var team1Q2: Int = 28
-    @State private var team1Q3: Int = 42
-    @State private var team1Q4: Int = 9
-    
-    @State private var team2Q1: Int = 27
-    @State private var team2Q2: Int = 19
-    @State private var team2Q3: Int = 29
-    @State private var team2Q4: Int = 4
+//    @State private var team1Q1: Int = 35
+//    @State private var team1Q2: Int = 28
+//    @State private var team1Q3: Int = 42
+//    @State private var team1Q4: Int = 9
+//
+//    @State private var team2Q1: Int = 27
+//    @State private var team2Q2: Int = 19
+//    @State private var team2Q3: Int = 29
+//    @State private var team2Q4: Int = 4
     
     var body: some View
     {
