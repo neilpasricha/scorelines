@@ -4,4 +4,365 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Assets.xcassets"
+      name = "Assets.xcassets">
+      <Group
+         location = "group:baseball.imageset"
+         name = "baseball.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:baseball.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:sl_logo_large.imageset"
+         name = "sl_logo_large.imageset">
+         <FileRef
+            location = "group:logo_branding_large.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:basketball.imageset"
+         name = "basketball.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:basketball.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:football.imageset"
+         name = "football.imageset">
+         <FileRef
+            location = "group:american-football-pngrepo-com.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:AppIcon.appiconset"
+         name = "AppIcon.appiconset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:AccentColor.colorset"
+         name = "AccentColor.colorset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Contents.json">
+      </FileRef>
+      <Group
+         location = "group:sl_logo_large_old.imageset"
+         name = "sl_logo_large_old.imageset">
+         <FileRef
+            location = "group:sl_logo_large.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:soccer.imageset"
+         name = "soccer.imageset">
+         <FileRef
+            location = "group:soccer.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:football_old.imageset"
+         name = "football_old.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:football.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:sl_logo.imageset"
+         name = "sl_logo.imageset">
+         <FileRef
+            location = "group:sl_logo.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:Datasets"
+      name = "Datasets">
+      <FileRef
+         location = "group:NBAComplex.json">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:fdjogidoi">
+   </FileRef>
+   <Group
+      location = "group:Fonts"
+      name = "Fonts">
+      <FileRef
+         location = "group:AVENTURESCRIPTINE-REGULAR.OTF">
+      </FileRef>
+      <FileRef
+         location = "group:SCRIPT_MT_BOLD.TTF">
+      </FileRef>
+      <FileRef
+         location = "group:BACK TO BLACK DEMO.TTF">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:FREEH575.TTF">
+   </FileRef>
+   <Group
+      location = "group:Helpers"
+      name = "Helpers">
+      <FileRef
+         location = "group:Constants.swift">
+      </FileRef>
+      <FileRef
+         location = "group:UserInfo.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Location.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Date.swift">
+      </FileRef>
+      <FileRef
+         location = "group:idGenerator.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Login.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Helpers.swift">
+      </FileRef>
+      <Group
+         location = "group:Preview Content"
+         name = "Preview Content">
+         <Group
+            location = "group:Preview Assets.xcassets"
+            name = "Preview Assets.xcassets">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:Category.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Device.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Helpers_"
+      name = "Helpers_">
+      <FileRef
+         location = "group:Constants.swift">
+      </FileRef>
+      <FileRef
+         location = "group:UserInfo.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Location.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Date.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Login.swift">
+      </FileRef>
+      <FileRef
+         location = "group:File">
+      </FileRef>
+      <FileRef
+         location = "group:Helpers.swift">
+      </FileRef>
+      <Group
+         location = "group:Preview Content"
+         name = "Preview Content">
+         <Group
+            location = "group:Preview Assets.xcassets"
+            name = "Preview Assets.xcassets">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:Category.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Device.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Images"
+      name = "Images">
+      <FileRef
+         location = "group:sl_logo.png">
+      </FileRef>
+      <FileRef
+         location = "group:sl_logo_large.png">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Models"
+      name = "Models">
+      <FileRef
+         location = "group:NBAComplexModel.swift">
+      </FileRef>
+      <FileRef
+         location = "group:readJSONData.swift">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:NBAComplex.json">
+   </FileRef>
+   <FileRef
+      location = "group:Podfile">
+   </FileRef>
+   <FileRef
+      location = "group:Podfile.lock">
+   </FileRef>
+   <FileRef
+      location = "group:ScoreLines-Info.plist">
+   </FileRef>
+   <FileRef
+      location = "group:ScoreLines.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ScoreLines.xcworkspace">
+   </FileRef>
+   <FileRef
+      location = "group:ScoreLinesApp.swift">
+   </FileRef>
+   <Group
+      location = "group:Views"
+      name = "Views">
+      <FileRef
+         location = "group:SportView.swift">
+      </FileRef>
+      <Group
+         location = "group:Football"
+         name = "Football">
+         <FileRef
+            location = "group:NFLButton.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NFLComplex.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NFLSimple.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CFBButton.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CFBSimple.swift">
+         </FileRef>
+         <FileRef
+            location = "group:FootballView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CFBComplex.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Baseball"
+         name = "Baseball">
+         <FileRef
+            location = "group:BaseballView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MLBButton.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MLBComplex.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MLBSimple.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:NavigationBarColor.swift">
+      </FileRef>
+      <Group
+         location = "group:Soccer"
+         name = "Soccer">
+         <FileRef
+            location = "group:SoccerView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SoccerSimple.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SoccerComplex.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SoccerButton.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Basketball"
+         name = "Basketball">
+         <FileRef
+            location = "group:NCAAMButton.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NBASimple.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NCAAMSimple.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NBAComplex.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NBAButton.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NCAAMComplex.swift">
+         </FileRef>
+         <FileRef
+            location = "group:BasketballView.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:DetailedFrames"
+         name = "DetailedFrames">
+      </Group>
+      <Group
+         location = "group:SimpleFrames"
+         name = "SimpleFrames">
+      </Group>
+      <FileRef
+         location = "group:FeedView.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ContentView.swift">
+      </FileRef>
+      <FileRef
+         location = "group:MenuView.swift">
+      </FileRef>
+   </Group>
 </Workspace>
