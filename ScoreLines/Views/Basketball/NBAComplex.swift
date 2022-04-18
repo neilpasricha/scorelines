@@ -8,7 +8,7 @@ struct NBAComplex: View
             //{vstack
                 //{hstack
                     //vstack
-    let id: UUID
+    let id: Int
     
     var current_possession: String
     

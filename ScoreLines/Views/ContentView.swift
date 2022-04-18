@@ -8,22 +8,22 @@ extension View {
 }
 class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
-    @Published var feedIDs: [UUID] = []
+    @Published var feedIDs: [Int] = []
+    @Published var frameIDs: [UUID] = []
+    @Published var excludeList: [Int] = []
+    @Published var gameIDs: [Int] = Array(0...1000)
 //    @Published var randomNumbers = Set<Int>()
 //    @State var maxValue: Int = 2147483645
 //    @Published var id: Int = generateIDs(<#T##self: Feed##Feed#>)
 //    
-//    func generateIDs() -> Int{
-//        var tmp_id = Int.random(in: 1..<2147483645)
-//        while(randomNumbers.contains(tmp_id)){
-//            tmp_id = Int.random(in: 1..<2147483645)
-//        }
-//        if(!randomNumbers.contains(tmp_id)){
-//            id = tmp_id
-//            randomNumbers.insert(tmp_id)
-//        }
-//        return id
-//    }
+    func generateIDs() -> Int{
+        var random = Int.random(in: 0...1000)
+        while(feedIDs.contains(random)){
+            random = Int.random(in: 0...1000)
+        }
+        
+        return random
+    }
     
 }
 struct ContentView : View {
@@ -31,7 +31,7 @@ struct ContentView : View {
     @State var showMenu = false
     @State private var selection = 2
     @ObservedObject var feed: Feed = Feed()
-    @ObservedObject var jsonData = readJSONData()
+    @ObservedObject var jsonData: readJSONData = readJSONData()
    
 
      
@@ -61,7 +61,7 @@ struct ContentView : View {
                             }
                             .tag(0)
                      
-                        BasketballView(feed:feed)
+                        BasketballView(feed:feed, jsonData: jsonData)
                             .tabItem {
                                 Image(systemName: "atom")
                                 Text("Basketball")
@@ -161,7 +161,9 @@ struct ContentView : View {
         })
                 
         Print("jsonData.nbaComplexModel ContentView")
-        Print(jsonData.nbaComplexModel)
+        //Print(jsonData.nbaComplexModel)
     }
         
 }
+
+

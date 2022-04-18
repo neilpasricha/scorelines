@@ -27,7 +27,7 @@ struct NBASimple: View
       */
     @Environment(\.colorScheme) var currentMode
     
-    let id: UUID
+    let id: Int
     
     var current_possession: String
     
