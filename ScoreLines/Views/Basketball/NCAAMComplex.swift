@@ -8,42 +8,80 @@ struct NCAAMComplex: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var id: Int = 1
-    @State private var team1Name: String = "Gonzaga"
-    @State private var team2Name: String = "Purdue"
-    
-    @State private var gameClockMin: Int = 2
-    @State private var gameClockSec: Int = 24
-    @State private var gameQuarter: Int = 4
-    
-    @State private var team1W: Int = 9
-    @State private var team1L: Int = 1
-    @State private var team2W: Int = 7
-    @State private var team2L: Int = 3
-    
-    @State private var team1ML: Int = -750
-    @State private var team1Spread: Int = -17
-    @State private var team2ML: Int = 1200
-    @State private var team2Spread: Int = 20
-    
-    @State private var team1Score: Int = 57
-    @State private var team2Score: Int = 39
-    
-    @State private var total: Double = 105.5
-    @State private var totalScore: Double = 0
-    @State private var totalDiff: Double = 8.5
-    //Both teams total projection formula:
-    //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
-    
-    @State private var team1Q1: Int = 35
-    @State private var team1Q2: Int = 28
-    @State private var team1Q3: Int = 42
-    @State private var team1Q4: Int = 9
-    
-    @State private var team2Q1: Int = 27
-    @State private var team2Q2: Int = 19
-    @State private var team2Q3: Int = 29
-    @State private var team2Q4: Int = 4
+    let id: UUID
+
+    var current_possession: String
+
+     var team1Name: String
+     var team2Name: String
+
+     var team1Score: Int
+     var team2Score: Int
+
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
+
+     var team1W: Int
+     var team1L: Int
+     var team2W: Int
+     var team2L: Int
+
+     var team1ML: Int
+     var team1Spread: Int
+     var team2ML: Int
+     var team2Spread: Int
+
+
+
+     var total: Double
+     var totalScore: Double
+     var totalDiff: Double
+
+     var team1Q1: Int
+     var team1Q2: Int
+     var team1Q3: Int
+     var team1Q4: Int
+     var team2Q1: Int
+     var team2Q2: Int
+     var team2Q3: Int
+     var team2Q4: Int
+//    @State private var id: Int = 1
+//    @State private var team1Name: String = "Gonzaga"
+//    @State private var team2Name: String = "Purdue"
+//
+//    @State private var gameClockMin: Int = 2
+//    @State private var gameClockSec: Int = 24
+//    @State private var gameQuarter: Int = 4
+//
+//    @State private var team1W: Int = 9
+//    @State private var team1L: Int = 1
+//    @State private var team2W: Int = 7
+//    @State private var team2L: Int = 3
+//
+//    @State private var team1ML: Int = -750
+//    @State private var team1Spread: Int = -17
+//    @State private var team2ML: Int = 1200
+//    @State private var team2Spread: Int = 20
+//
+//    @State private var team1Score: Int = 57
+//    @State private var team2Score: Int = 39
+//
+//    @State private var total: Double = 105.5
+//    @State private var totalScore: Double = 0
+//    @State private var totalDiff: Double = 8.5
+//    //Both teams total projection formula:
+//    //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
+//
+//    @State private var team1Q1: Int = 35
+//    @State private var team1Q2: Int = 28
+//    @State private var team1Q3: Int = 42
+//    @State private var team1Q4: Int = 9
+//
+//    @State private var team2Q1: Int = 27
+//    @State private var team2Q2: Int = 19
+//    @State private var team2Q3: Int = 29
+//    @State private var team2Q4: Int = 4
     
     var body: some View
     

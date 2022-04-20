@@ -161,7 +161,7 @@ struct ContentView : View {
         })
                 
         Print("jsonData.nbaComplexModel ContentView")
-        Print(jsonData.nbaComplexModel)
+        Print(jsonData.basketballData)
     }
         
 }

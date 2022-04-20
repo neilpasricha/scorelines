@@ -8,7 +8,7 @@
 import Foundation
 
 class readJSONData: ObservableObject  {
-    @Published var nbaComplexModel = [Result]()
+    @Published var basketballData = [Result]()
     @Published var dataLoaded = false
     var data_loaded = false
         
@@ -22,7 +22,7 @@ class readJSONData: ObservableObject  {
     }
     
     func loadData()  {
-        guard let path = Bundle.main.path(forResource: "NBAComplex", ofType: "json")
+        guard let path = Bundle.main.path(forResource: "basketballData", ofType: "json")
             else {
                 print("Json file not found")
                 return
@@ -36,8 +36,8 @@ class readJSONData: ObservableObject  {
             result = try JSONDecoder().decode(Result.self, from: data)
             if let result = result{
                 //print(result)
-                self.nbaComplexModel.append(result)
-                print(self.nbaComplexModel[0].data[0].homeTeam)
+                self.basketballData.append(result)
+                print(self.basketballData[0].data[0].homeTeam)
                 self.dataLoaded = true
             }
             else{

@@ -20,7 +20,7 @@
 		5C57E0F62755606400D3375D /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57E0F52755606400D3375D /* NavigationBarColor.swift */; };
 		5C57E0F827557EAC00D3375D /* FREEH575.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C57E0F727557EA900D3375D /* FREEH575.TTF */; };
 		5C8EB5A3278F306B00E4FC3E /* readJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A2278F306B00E4FC3E /* readJSONData.swift */; };
-		5C8EB5A5278F650F00E4FC3E /* NBAComplex.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A1278F2DEF00E4FC3E /* NBAComplex.json */; };
+		5C8EB5A5278F650F00E4FC3E /* basketballData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A1278F2DEF00E4FC3E /* basketballData.json */; };
 		5C8EB5A8279143BE00E4FC3E /* sl_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A7279143BE00E4FC3E /* sl_logo.png */; };
 		5C8EB5AA2791455F00E4FC3E /* sl_logo_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EB5A92791455F00E4FC3E /* sl_logo_large.png */; };
 		5C9009A42784FDEA008ACD7E /* SportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9009A32784FDEA008ACD7E /* SportView.swift */; };
@@ -40,7 +40,7 @@
 		5CA6ED412784E4CB0042A2F7 /* NFLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6ED402784E4CB0042A2F7 /* NFLButton.swift */; };
 		5CA6ED432784E5220042A2F7 /* CFBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6ED422784E5220042A2F7 /* CFBButton.swift */; };
 		5CA6ED452784E54C0042A2F7 /* SoccerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6ED442784E54C0042A2F7 /* SoccerButton.swift */; };
-		5CB9B93D27852DD200468935 /* NBAComplexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B93C27852DD200468935 /* NBAComplexModel.swift */; };
+		5CB9B93D27852DD200468935 /* basketballData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B93C27852DD200468935 /* basketballData.swift */; };
 		5CBF2F062755C6920066CF2C /* BasketballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF2F052755C6920066CF2C /* BasketballView.swift */; };
 		5CBF2F092755C6D40066CF2C /* NBASimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF2F082755C6D40066CF2C /* NBASimple.swift */; };
 		5CE46CB527570CEC005779A5 /* NCAAMSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE46CB427570CEC005779A5 /* NCAAMSimple.swift */; };
@@ -61,7 +61,7 @@
 		5C57E0F327555BF600D3375D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5C57E0F52755606400D3375D /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
 		5C57E0F727557EA900D3375D /* FREEH575.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FREEH575.TTF; sourceTree = "<group>"; };
-		5C8EB5A1278F2DEF00E4FC3E /* NBAComplex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NBAComplex.json; sourceTree = "<group>"; };
+		5C8EB5A1278F2DEF00E4FC3E /* basketballData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = basketballData.json; sourceTree = "<group>"; };
 		5C8EB5A2278F306B00E4FC3E /* readJSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJSONData.swift; sourceTree = "<group>"; };
 		5C8EB5A7279143BE00E4FC3E /* sl_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sl_logo.png; sourceTree = "<group>"; };
 		5C8EB5A92791455F00E4FC3E /* sl_logo_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sl_logo_large.png; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		5CA6ED402784E4CB0042A2F7 /* NFLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFLButton.swift; sourceTree = "<group>"; };
 		5CA6ED422784E5220042A2F7 /* CFBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFBButton.swift; sourceTree = "<group>"; };
 		5CA6ED442784E54C0042A2F7 /* SoccerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerButton.swift; sourceTree = "<group>"; };
-		5CB9B93C27852DD200468935 /* NBAComplexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAComplexModel.swift; sourceTree = "<group>"; };
+		5CB9B93C27852DD200468935 /* basketballData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basketballData.swift; sourceTree = "<group>"; };
 		5CBF2F052755C6920066CF2C /* BasketballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballView.swift; sourceTree = "<group>"; };
 		5CBF2F082755C6D40066CF2C /* NBASimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBASimple.swift; sourceTree = "<group>"; };
 		5CDC56BF27552BA40065B639 /* ScoreLines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreLines.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +122,7 @@
 		5C8EB5A0278F2D4400E4FC3E /* Datasets */ = {
 			isa = PBXGroup;
 			children = (
-				5C8EB5A1278F2DEF00E4FC3E /* NBAComplex.json */,
+				5C8EB5A1278F2DEF00E4FC3E /* basketballData.json */,
 			);
 			path = Datasets;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 		5CB9B93B27852DB400468935 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5CB9B93C27852DD200468935 /* NBAComplexModel.swift */,
+				5CB9B93C27852DD200468935 /* basketballData.swift */,
 				5C8EB5A2278F306B00E4FC3E /* readJSONData.swift */,
 			);
 			path = Models;
@@ -293,7 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C8EB5A5278F650F00E4FC3E /* NBAComplex.json in Resources */,
+				5C8EB5A5278F650F00E4FC3E /* basketballData.json in Resources */,
 				5C8EB5AA2791455F00E4FC3E /* sl_logo_large.png in Resources */,
 				5C57E0E82755405900D3375D /* Helpers in Resources */,
 				5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */,
@@ -330,7 +330,7 @@
 				5C57E0EC275541BB00D3375D /* ContentView.swift in Sources */,
 				5C57E0EF2755427400D3375D /* NBAComplex.swift in Sources */,
 				5C57E0EA2755414F00D3375D /* ScoreLinesApp.swift in Sources */,
-				5CB9B93D27852DD200468935 /* NBAComplexModel.swift in Sources */,
+				5CB9B93D27852DD200468935 /* basketballData.swift in Sources */,
 				5CA6ED432784E5220042A2F7 /* CFBButton.swift in Sources */,
 				5CA6ED412784E4CB0042A2F7 /* NFLButton.swift in Sources */,
 				5CBF2F092755C6D40066CF2C /* NBASimple.swift in Sources */,

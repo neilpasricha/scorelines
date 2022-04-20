@@ -9,21 +9,41 @@ struct NCAAMSimple: View
                 //{hstack
                     //vstack
     @Environment(\.colorScheme) var currentMode
-    @State private var id: Int = 1
-    @State private var team1Name: String = "Gonzaga"
-    @State private var team2Name: String = "Purdue"
-    @State private var current_possession: String = "Purdue"
+    let id: UUID
     
-    @State private var team1Score: Int = 57
-    @State private var team2Score: Int = 39
+    var current_possession: String
     
-    @State private var quarter: Int = 4
-    @State private var gameClock: String = "2:24"
+     var team1Name: String
+     var team2Name: String
+
     
-    @State private var team1W: Int = 9
-    @State private var team1L: Int = 1
-    @State private var team2W: Int = 7
-    @State private var team2L: Int = 3
+     var team1Score: Int
+     var team2Score: Int
+    
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
+    
+    
+    var team1W: Int
+    var team1L: Int
+    var team2W: Int
+    var team2L: Int
+//    @State private var id: Int = 1
+//    @State private var team1Name: String = "Gonzaga"
+//    @State private var team2Name: String = "Purdue"
+//    @State private var current_possession: String = "Purdue"
+//
+//    @State private var team1Score: Int = 57
+//    @State private var team2Score: Int = 39
+//
+//    @State private var quarter: Int = 4
+//    @State private var gameClock: String = "2:24"
+//
+//    @State private var team1W: Int = 9
+//    @State private var team1L: Int = 1
+//    @State private var team2W: Int = 7
+//    @State private var team2L: Int = 3
     
     var body: some View
     {
@@ -122,12 +142,12 @@ struct NCAAMSimple: View
             Spacer()
             VStack{
                 Spacer()
-            Text("Q" + String(quarter))
+            Text("Q" + String(gameQuarter))
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
                   
             
                 Spacer()
-                Text(gameClock)
+                Text(String(gameClockMin))
                     .font(.system(size: UIScreen.main.bounds.height*0.025))
                       
                 Spacer()
