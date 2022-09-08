@@ -14,12 +14,14 @@ struct FootballView: View {
     @State private var complexFrame: Bool = false
     @ObservedObject var feed: Feed
     @ObservedObject var footballData = readFootballData()
+
+    
     var body: some View
     {
-        
-//
-//        let nflData = jsonData.footballData[0].data[0]
-//        let cfbData = jsonData.footballData[0].data[1]
+//        let nbaData = basketballData.basketballData[0].data[0]
+//        let ncaamData = basketballData.basketballData[0].data[1]
+        let nflData = footballData.footballData[0].data[0]
+        let cfbData = footballData.footballData[0].data[1]
                 ScrollView{
                     
                     VStack{
@@ -68,7 +70,7 @@ struct FootballView: View {
                         if(showNFL){
                             ScrollView{
                             NFLButton(feed:feed)
-                                (NFLButton(feed:feed, complexFrame: $complexFrame, current_possession: footballData.current_possession, id: footballData.id, team1Name: footballData.homeTeam, team2Name: footballData.awayTeam, gameClockMin : footballData.gameClockMin, gameClockSec : footballData.gameClockSec, gameQuarter : footballData.gameQuarter, team1W : footballData.team1W, team1L : footballData.team1L, team2W : footballData.team2W, team2L : footballData.team2L, team1ML : footballData.team1ML, team1Spread : footballData.team1Spread, team2ML : footballData.team2ML, team2Spread : footballData.team2Spread, team1Score : footballData.team1Score, team2Score : footballData.team2Score, total : footballData.total, totalScore : footballData.totalScore, totalDiff : footballData.totalDiff,team1Q1: footballData.team1Q1,team1Q2: footballData.team1Q2,team1Q3: footballData.team1Q3,team1Q4: footballData.team1Q4,team2Q1: footballData.team2Q1,team2Q2: footballData.team2Q2,team2Q3: footballData.team2Q3,team2Q4: footballData.team2Q4))
+                                (NFLButton(feed:feed, complexFrame: $complexFrame, current_possession: nflData.current_possession, id: nflData.id, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L, team1ML : nflData.team1ML, team1Spread : nflData.team1Spread, team2ML : nflData.team2ML, team2Spread : nflData.team2Spread, team1Score : nflData.team1Score, team2Score : nflData.team2Score, total : nflData.total, totalScore : nflData.totalScore, totalDiff : nflData.totalDiff,team1Q1: nflData.team1Q1,team1Q2: nflData.team1Q2,team1Q3: nflData.team1Q3,team1Q4: nflData.team1Q4,team2Q1: nflData.team2Q1,team2Q2: nflData.team2Q2,team2Q3: nflData.team2Q3,team2Q4: nflData.team2Q4))
                             }
                         }
                         else if(showCFB){
