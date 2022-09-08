@@ -1,5 +1,5 @@
 //
-//  readJSONData.swift
+//  readBasketballData.swift
 //  ScoreLines
 //
 //  Created by Neil Pasricha on 1/12/22.
@@ -7,22 +7,22 @@
 
 import Foundation
 
-class readJSONData: ObservableObject  {
-    @Published var basketballData = [Result]()
+class readFootballData: ObservableObject  {
+    @Published var foobtallData = [Result]()
+    
     @Published var dataLoaded = false
     var data_loaded = false
         
     init(){
         if(!self.dataLoaded){
-            loadData()
+            loadFootballData()
         }
         else{
             print("Data already loaded baby")
         }
     }
-    
-    func loadData()  {
-        guard let path = Bundle.main.path(forResource: "basketballData", ofType: "json")
+    func loadFootballData()  {
+        guard let path = Bundle.main.path(forResource: "footballData", ofType: "json")
             else {
                 print("Json file not found")
                 return
@@ -36,8 +36,8 @@ class readJSONData: ObservableObject  {
             result = try JSONDecoder().decode(Result.self, from: data)
             if let result = result{
                 //print(result)
-                self.basketballData.append(result)
-                print(self.basketballData[0].data[0].homeTeam)
+                self.foobtallData.append(result)
+                print(self.foobtallData[0].data[0].homeTeam)
                 self.dataLoaded = true
             }
             else{
@@ -51,5 +51,4 @@ class readJSONData: ObservableObject  {
         }
 
     }
-     
 }

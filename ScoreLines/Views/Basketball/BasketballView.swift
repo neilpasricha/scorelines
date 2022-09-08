@@ -13,7 +13,7 @@ struct BasketballView: View {
     @State private var showNCAAM: Bool = false
     @State private var complexFrame: Bool = false
     @StateObject var feed: Feed
-    @ObservedObject var jsonData = readJSONData()
+    @ObservedObject var basketballData = readBasketballData()
     
     //Below is to detect light/dark mode.
     //"if currentMode == .dark"
@@ -56,11 +56,12 @@ struct BasketballView: View {
     
     var body: some View
     {
-//        List(jsonData.nbaComplexModel){complex in
+//        List(readBasketballData.nbaComplexModel){complex in
 //           // Text(complex.team2Name)
         
-        let nbaData = jsonData.basketballData[0].data[0]
-        let ncaamData = jsonData.basketballData[0].data[1]
+        let nbaData = basketballData.basketballData[0].data[0]
+        let ncaamData = basketballData.basketballData[0].data[1]
+
                 ScrollView{
 
                     VStack{
@@ -96,7 +97,7 @@ struct BasketballView: View {
                             Button(action: {
                                 showNCAAM = true
                                 showNBA = false
-                                print(jsonData.basketballData)
+                                //print(readBasketballData.basketballData[0])
                             }) {
                                 if(showNCAAM){
                                 Text("NCAAM")
@@ -125,7 +126,7 @@ struct BasketballView: View {
                         .padding(.bottom)
                         if(showNBA){
                             //NBAButton(feed:feed)
-                            Print(jsonData.basketballData[0].data[0])
+                            //Print(readBasketballData.basketballData[0].data[0])
                             (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff,team1Q1: nbaData.team1Q1,team1Q2: nbaData.team1Q2,team1Q3: nbaData.team1Q3,team1Q4: nbaData.team1Q4,team2Q1: nbaData.team2Q1,team2Q2: nbaData.team2Q2,team2Q3: nbaData.team2Q3,team2Q4: nbaData.team2Q4))
                             (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff,team1Q1: nbaData.team1Q1,team1Q2: nbaData.team1Q2,team1Q3: nbaData.team1Q3,team1Q4: nbaData.team1Q4,team2Q1: nbaData.team2Q1,team2Q2: nbaData.team2Q2,team2Q3: nbaData.team2Q3,team2Q4: nbaData.team2Q4))
                             (NBAButton(feed:feed, complexFrame: $complexFrame, current_possession: nbaData.current_possession, id: nbaData.id, team1Name: nbaData.homeTeam, team2Name: nbaData.awayTeam, gameClockMin : nbaData.gameClockMin, gameClockSec : nbaData.gameClockSec, gameQuarter : nbaData.gameQuarter, team1W : nbaData.team1W, team1L : nbaData.team1L, team2W : nbaData.team2W, team2L : nbaData.team2L, team1ML : nbaData.team1ML, team1Spread : nbaData.team1Spread, team2ML : nbaData.team2ML, team2Spread : nbaData.team2Spread, team1Score : nbaData.team1Score, team2Score : nbaData.team2Score, total : nbaData.total, totalScore : nbaData.totalScore, totalDiff : nbaData.totalDiff,team1Q1: nbaData.team1Q1,team1Q2: nbaData.team1Q2,team1Q3: nbaData.team1Q3,team1Q4: nbaData.team1Q4,team2Q1: nbaData.team2Q1,team2Q2: nbaData.team2Q2,team2Q3: nbaData.team2Q3,team2Q4: nbaData.team2Q4))

@@ -6,11 +6,11 @@
 //
 import Foundation
 
-struct NBAResult: Codable{
-    let data: [NBAComplexModel]
+struct NFLResult: Codable{
+    let data: [NFLComplexModel]
 }
 
-struct NBAComplexModel: Codable, Identifiable{
+struct NFLComplexModel: Codable, Identifiable{
     enum CodingKeys: CodingKey {
         case type
         case homeTeam

@@ -10,9 +10,9 @@ struct NCAAMButton: View {
     @State var isClicked: Bool = false
     @State private var addToFeedAlert = false
     @ObservedObject var feed: Feed
-    @ObservedObject var jsonData = readJSONData()
+    @ObservedObject var basketballData = readBasketballData()
     var body: some View {
-        let ncaamData = jsonData.basketballData[0].data[1]
+        let ncaamData = basketballData.basketballData[0].data[1]
         Button(action: {
         }) {
             if(isClicked){

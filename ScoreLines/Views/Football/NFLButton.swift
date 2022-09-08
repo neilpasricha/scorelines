@@ -14,7 +14,7 @@ struct NFLButton: View {
         Button(action: {
         }) {
             if(isClicked){
-                NFLComplex()
+//                NFLComplex()
             }else{
                 NFLSimple()
             }
