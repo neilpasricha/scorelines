@@ -69,7 +69,6 @@ struct FootballView: View {
                         .padding(.bottom)
                         if(showNFL){
                             ScrollView{
-                            NFLButton(feed:feed)
                                 (NFLButton(feed:feed, complexFrame: $complexFrame, current_possession: nflData.current_possession, id: nflData.id, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L, team1ML : nflData.team1ML, team1Spread : nflData.team1Spread, team2ML : nflData.team2ML, team2Spread : nflData.team2Spread, team1Score : nflData.team1Score, team2Score : nflData.team2Score, total : nflData.total, totalScore : nflData.totalScore, totalDiff : nflData.totalDiff,team1Q1: nflData.team1Q1,team1Q2: nflData.team1Q2,team1Q3: nflData.team1Q3,team1Q4: nflData.team1Q4,team2Q1: nflData.team2Q1,team2Q2: nflData.team2Q2,team2Q3: nflData.team2Q3,team2Q4: nflData.team2Q4))
                             }
                         }
