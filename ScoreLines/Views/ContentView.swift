@@ -31,7 +31,9 @@ struct ContentView : View {
     @State var showMenu = false
     @State private var selection = 2
     @ObservedObject var feed: Feed = Feed()
-    @ObservedObject var jsonData = readJSONData()
+    @ObservedObject var basketballData = readBasketballData()
+    @ObservedObject var footballData = readFootballData()
+    
    
 
      
@@ -155,13 +157,15 @@ struct ContentView : View {
             }
         
         .onAppear(perform: {
-            self.jsonData.loadData()
-            self.jsonData.dataLoaded = true
+            self.basketballData.loadBasketballData()
+            self.footballData.loadFootballData()
+            self.basketballData.dataLoaded = true
             
         })
                 
-        Print("jsonData.nbaComplexModel ContentView")
-        Print(jsonData.nbaComplexModel)
+        Print("readBasketballData.nbaComplexModel ContentView")
+        Print(basketballData.basketballData)
+        Print("readBasketballData.footballModel ContentView")
     }
         
 }

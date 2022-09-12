@@ -8,22 +8,45 @@ struct NCAAMSimple: View
             //{vstack
                 //{hstack
                     //vstack
+     /*
+      @Binding var id: Int = 1
+      @Binding var team1Name: String = "Warriors"
+      @Binding var team2Name: String = "Bulls"
+      @Binding var current_possession: String = "Warriors"
+      
+      @Binding var team1Score: Int = 114
+      @Binding var team2Score: Int = 79
+      
+      @Binding var quarter: Int = 4
+      @Binding var gameClock: String = "4:48"
+      
+      @Binding var team1W: Int = 10
+      @Binding var team1L: Int = 2
+      @Binding var team2W: Int = 8
+      @Binding var team2L: Int = 4
+      */
     @Environment(\.colorScheme) var currentMode
-    @State private var id: Int = 1
-    @State private var team1Name: String = "Gonzaga"
-    @State private var team2Name: String = "Purdue"
-    @State private var current_possession: String = "Purdue"
     
-    @State private var team1Score: Int = 57
-    @State private var team2Score: Int = 39
+    let id: UUID
     
-    @State private var quarter: Int = 4
-    @State private var gameClock: String = "2:24"
+    var current_possession: String
     
-    @State private var team1W: Int = 9
-    @State private var team1L: Int = 1
-    @State private var team2W: Int = 7
-    @State private var team2L: Int = 3
+     var team1Name: String
+     var team2Name: String
+
+    
+     var team1Score: Int
+     var team2Score: Int
+    
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
+    
+    
+    var team1W: Int
+    var team1L: Int
+    var team2W: Int
+    var team2L: Int
     
     var body: some View
     {
@@ -41,27 +64,27 @@ struct NCAAMSimple: View
                         
                         Text(team1Name)
                             .lineLimit(1)
-                              
+                                
                             .padding(.leading, -UIScreen.main.bounds.width*0.04)
                     }
                     else{
                     Text(team1Name)
                         .lineLimit(1)
-                          
+                            
                     }
                     
                     Text(" (")
                         .lineLimit(1)
-                          
+                            
                     Text(String(team1W))
                         .lineLimit(1)
-                          
+                            
                     Text("-")
                         .lineLimit(1)
-                          
+                            
                     Text(String(team1L))
                         .lineLimit(1)
-                          
+                            
                     Text(")")
                         .lineLimit(1)
                           
@@ -72,7 +95,6 @@ struct NCAAMSimple: View
                     if(current_possession==team2Name){
                         Image("basketball")
                             .resizable()
-                            .foregroundColor(Color.orange)
                             .frame(width: UIScreen.main.bounds.width*0.04, height: UIScreen.main.bounds.height*0.019)
                             .rotationEffect(.degrees(-90))
                             .offset(x:-UIScreen.main.bounds.width*0.08)
@@ -122,21 +144,33 @@ struct NCAAMSimple: View
             Spacer()
             VStack{
                 Spacer()
-            Text("Q" + String(quarter))
+            Text("Q" + String(gameQuarter))
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
-                  
             
                 Spacer()
-                Text(gameClock)
-                    .font(.system(size: UIScreen.main.bounds.height*0.025))
-                      
+                HStack(spacing:0){
+                Text(String(gameClockMin))
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                Text(":")
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                Text(String(gameClockSec))
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                }
                 Spacer()
             }
+            
             Spacer()
         }
         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height*0.1, alignment: .center)
         .foregroundColor(currentMode  == .dark ? Color.white : Color.black)
         .background(currentMode  == .dark ? Color(red: 87 / 255, green: 87 / 255, blue: 87 / 255) : Color.white)
+        //.background(Color.gray)
         .overlay(
             Rectangle()
                 .stroke(Color.black, lineWidth: 2)

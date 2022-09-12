@@ -8,45 +8,98 @@ struct NCAAMComplex: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var id: Int = 1
-    @State private var team1Name: String = "Gonzaga"
-    @State private var team2Name: String = "Purdue"
-    
-    @State private var gameClockMin: Int = 2
-    @State private var gameClockSec: Int = 24
-    @State private var gameQuarter: Int = 4
-    
-    @State private var team1W: Int = 9
-    @State private var team1L: Int = 1
-    @State private var team2W: Int = 7
-    @State private var team2L: Int = 3
-    
-    @State private var team1ML: Int = -750
-    @State private var team1Spread: Int = -17
-    @State private var team2ML: Int = 1200
-    @State private var team2Spread: Int = 20
-    
-    @State private var team1Score: Int = 57
-    @State private var team2Score: Int = 39
-    
-    @State private var total: Double = 105.5
-    @State private var totalScore: Double = 0
-    @State private var totalDiff: Double = 8.5
+    let id: UUID
+
+    var current_possession: String
+
+     var team1Name: String
+     var team2Name: String
+
+     var team1Score: Int
+     var team2Score: Int
+
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
+
+     var team1W: Int
+     var team1L: Int
+     var team2W: Int
+     var team2L: Int
+
+     var team1ML: Int
+     var team1Spread: Int
+     var team2ML: Int
+     var team2Spread: Int
+
+
+
+     var total: Double
+     var totalScore: Double
+     var totalDiff: Double
+
+     var team1Q1: Int
+     var team1Q2: Int
+     var team1Q3: Int
+     var team1Q4: Int
+     var team2Q1: Int
+     var team2Q2: Int
+     var team2Q3: Int
+     var team2Q4: Int
     //Both teams total projection formula:
+    //(Total_Current_Score_Both_Teams/Total_Seconds_played)*Total_Seconds_In_Entire_Game
     //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
     
-    @State private var team1Q1: Int = 35
-    @State private var team1Q2: Int = 28
-    @State private var team1Q3: Int = 42
-    @State private var team1Q4: Int = 9
+    //    @State private var team1Q1: Int = 35
+    //    @State private var team1Q2: Int = 28
+    //    @State private var team1Q3: Int = 42
+    //    @State private var team1Q4: Int = 9
+    //
+    //    @State private var team2Q1: Int = 27
+    //    @State private var team2Q2: Int = 19
+    //    @State private var team2Q3: Int = 29
+    //    @State private var team2Q4: Int = 4
+    /*
+     team1Name: "Warriors", team2Name: "Bulls", gameClockMin : 4, gameClockSec : 48, gameQuarter : 4, team1W : 10, team1L : 2, team2W : 8, team2L : 4, team1ML : -1200, team1Spread : -20, team2ML : 2500, team2Spread : 12, team1Score : 114, team2Score : 79, total : 210.5, totalScore : 0, totalDiff : 17.5
+     */
+//    @State private var team1Name: String = "Warriors"
+//    @State private var team2Name: String = "Bulls"
+//
+//    @State private var gameClockMin: Int = 4
+//    @State private var gameClockSec: Int = 48
+//    @State private var gameQuarter: Int = 4
+//
+//    @State private var team1W: Int = 10
+//    @State private var team1L: Int = 2
+//    @State private var team2W: Int = 8
+//    @State private var team2L: Int = 4
+//
+//    @State private var team1ML: Int = -1200
+//    @State private var team1Spread: Int = -20
+//    @State private var team2ML: Int = 2500
+//    @State private var team2Spread: Int = 12
+//
+//    @State private var team1Score: Int = 114
+//    @State private var team2Score: Int = 79
+//
+//    @State private var total: Double = 210.5
+//    @State private var totalScore: Double = 0
+//    @State private var totalDiff: Double = 17.5
+    //Both teams total projection formula:
+    //(Total_Current_Score_Both_Teams/Total_Seconds_played)*Total_Seconds_In_Entire_Game
+    //(String(format:" [%.2f" ,Float(Float((Float(team1Score+team2Score))/2736))*2880)+"]")
     
-    @State private var team2Q1: Int = 27
-    @State private var team2Q2: Int = 19
-    @State private var team2Q3: Int = 29
-    @State private var team2Q4: Int = 4
+//    @State private var team1Q1: Int = 35
+//    @State private var team1Q2: Int = 28
+//    @State private var team1Q3: Int = 42
+//    @State private var team1Q4: Int = 9
+//
+//    @State private var team2Q1: Int = 27
+//    @State private var team2Q2: Int = 19
+//    @State private var team2Q3: Int = 29
+//    @State private var team2Q4: Int = 4
     
     var body: some View
-    
     {
             HStack{
                 Spacer()
@@ -78,30 +131,32 @@ struct NCAAMComplex: View
                         .underline()
                         .font(.system(size: UIScreen.main.bounds.height*0.05))
                         .lineLimit(1)
-                          .foregroundColor(Color.black)
+                        .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                         .padding()
                     Spacer()
                     VStack(spacing:0){
                         
                     Text("ML (" + String(team1ML) + ") ")
                             .bold()
-                        .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
+                       // .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     Text(" Spread (" + String(team1Spread) + ")")
                             .bold()
-                        .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
+                        //.foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
+                    .foregroundColor(.black)
                 }
                 .padding(.bottom, UIScreen.main.bounds.height*0.01)
                 .padding(.top, UIScreen.main.bounds.height*0.013)
                 VStack{//Time left and O/\U
                     Spacer()
                    HStack(spacing:0){//HStack 3 for gameclock seconds and min
+
                    Text("[Q")
                        
                        .bold()
@@ -250,25 +305,25 @@ struct NCAAMComplex: View
                         .underline()
                         .font(.system(size: UIScreen.main.bounds.height*0.05))
                         .lineLimit(1)
-                          .foregroundColor(Color.black)
+                        .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                         .padding()
                     Spacer()
                     VStack(spacing:0){
                         
                     Text("ML (+" + String(team2ML) + ") ")
                             .bold()
-                        .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
+                        //.foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     Text(" Spread (+" + String(team2Spread) + ")")
                             .bold()
-                        .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
+                       // .foregroundColor(Color(red: 123 / 255, green: 198 / 255, blue: 235 / 255))
                         .font(.system(size: UIScreen.main.bounds.height*0.0125))
                         .lineLimit(1)
                         .multilineTextAlignment(.center)
                     }
-                    
+                    .foregroundColor(.black)
                     .padding(.bottom, UIScreen.main.bounds.height*0.01)
                 }
                     Spacer()

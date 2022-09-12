@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct Result: Codable{
+struct NBAResult: Codable{
     let data: [NBAComplexModel]
 }
 
