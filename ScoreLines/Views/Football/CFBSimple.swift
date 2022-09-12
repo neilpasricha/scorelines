@@ -1,5 +1,5 @@
 //
-//  NFLSimple.swift
+//  CFBSimple.swift
 //  ScoreLines
 //
 //  Created by Neil Pasricha on 1/4/22.
@@ -55,6 +55,7 @@ struct CFBSimple: View
                         .lineLimit(1)
                           .foregroundColor(Color.black)
                     }
+                    
                     Text(" (")
                         .lineLimit(1)
                           .foregroundColor(Color.black)

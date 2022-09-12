@@ -58,9 +58,9 @@ struct NFLButton: View {
         Button(action: {
         }) {
             if(isClicked){
-//                NFLComplex()
+                NFLComplex(id: self.id, current_possession: nflData.current_possession, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, team1Score : nflData.team1Score, team2Score : nflData.team2Score, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L, team1ML : nflData.team1ML, team1Spread : nflData.team1Spread, team2ML : nflData.team2ML, team2Spread : nflData.team2Spread, total : nflData.total, totalScore : nflData.totalScore, totalDiff : nflData.totalDiff, team1Q1: nflData.team1Q1,team1Q2: nflData.team1Q2,team1Q3: nflData.team1Q3,team1Q4: nflData.team1Q4,team2Q1: nflData.team2Q1,team2Q2: nflData.team2Q2,team2Q3: nflData.team2Q3,team2Q4: nflData.team2Q4)
             }else{
-                NFLSimple()
+                NFLSimple(id: self.id, current_possession: nflData.current_possession, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, team1Score : nflData.team1Score, team2Score : nflData.team2Score, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L)
             }
         }
         .contextMenu{
