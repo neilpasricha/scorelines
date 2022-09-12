@@ -15,21 +15,26 @@ struct CFBSimple: View
             //{vstack
                 //{hstack
                     //vstack
-    @State private var id: Int = 3
-    @State private var team1Name: String = "Penn St"
-    @State private var team2Name: String = "Michigan"
-    @State private var current_possession: String = "Penn St"
+    let id: UUID
     
-    @State private var team1Score: Int = 24
-    @State private var team2Score: Int = 13
+    var current_possession: String
     
-    @State private var quarter: Int = 3
-    @State private var gameClock: String = "6:58"
+     var team1Name: String
+     var team2Name: String
+
     
-    @State private var team1W: Int = 7
-    @State private var team1L: Int = 0
-    @State private var team2W: Int = 6
-    @State private var team2L: Int = 1
+     var team1Score: Int
+     var team2Score: Int
+    
+     var gameClockMin: Int
+     var gameClockSec: Int
+     var gameQuarter: Int
+    
+    
+    var team1W: Int
+    var team1L: Int
+    var team2W: Int
+    var team2L: Int
     
     var body: some View
     {
@@ -127,14 +132,26 @@ struct CFBSimple: View
             Spacer()
             VStack{
                 Spacer()
-            Text("Q" + String(quarter))
+            Text("Q" + String(gameQuarter))
+                
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
-                  .foregroundColor(Color.black)
+                .foregroundColor(Color.black)
             
                 Spacer()
-                Text(gameClock)
-                    .font(.system(size: UIScreen.main.bounds.height*0.025))
+                HStack(spacing:0){
+                Text(String(gameClockMin))
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    .lineLimit(1)
                       .foregroundColor(Color.black)
+                Text(":")
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                Text(String(gameClockSec))
+                        .font(.system(size: UIScreen.main.bounds.height*0.025))
+                    .lineLimit(1)
+                      .foregroundColor(Color.black)
+                }
                 Spacer()
             }
             Spacer()

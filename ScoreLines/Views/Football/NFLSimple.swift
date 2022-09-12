@@ -134,7 +134,7 @@ struct NFLSimple: View
                 Spacer()
             Text("Q" + String(gameQuarter))
                 .font(.system(size: UIScreen.main.bounds.height*0.025))
-            
+                .foregroundColor(Color.black)
                 Spacer()
                 HStack(spacing:0){
                 Text(String(gameClockMin))
