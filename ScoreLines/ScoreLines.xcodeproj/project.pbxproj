@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C21D94728D1017F008F8128 /* sportsDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21D94628D1017F008F8128 /* sportsDataAPI.swift */; };
 		5C38DDEE2755810A00FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */; };
 		5C38DDF02755813700FCE1E9 /* SCRIPT_MT_BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */; };
 		5C38DDF22755932900FCE1E9 /* BaseballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38DDF12755932900FCE1E9 /* BaseballView.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C21D94628D1017F008F8128 /* sportsDataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sportsDataAPI.swift; sourceTree = "<group>"; };
 		5C38DDEC27557F4100FCE1E9 /* ScoreLines-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ScoreLines-Info.plist"; sourceTree = "<group>"; };
 		5C38DDED2755810900FCE1E9 /* AVENTURESCRIPTINE-REGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AVENTURESCRIPTINE-REGULAR.OTF"; path = "Fonts/AVENTURESCRIPTINE-REGULAR.OTF"; sourceTree = "<group>"; };
 		5C38DDEF2755813600FCE1E9 /* SCRIPT_MT_BOLD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SCRIPT_MT_BOLD.TTF; path = Fonts/SCRIPT_MT_BOLD.TTF; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				5C8EB5A2278F306B00E4FC3E /* readBasketballData.swift */,
 				5C5B22DB283379AF00306067 /* readFootballData.swift */,
 				5C75A6B628CAB3160086019C /* footballData.swift */,
+				5C21D94628D1017F008F8128 /* sportsDataAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				5CE46CB727570D15005779A5 /* NCAAMComplex.swift in Sources */,
 				5C38DDF22755932900FCE1E9 /* BaseballView.swift in Sources */,
 				5CA6ED3F2784E48A0042A2F7 /* NCAAMButton.swift in Sources */,
+				5C21D94728D1017F008F8128 /* sportsDataAPI.swift in Sources */,
 				5CBF2F062755C6920066CF2C /* BasketballView.swift in Sources */,
 				5C8EB5A3278F306B00E4FC3E /* readBasketballData.swift in Sources */,
 				5CA6ED292784B1220042A2F7 /* NFLComplex.swift in Sources */,

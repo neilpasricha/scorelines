@@ -33,7 +33,7 @@ struct ContentView : View {
     @ObservedObject var feed: Feed = Feed()
     @ObservedObject var basketballData = readBasketballData()
     @ObservedObject var footballData = readFootballData()
-    
+    @ObservedObject var sportsData = readSportsDataAPI()
    
 
      
@@ -159,7 +159,11 @@ struct ContentView : View {
         .onAppear(perform: {
             self.basketballData.loadBasketballData()
             self.footballData.loadFootballData()
+            self.sportsData.loadSportsData()
+            
             self.basketballData.dataLoaded = true
+            self.footballData.dataLoaded = true
+            self.sportsData.dataLoaded = true
             
         })
                 
