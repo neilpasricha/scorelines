@@ -33,6 +33,7 @@ struct ContentView : View {
     @ObservedObject var feed: Feed = Feed()
     @ObservedObject var basketballData = readBasketballData()
     @ObservedObject var footballData = readFootballData()
+    @ObservedObject var sportsData = readSportsData()
     
    
 
