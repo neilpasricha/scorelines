@@ -5,10 +5,7 @@ struct NCAAMButton: View {
     @State var isClicked: Bool = false
     @Binding var complexFrame: Bool
     var current_possession: String
-    @ObservedObject var basketballData = readBasketballData()
     let id: UUID
-
-    @State private var feedID: Int =  0
 
     var team1Name: String
     var team2Name: String
@@ -67,45 +64,29 @@ struct NCAAMButton: View {
 //        @State private var totalDiff: Double = 17.5
     var body: some View {
         Print("readBasketballData.NCAAMComplexModel NCAAMButton")
-       // Print(readBasketballData.NCAAMComplexModel)
-        let nbaData = basketballData.basketballData[0].data[0]
-        let ncaamData = basketballData.basketballData[0].data[1]
-        let id = basketballData.basketballData[0].data[1].id
         Button(action: {
             print("$id:")
-            print(ncaamData.id)
+            print(self.id)
         }) {
 
             if(isClicked){
-                NCAAMComplex(id: self.id, current_possession: ncaamData.current_possession, team1Name: ncaamData.homeTeam, team2Name: ncaamData.awayTeam, team1Score : ncaamData.team1Score, team2Score : ncaamData.team2Score, gameClockMin : ncaamData.gameClockMin, gameClockSec : ncaamData.gameClockSec, gameQuarter : ncaamData.gameQuarter, team1W : ncaamData.team1W, team1L : ncaamData.team1L, team2W : ncaamData.team2W, team2L : ncaamData.team2L, team1ML : ncaamData.team1ML, team1Spread : ncaamData.team1Spread, team2ML : ncaamData.team2ML, team2Spread : ncaamData.team2Spread, total : ncaamData.total, totalScore : ncaamData.totalScore, totalDiff : ncaamData.totalDiff, team1Q1: ncaamData.team1Q1,team1Q2: ncaamData.team1Q2,team1Q3: ncaamData.team1Q3,team1Q4: ncaamData.team1Q4,team2Q1: ncaamData.team2Q1,team2Q2: ncaamData.team2Q2,team2Q3: ncaamData.team2Q3,team2Q4: ncaamData.team2Q4)
+                NCAAMComplex(id: self.id, current_possession: current_possession, team1Name: team1Name, team2Name: team2Name, team1Score : team1Score, team2Score : team2Score, gameClockMin : gameClockMin, gameClockSec : gameClockSec, gameQuarter : gameQuarter, team1W : team1W, team1L : team1L, team2W : team2W, team2L : team2L, team1ML : team1ML, team1Spread : team1Spread, team2ML : team2ML, team2Spread : team2Spread, total : total, totalScore : totalScore, totalDiff : totalDiff, team1Q1: team1Q1,team1Q2: team1Q2,team1Q3: team1Q3,team1Q4: team1Q4,team2Q1: team2Q1,team2Q2: team2Q2,team2Q3: team2Q3,team2Q4: team2Q4)
             }else{
-                NCAAMSimple(id: self.id, current_possession: ncaamData.current_possession, team1Name: ncaamData.homeTeam, team2Name: ncaamData.awayTeam, team1Score : ncaamData.team1Score, team2Score : ncaamData.team2Score, gameClockMin : ncaamData.gameClockMin, gameClockSec : ncaamData.gameClockSec, gameQuarter : ncaamData.gameQuarter, team1W : ncaamData.team1W, team1L : ncaamData.team1L, team2W : ncaamData.team2W, team2L : ncaamData.team2L)
+                NCAAMSimple(id: self.id, current_possession: current_possession, team1Name: team1Name, team2Name: team2Name, team1Score : team1Score, team2Score : team2Score, gameClockMin : gameClockMin, gameClockSec : gameClockSec, gameQuarter : gameQuarter, team1W : team1W, team1L : team1L, team2W : team2W, team2L : team2L)
             }
         }
         .contextMenu{
             Button {
-                self.feedID = self.feed.CurrentFeed.count
                 print("self.id")
                 print(self.id)
+                let feedButton = NCAAMButton(feed:feed, complexFrame: $complexFrame, current_possession: current_possession, id: self.id, team1Name: team1Name, team2Name: team2Name, gameClockMin : gameClockMin, gameClockSec : gameClockSec, gameQuarter : gameQuarter, team1W : team1W, team1L : team1L, team2W : team2W, team2L : team2L, team1ML : team1ML, team1Spread : team1Spread, team2ML : team2ML, team2Spread : team2Spread, team1Score : team1Score, team2Score : team2Score, total : total, totalScore : totalScore, totalDiff : totalDiff,team1Q1: team1Q1,team1Q2: team1Q2,team1Q3: team1Q3,team1Q4: team1Q4,team2Q1: team2Q1,team2Q2: team2Q2,team2Q3: team2Q3,team2Q4: team2Q4)
                 if(!self.feed.feedIDs.contains(self.id)){
-                    if(isClicked){
-                        self.feed.CurrentFeed.append(AnyView(NCAAMButton(feed:feed, complexFrame: $complexFrame, current_possession: ncaamData.current_possession, id: self.id, team1Name: ncaamData.homeTeam, team2Name: ncaamData.awayTeam, gameClockMin : ncaamData.gameClockMin, gameClockSec : ncaamData.gameClockSec, gameQuarter : ncaamData.gameQuarter, team1W : ncaamData.team1W, team1L : ncaamData.team1L, team2W : ncaamData.team2W, team2L : ncaamData.team2L, team1ML : ncaamData.team1ML, team1Spread : ncaamData.team1Spread, team2ML : ncaamData.team2ML, team2Spread : ncaamData.team2Spread, team1Score : ncaamData.team1Score, team2Score : ncaamData.team2Score, total : ncaamData.total, totalScore : ncaamData.totalScore, totalDiff : ncaamData.totalDiff,team1Q1: ncaamData.team1Q1,team1Q2: ncaamData.team1Q2,team1Q3: ncaamData.team1Q3,team1Q4: ncaamData.team1Q4,team2Q1: ncaamData.team2Q1,team2Q2: ncaamData.team2Q2,team2Q3: ncaamData.team2Q3,team2Q4: ncaamData.team2Q4)))
-                        //Append the ID to the feed array for easy look up
-                        self.feed.feedIDs.append(self.id)
-                    }
-                    else{
-                        self.feed.CurrentFeed.append(AnyView(NCAAMButton(feed:feed, complexFrame: $complexFrame, current_possession: ncaamData.current_possession, id: self.id,team1Name: ncaamData.homeTeam, team2Name: ncaamData.awayTeam, gameClockMin : ncaamData.gameClockMin, gameClockSec : ncaamData.gameClockSec, gameQuarter : ncaamData.gameQuarter, team1W : ncaamData.team1W, team1L : ncaamData.team1L, team2W : ncaamData.team2W, team2L : ncaamData.team2L, team1ML : ncaamData.team1ML, team1Spread : ncaamData.team1Spread, team2ML : ncaamData.team2ML, team2Spread : ncaamData.team2Spread, team1Score : ncaamData.team1Score, team2Score : ncaamData.team2Score, total : ncaamData.total, totalScore : ncaamData.totalScore, totalDiff : ncaamData.totalDiff,team1Q1: ncaamData.team1Q1,team1Q2: ncaamData.team1Q2,team1Q3: ncaamData.team1Q3,team1Q4: ncaamData.team1Q4,team2Q1: ncaamData.team2Q1,team2Q2: ncaamData.team2Q2,team2Q3: ncaamData.team2Q3,team2Q4: ncaamData.team2Q4)))
-                        
-                        self.feed.feedIDs.append(self.id)
-                        }
+                    self.feed.add(AnyView(feedButton), id: self.id)
                     print(self.feed.CurrentFeed.count)
                     print("NCAAM Added to current Feed!")
                 }
                 else{
-                    if let index = self.feed.feedIDs.firstIndex(of: self.id) {
-                        self.feed.CurrentFeed.remove(at: index)
-                        self.feed.feedIDs.remove(at: index)
-                    }
+                    self.feed.remove(id: self.id)
                     print(self.feed.CurrentFeed.count)
                     print("NCAAM Frame Removed from feed!")
                 }
@@ -136,4 +117,3 @@ struct NCAAMButton: View {
 
     }
 }
-

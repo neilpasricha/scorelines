@@ -7,48 +7,42 @@
 
 import Foundation
 
-class readFootballData: ObservableObject  {
+final class readFootballData: ObservableObject  {
+    private static var cachedFootballData: NFLResult?
+
     @Published var footballData = [NFLResult]()
-    
     @Published var dataLoaded = false
-    var data_loaded = false
-        
+
     init(){
-        if(!self.dataLoaded){
-            loadFootballData()
-        }
-        else{
-            print("Data already loaded baby")
-        }
+        loadFootballData()
     }
+
     func loadFootballData()  {
-        guard let path = Bundle.main.path(forResource: "footballData", ofType: "json")
-            else {
-                print("Json file not found")
-                return
-            }
-        let url = URL(fileURLWithPath: path)
-        print(url)
-        var result: NFLResult?
-        
+        if dataLoaded {
+            return
+        }
+
+        if let cachedFootballData = Self.cachedFootballData {
+            self.footballData = [cachedFootballData]
+            self.dataLoaded = true
+            return
+        }
+
+        guard let url = Bundle.main.url(forResource: "footballData", withExtension: "json") else {
+            print("Json file not found")
+            return
+        }
+
         do{
             let data = try Data(contentsOf: url)
-            result = try JSONDecoder().decode(NFLResult.self, from: data)
-            if let result = result{
-                //print(result)
-                self.footballData.append(result)
-                print(self.footballData[0].data[0].homeTeam)
-                self.dataLoaded = true
-            }
-            else{
-                print("Failed to parse")
-            }
-            return
-            
+            let result = try JSONDecoder().decode(NFLResult.self, from: data)
+            Self.cachedFootballData = result
+            self.footballData = [result]
+            self.dataLoaded = true
+            print(self.footballData[0].data[0].homeTeam)
         }
         catch{
             print("Error \(error)")
         }
-
     }
 }

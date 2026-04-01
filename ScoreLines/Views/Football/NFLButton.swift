@@ -13,10 +13,7 @@ struct NFLButton: View {
     @Binding var complexFrame: Bool
     var current_possession: String
     @State private var addToFeedAlert = false
-    @ObservedObject var footballData = readFootballData()
     let id: UUID
-
-    @State private var feedID: Int =  0
 
     var team1Name: String
     var team2Name: String
@@ -52,25 +49,17 @@ struct NFLButton: View {
     var team2Q4: Int
     
     var body: some View {
-        let nflData = footballData.footballData[0].data[0]
-        let cfbData = footballData.footballData[0].data[1]
-        let id = footballData.footballData[0].data[1].id
         Button(action: {
         }) {
             if(isClicked){
-                NFLComplex(id: self.id, current_possession: nflData.current_possession, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, team1Score : nflData.team1Score, team2Score : nflData.team2Score, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L, team1ML : nflData.team1ML, team1Spread : nflData.team1Spread, team2ML : nflData.team2ML, team2Spread : nflData.team2Spread, total : nflData.total, totalScore : nflData.totalScore, totalDiff : nflData.totalDiff, team1Q1: nflData.team1Q1,team1Q2: nflData.team1Q2,team1Q3: nflData.team1Q3,team1Q4: nflData.team1Q4,team2Q1: nflData.team2Q1,team2Q2: nflData.team2Q2,team2Q3: nflData.team2Q3,team2Q4: nflData.team2Q4)
+                NFLComplex(id: self.id, current_possession: current_possession, team1Name: team1Name, team2Name: team2Name, team1Score : team1Score, team2Score : team2Score, gameClockMin : gameClockMin, gameClockSec : gameClockSec, gameQuarter : gameQuarter, team1W : team1W, team1L : team1L, team2W : team2W, team2L : team2L, team1ML : team1ML, team1Spread : team1Spread, team2ML : team2ML, team2Spread : team2Spread, total : total, totalScore : totalScore, totalDiff : totalDiff, team1Q1: team1Q1,team1Q2: team1Q2,team1Q3: team1Q3,team1Q4: team1Q4,team2Q1: team2Q1,team2Q2: team2Q2,team2Q3: team2Q3,team2Q4: team2Q4)
             }else{
-                NFLSimple(id: self.id, current_possession: nflData.current_possession, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, team1Score : nflData.team1Score, team2Score : nflData.team2Score, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L)
+                NFLSimple(id: self.id, current_possession: current_possession, team1Name: team1Name, team2Name: team2Name, team1Score : team1Score, team2Score : team2Score, gameClockMin : gameClockMin, gameClockSec : gameClockSec, gameQuarter : gameQuarter, team1W : team1W, team1L : team1L, team2W : team2W, team2L : team2L)
             }
         }
         .contextMenu{
             Button {
-                if(isClicked){
-                    self.feed.CurrentFeed.append(AnyView((NFLButton(feed:feed, complexFrame: $complexFrame, current_possession: nflData.current_possession, id: nflData.id, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L, team1ML : nflData.team1ML, team1Spread : nflData.team1Spread, team2ML : nflData.team2ML, team2Spread : nflData.team2Spread, team1Score : nflData.team1Score, team2Score : nflData.team2Score, total : nflData.total, totalScore : nflData.totalScore, totalDiff : nflData.totalDiff,team1Q1: nflData.team1Q1,team1Q2: nflData.team1Q2,team1Q3: nflData.team1Q3,team1Q4: nflData.team1Q4,team2Q1: nflData.team2Q1,team2Q2: nflData.team2Q2,team2Q3: nflData.team2Q3,team2Q4: nflData.team2Q4))))
-                }
-                else{
-                    self.feed.CurrentFeed.append(AnyView((NFLButton(feed:feed, complexFrame: $complexFrame, current_possession: nflData.current_possession, id: nflData.id, team1Name: nflData.homeTeam, team2Name: nflData.awayTeam, gameClockMin : nflData.gameClockMin, gameClockSec : nflData.gameClockSec, gameQuarter : nflData.gameQuarter, team1W : nflData.team1W, team1L : nflData.team1L, team2W : nflData.team2W, team2L : nflData.team2L, team1ML : nflData.team1ML, team1Spread : nflData.team1Spread, team2ML : nflData.team2ML, team2Spread : nflData.team2Spread, team1Score : nflData.team1Score, team2Score : nflData.team2Score, total : nflData.total, totalScore : nflData.totalScore, totalDiff : nflData.totalDiff,team1Q1: nflData.team1Q1,team1Q2: nflData.team1Q2,team1Q3: nflData.team1Q3,team1Q4: nflData.team1Q4,team2Q1: nflData.team2Q1,team2Q2: nflData.team2Q2,team2Q3: nflData.team2Q3,team2Q4: nflData.team2Q4))))
-                }
+                self.feed.append(AnyView(NFLButton(feed:feed, complexFrame: $complexFrame, current_possession: current_possession, id: self.id, team1Name: team1Name, team2Name: team2Name, gameClockMin : gameClockMin, gameClockSec : gameClockSec, gameQuarter : gameQuarter, team1W : team1W, team1L : team1L, team2W : team2W, team2L : team2L, team1ML : team1ML, team1Spread : team1Spread, team2ML : team2ML, team2Spread : team2Spread, team1Score : team1Score, team2Score : team2Score, total : total, totalScore : totalScore, totalDiff : totalDiff,team1Q1: team1Q1,team1Q2: team1Q2,team1Q3: team1Q3,team1Q4: team1Q4,team2Q1: team2Q1,team2Q2: team2Q2,team2Q3: team2Q3,team2Q4: team2Q4)))
                 print(self.feed.CurrentFeed.count)
                 print("NBA Added to current Feed!")
             } label: {
@@ -90,4 +79,3 @@ struct NFLButton: View {
 
     }
 }
-

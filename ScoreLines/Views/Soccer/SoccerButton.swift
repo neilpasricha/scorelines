@@ -21,12 +21,7 @@ struct SoccerButton: View {
         }
         .contextMenu{
             Button {
-                if(isClicked){
-                    self.feed.CurrentFeed.append(AnyView(SoccerButton(feed:feed)))
-                }
-                else{
-                    self.feed.CurrentFeed.append(AnyView(SoccerButton(feed:feed)))
-                }
+                self.feed.append(AnyView(SoccerButton(feed:feed)))
                 print(self.feed.CurrentFeed.count)
                 print("NBA Added to current Feed!")
             } label: {
@@ -46,4 +41,3 @@ struct SoccerButton: View {
 
     }
 }
-

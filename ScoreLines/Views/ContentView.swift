@@ -6,7 +6,7 @@ extension View {
     self.modifier(NavigationBarColor(backgroundColor: backgroundColor, tintColor: tintColor))
   }
 }
-class Feed: ObservableObject{
+final class Feed: ObservableObject{
     @Published var CurrentFeed: [AnyView] = []
     @Published var feedIDs: [UUID] = []
 //    @Published var randomNumbers = Set<Int>()
@@ -24,15 +24,41 @@ class Feed: ObservableObject{
 //        }
 //        return id
 //    }
-    
+    func contains(_ id: UUID) -> Bool {
+        feedIDs.contains(id)
+    }
+
+    func append(_ view: AnyView) {
+        CurrentFeed.append(view)
+    }
+
+    func add(_ view: AnyView, id: UUID) {
+        guard !contains(id) else { return }
+        CurrentFeed.append(view)
+        feedIDs.append(id)
+    }
+
+    func remove(id: UUID) {
+        guard let index = feedIDs.firstIndex(of: id) else { return }
+        CurrentFeed.remove(at: index)
+        feedIDs.remove(at: index)
+    }
+
+    func toggle(_ view: AnyView, id: UUID) {
+        if contains(id) {
+            remove(id: id)
+        } else {
+            add(view, id: id)
+        }
+    }
 }
 struct ContentView : View {
     
     @State var showMenu = false
     @State private var selection = 2
-    @ObservedObject var feed: Feed = Feed()
-    @ObservedObject var basketballData = readBasketballData()
-    @ObservedObject var footballData = readFootballData()
+    @StateObject private var feed = Feed()
+    @StateObject private var basketballData = readBasketballData()
+    @StateObject private var footballData = readFootballData()
     
    
 
@@ -159,8 +185,6 @@ struct ContentView : View {
         .onAppear(perform: {
             self.basketballData.loadBasketballData()
             self.footballData.loadFootballData()
-            self.basketballData.dataLoaded = true
-            
         })
                 
         Print("readBasketballData.nbaComplexModel ContentView")
