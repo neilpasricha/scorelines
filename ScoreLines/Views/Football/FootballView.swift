@@ -13,7 +13,7 @@ struct FootballView: View {
     @State private var showCFB: Bool = false
     @State private var complexFrame: Bool = false
     @ObservedObject var feed: Feed
-    @ObservedObject var footballData = readFootballData()
+    @StateObject private var footballData = readFootballData()
 
     
     var body: some View
@@ -111,5 +111,4 @@ struct FootballView: View {
     
     
 }
-
 

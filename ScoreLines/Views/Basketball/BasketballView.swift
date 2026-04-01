@@ -12,8 +12,8 @@ struct BasketballView: View {
     @State private var showNBA: Bool = true
     @State private var showNCAAM: Bool = false
     @State private var complexFrame: Bool = false
-    @StateObject var feed: Feed
-    @ObservedObject var basketballData = readBasketballData()
+    @ObservedObject var feed: Feed
+    @StateObject private var basketballData = readBasketballData()
     
     //Below is to detect light/dark mode.
     //"if currentMode == .dark"
